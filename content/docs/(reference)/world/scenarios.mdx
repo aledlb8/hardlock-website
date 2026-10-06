@@ -97,12 +97,13 @@ The score is 100 per kill, 250 per wave or formation downed, 500 for a victory, 
 
 ## The editor
 
-Open it with **NEW SCENARIO** or **EDIT** on the scenario list, or **EDIT SCENARIO** on the briefing map. It has five tabs, changed with <Key k="Q" />/<Key k="E" />.
+Open it with **NEW SCENARIO** or **EDIT** on the scenario list, or **EDIT SCENARIO** on the briefing map. It has six tabs, changed with <Key k="Q" />/<Key k="E" />.
 
 | Tab | What you set |
 | --- | --- |
 | MAP | A top-down map of the theater. Place hostile and friendly flights, zones and patrol points, and set each one's details. |
 | RULES | The mode, waves, time limit, jets, friendly fire, training aids, your role and loadout, and the main opposing flight. |
+| BASE | [Base defence](#the-base-tab): the raids, and everything about the base and the raiders. |
 | SCRIPT | Triggers and objectives. |
 | BRIEFING | The name, author, tags, description and the briefing text read before launch. |
 | CHECK | What would stop the scenario playing as you meant it, such as a trigger naming a flight that does not exist. The tab shows how many problems there are. A scenario with problems still saves and flies. |
@@ -120,6 +121,7 @@ Open it with **NEW SCENARIO** or **EDIT** on the scenario list, or **EDIT SCENAR
 | LURK | Stays on patrol until a contact comes close: an ambush. |
 | CAP | Holds over its start until a contact is inside its commit range. |
 | PATROL | Flies its patrol points in turn, holding like a CAP. |
+| STRIKE | A hostile flight bombs one asset of your base, set on its BOMBS row (AUTO picks the one strike jets want most), then turns for home. It fights what it meets on the way. With no base to bomb it flies like DIRECT. |
 
 ### Triggers
 
@@ -128,7 +130,30 @@ A trigger reads as WHEN something is true, DO a list of actions. It fires ONCE, 
 - **When:** TIME PASSED, FLIGHT DESTROYED, FLIGHT FLYING (at least or at most a number), INSIDE A ZONE (any aircraft of a flight, any hostile, any friendly, or you), FLAG, CHANCE, YOUR JET DOWN, OBJECTIVE, YOUR KILLS.
 - **Do:** SEND FLIGHT, MESSAGE, SET FLAG, END THE MATCH (victory or defeat, with your headline), CHANGE TASK, WEAPONS (free or hold), OBJECTIVE (open, complete or failed).
 
+With base defence on, a trigger can also read the raids and act on the base:
+
+- **When:** RAID BEGUN (from that raid's intel card on), RAID PHASE (intel card up, raid in the air, between raids), ASSET DESTROYED, ASSET DAMAGED (below a share of its structure), BASE INTEGRITY (below a share), POINTS, RAIDERS DOWN.
+- **Do:** GIVE POINTS (or take them), REPAIR or DAMAGE an asset by a share, ADD ROUNDS to a launcher's depot (or remove them), BASE RADAR on or off.
+
 The main opposing flight is called `opposition` in the script.
+
+### The BASE tab
+
+**SETUP** turns the raids on (CAMPAIGN or ENDLESS, which puts you at the SAM site) and picks the raid table they come from: the game's own, or one in your raids folder. **EDIT THE TABLE HERE** copies the table into the scenario, which then carries it wherever the file goes, and opens the other pages:
+
+| Page | What you set |
+| --- | --- |
+| BASE LAYOUT | Where each asset stands, on a plan of the base: click to pick, drag to move, add and remove. |
+| STORES AND RULES | Each launcher's rounds, reload and prices, the heat seeker the short-range launcher fires, the points, and the raids' timing. |
+| RAIDS | The campaign: each raid's name, intel card and direction, and its groups (kind, number, timing, range, altitude, aircraft, target, weapons). |
+| RAIDERS | What each kind of raider flies and carries, how it flies, its points, and what it goes for when its group names nothing. |
+| ASSETS | Each asset's name, HUD tag, size, hardness, value and the line the HUD shows when it is lost. An **essential** asset loses the match when it falls; a base needs one. |
+| WEAPONS | Each raid weapon's name and tag, speed, blast, radar return, heat and points, and whether it can be shot down. |
+| UPGRADES | The aftermath's upgrades: name, card text, levels, price, the first raid it is offered after, and its effects. |
+| WORDS | The debrief's headlines and reasons, and the endless raids' names and intel lines. |
+| ENDLESS | How the endless raids grow, and when each kind of raider first joins them. |
+
+**EXPORT TO YOUR RAIDS FOLDER** writes the table there, so other scenarios can pick it on SETUP. The scenario's own flights, triggers and objectives play beside the raids: a friendly patrol on the MAP tab, radio calls and rewards on the SCRIPT tab. An objective or END THE MATCH can end the match before the raids do.
 
 ### Saving and test flying
 
