@@ -4,9 +4,11 @@
   "defaultOpen": true,
   "pages": [
     "game-flow",
+    "scenarios",
     "theater",
     "enemy-pilots",
     "ground-launcher",
+    "base-defence",
     "outcomes"
   ]
 }

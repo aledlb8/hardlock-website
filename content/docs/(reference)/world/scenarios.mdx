@@ -1,0 +1,135 @@
+---
+title: "Scenarios and the editor"
+description: "The scenario list, how each kind of match is won or lost, friendly flights, objectives, the debrief, and the editor that makes your own scenarios."
+icon: Map
+---
+
+A scenario is a whole match saved under a name: your role and loadout, the terrain, the opposing flight, the rules that decide how it is won, and, if it has them, more flights, zones, objectives and a script. Choose **SCENARIOS** on the title screen to see them all.
+
+## The scenario list
+
+The list shows every scenario the game ships (BUILT-IN) and every one you have saved (YOURS), each with its kind of match. <Key k="Q" />/<Key k="E" /> filter the list between ALL, BUILT-IN and YOURS, the search field finds a name, an author or a tag, and <Key k="W" />/<Key k="S" /> pick one. The card on the right says who made it, its mode, what you fly, the opposition, any other flights and its script.
+
+| Command | Key | What it does |
+| --- | --- | --- |
+| PLAY | <Key k="Enter" /> | Opens the [briefing map](/world/game-flow/#the-briefing-map) with the scenario set up. |
+| EDIT / EDIT A COPY | <Key k="F2" /> | Opens it in the [editor](#the-editor). A built-in scenario is never changed: your edits save as your own file. |
+| DELETE | <Key k="Del" hold /> | Deletes one of your own files. Built-in scenarios cannot be deleted. |
+| NEW SCENARIO | <Key k="N" /> | Opens the editor on an empty sandbox. |
+| OPEN FOLDER | <Key k="F" /> | Opens the folder your scenarios are kept in. |
+
+**Sharing:** a scenario is one file in that folder. Send it to a friend; they drop it in their own scenarios folder and it shows in the list.
+
+## The built-in scenarios
+
+| Scenario | Mode | What it sets up |
+| --- | --- | --- |
+| Sandbox | Sandbox | Two veterans in a mixed flight, 48 km out, over the mountains. |
+| Duel | Single wave | You in an F-15C against one ace in an Su-35S, 30 km out, over flat ground. One jet. |
+| Outnumbered | Single wave | Four veterans in a mixed flight, 48 km out. Two jets. |
+| Target practice | Sandbox | Three rookie MiG-29s, 24 km out, over flat ground. They never fire, their radars are off, and your rounds never run out. |
+| Valley ambush | Single wave | Three veterans starting 2000 m above the mountains, 20 km out, with the same opening every launch. One jet. |
+| Launch site | Single wave | You are the SAM site, against four veterans 30 km out. |
+| Escalation | Waves | Four waves, starting with one veteran and one more each wave, 32 km out. Three jets, 15 s between waves, rearmed between waves. |
+| Two-ship | Single wave | You and a friendly F-16, Viper, against three veterans. Two jets. |
+| Hold the valley | Mission | Three phases with a friendly CAP, Eagle, over the east pass. Down the northern two-ship, then a low flight sent up the west side, and keep every hostile out of your airfield's circle. Two jets, 15 minutes. |
+| Base defence | Raid campaign | You are the base's air defence, against eight raids from the north. See [Base defence](/world/base-defence/). |
+| Endless raids | Endless raids | The same base, against raids that never stop, for a score. |
+
+## How a match is won
+
+Every scenario has one of four modes. The HUD and the debrief name it. The two base defence scenarios are the exception: their raids decide the match, as [Base defence](/world/base-defence/) explains.
+
+| Mode | Won when | Lost when |
+| --- | --- | --- |
+| SANDBOX | Never: it runs until you leave. | Never, unless a time limit or the script ends it. |
+| SINGLE WAVE | Every hostile aircraft is down. | Your last jet goes down. |
+| WAVES | The last wave is down. Each wave adds aircraft to the opposing flight. | Your last jet goes down. |
+| MISSION | Every primary objective is complete, or the script says so. | A primary objective fails, your last jet goes down, or the script says so. |
+
+In the sandbox, when every enemy aircraft is down and no missile is in the air, a new formation takes off 3 s<SimChoice /> later. [Kills, crashes and rearming](/world/outcomes/) has the rules for going down.
+
+A scenario can also set:
+
+- **Jets:** how many you have, the first included. When one goes down, the next takes off from your airfield 5 s<SimChoice /> later, and the HUD says how many are left. Unlimited jets never run out.
+- **A time limit.** When it runs out the match ends: as a victory if the scenario is about lasting (HELD OUT), as a defeat if it is about finishing in time (OUT OF TIME).
+- **Rearm between waves:** your rounds, chaff and flares are full again each time a wave is down.
+- **Training aids:** unlimited rounds (a radar round comes back at once, a heat seeker 2 s later), unlimited chaff and flares, and invulnerable (weapons cannot hurt your jet; the ground still can).
+- **Friendly fire.** Off, which is the default, a missile's fuze and blast spare its own side. On, every aircraft is fair game.
+
+<Callout kind="note" title="Rearming belongs to the sandbox">
+  <Key k="G" /> and the tactical screen's REARM work only in a sandbox match. Anywhere else you fight with what the scenario gives you.
+</Callout>
+
+## Friendly flights
+
+Some scenarios put friendly aircraft in the air, flown by the computer. They fight the other side with the same skills and tactics as [the enemy pilots](/world/enemy-pilots/), and they never shoot at you.
+
+- **Over the world:** each friendly has a ring, its callsign (VIPER 1, EAGLE 2…) and its range, out to 60 km. Point at one with the cursor free for its card. Hidden with **Target labels** off.
+- **On the HUD:** a FRIENDLIES list under the target list, with how many are still flying.
+- **On the radar scope:** a ring with a short line for its heading. Your radar never tracks your own side; the rings come from the datalink.
+- **On the tactical screen:** TARGETS lists them under the enemy roster.
+
+The target list, the T numbers and SPLASH count only the opposing side.
+
+## Objectives and messages
+
+A mission's objectives sit at the top right of the HUD, under the target and friendly lists, each with a box: empty while open, filled when complete, crossed when failed. Optional ones say so, and do not decide the match. The line above them gives the wave, the clock and your spare jets; [the HUD](/interface/hud/#friendlies-and-the-match) shows an example.
+
+Scenario messages appear under the camera name at the top centre, like a radio call, and fade after a few seconds. The tactical screen's **MISSION** category repeats all of it: the match, the objectives, each flight and the messages so far.
+
+## The debrief
+
+When a match ends the fight carries on for a moment, then the debrief opens over it:
+
+- **VICTORY** or **DEFEAT**, a headline such as AIRSPACE CLEARED, ALL WAVES DOWN, SHOT DOWN or OBJECTIVE FAILED, and the reason.
+- **SCORE** (sandbox and waves only) and **MISSION TIME**.
+- **RESULTS:** your kills, rounds fired and hits, jets lost, and what friendly flights downed and lost.
+- **The scenario** and every objective with how it ended.
+
+| Command | Key | What it does |
+| --- | --- | --- |
+| RESTART | <Key k="Enter" /> | Flies the same scenario again. |
+| BRIEFING | <Key k="B" /> | Back to the briefing map. Reads EDITOR when you are test flying. |
+| MAIN MENU | <Key k="Esc" /> | Back to the title screen. |
+
+The score is 100 per kill, 250 per wave or formation downed, 500 for a victory, and 200 for each jet you did not need.<SimChoice />
+
+## The editor
+
+Open it with **NEW SCENARIO** or **EDIT** on the scenario list, or **EDIT SCENARIO** on the briefing map. It has five tabs, changed with <Key k="Q" />/<Key k="E" />.
+
+| Tab | What you set |
+| --- | --- |
+| MAP | A top-down map of the theater. Place hostile and friendly flights, zones and patrol points, and set each one's details. |
+| RULES | The mode, waves, time limit, jets, friendly fire, training aids, your role and loadout, and the main opposing flight. |
+| SCRIPT | Triggers and objectives. |
+| BRIEFING | The name, author, tags, description and the briefing text read before launch. |
+| CHECK | What would stop the scenario playing as you meant it, such as a trigger naming a flight that does not exist. The tab shows how many problems there are. A scenario with problems still saves and flies. |
+
+**On the map**, pick a tool under PLACE (HOSTILE FLIGHT, FRIENDLY FLIGHT, ZONE, PATROL POINT), then click the map. Drag a marker to move it, drag a zone's square handle to size it, right-drag to pan and use the wheel to zoom. Positions read as a bearing and range from your airfield. <Key k="Del" /> deletes what is picked.
+
+**Each flight** has a side, aircraft, count, skill and task, weapons free and radar switches, a start (at its airfield, or where its marker is, with heading, altitude and speed), and when it takes off: at a set time, only when a trigger sends it, or again with every new wave. Its task is one of:
+
+| Task | What the flight does |
+| --- | --- |
+| DEALT | The lead flies straight in, high or low; the wingmen are dealt the other plans. |
+| DIRECT | Every pilot straight at the nearest contact. |
+| FLANK LEFT / FLANK RIGHT | Swings wide on that side and turns in late. |
+| LOW / HIGH | Runs in low over the ground, or climbs high and fast for a long shot. |
+| LURK | Stays on patrol until a contact comes close: an ambush. |
+| CAP | Holds over its start until a contact is inside its commit range. |
+| PATROL | Flies its patrol points in turn, holding like a CAP. |
+
+### Triggers
+
+A trigger reads as WHEN something is true, DO a list of actions. It fires ONCE, REPEATS (with a cooldown between firings), or EACH TIME IT BECOMES TRUE. Its conditions can all have to hold (ALL OF THESE) or any one (ANY OF THESE).
+
+- **When:** TIME PASSED, FLIGHT DESTROYED, FLIGHT FLYING (at least or at most a number), INSIDE A ZONE (any aircraft of a flight, any hostile, any friendly, or you), FLAG, CHANCE, YOUR JET DOWN, OBJECTIVE, YOUR KILLS.
+- **Do:** SEND FLIGHT, MESSAGE, SET FLAG, END THE MATCH (victory or defeat, with your headline), CHANGE TASK, WEAPONS (free or hold), OBJECTIVE (open, complete or failed).
+
+The main opposing flight is called `opposition` in the script.
+
+### Saving and test flying
+
+<Key k="Ctrl" />+<Key k="S" /> saves to your scenarios folder. <Key k="Ctrl" />+<Key k="Z" /> and <Key k="Ctrl" />+<Key k="Y" /> undo and redo. **TEST FLY** (<Key k="F5" />) launches the scenario as it stands; the pause menu's **BACK TO EDITOR**, or EDITOR on the debrief, brings you back with your edits. Leaving with unsaved changes asks for <Key k="Esc" /> a second time.

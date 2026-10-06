@@ -1,6 +1,6 @@
 ---
 title: "The tactical screen"
-description: "The full-screen Tab menu that pauses the fight: its WEAPON, TARGETS, WORLD and TELEMETRY categories and every control in them, with ranges and defaults."
+description: "The full-screen Tab menu that pauses the fight: its WEAPON, TARGETS, WORLD, TELEMETRY and MISSION categories and every control in them, with ranges and defaults."
 icon: LayoutDashboard
 ---
 
@@ -13,10 +13,10 @@ Press <Key k="Tab" /> during an engagement to open the tactical screen. **It pau
 | <Key k="Tab" /> or <Key k="Esc" /> | Close the screen |
 | <Key k="Q" /> / <Key k="E" /> | Previous / next category |
 | <Key k="←" /> / <Key k="→" /> | Change the value under the cursor |
-| <Key k="G" /> | Rearm |
+| <Key k="G" /> | Rearm (sandbox only) |
 | <Key k="F" /> | Close the screen and fire, if a launch is cleared |
 
-Across the top: your role, the engagement clock and the four category tabs. The settings run down the left column. **Whatever your cursor rests on is explained in the panel on the right.** Along the bottom: **LAUNCH** when a launch is cleared (or the reason it isn't), then **REARM**. The game remembers your changes.
+Across the top: your role, the engagement clock and the five category tabs. The settings run down the left column. **Whatever your cursor rests on is explained in the panel on the right.** Along the bottom: **LAUNCH** when a launch is cleared (or the reason it isn't), then **REARM** in a sandbox match. The game remembers your changes.
 
 ## WEAPON
 
@@ -40,9 +40,9 @@ Point at any tile and its full card appears in the right panel. [The roster](/ai
 | Skill | ROOKIE, VETERAN, ACE | VETERAN |
 | Weapons free | off / on | on |
 
-Changing the number of aircraft respawns the formation once you let go. Skill takes effect at once. With weapons free off, the enemy still flies, chases and defends itself but never fires. **RESPAWN THE FORMATION** brings everyone back. [Enemy pilots](/world/enemy-pilots/) explains what the skill levels change.
+Changing the number of aircraft respawns the formation once you let go. Skill takes effect at once. With weapons free off, the enemy still flies, chases and defends itself but never fires. **RESPAWN THE FORMATION** brings everyone back. [Enemy pilots](/world/enemy-pilots/) explains what the skill levels change. These controls belong to the sandbox: in any other match the rows only say what the scenario sent.
 
-Under the settings, one row per enemy aircraft: T1, T2…, what it is doing (or DOWN), then its height, its range, its missiles left as `R2  IR2` (radar, heat) and its flares and chaff left as `F24  C30`. Point at a row for the aircraft's full card.
+Under the settings, one row per enemy aircraft: T1, T2…, what it is doing (or DOWN), then its height, its range, its missiles left as `R2  IR2` (radar, heat) and its flares and chaff left as `F24  C30`. Point at a row for the aircraft's full card. A scenario's friendly aircraft follow under FRIENDLIES, each with its callsign, what it is doing and its range.
 
 ## WORLD
 
@@ -76,3 +76,7 @@ What the overlays draw:
 ## TELEMETRY
 
 Live, read-only numbers about the missile you are following (or the one ready to fire): its state, seeker and target range, closest pass so far, flight time, position and speed, motor and propellant, and the air at its altitude. It also shows the scenario seed, which replays the same fight.
+
+## MISSION
+
+The match, read-only: its mode, the time so far and any time left, the wave, your spare jets and your kills, then the scenario's objectives, each of its flights (waiting, when it takes off, how many are flying, or down) and the messages it has sent. [Scenarios and the editor](/world/scenarios/) explains each part.

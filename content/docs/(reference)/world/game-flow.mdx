@@ -1,20 +1,26 @@
 ---
 title: "Menus and game flow"
-description: "From the title screen to the briefing map, the hangar, the tactical screen and the pause menu: what each screen does and what it changes."
+description: "From the title screen to the briefing map, the hangar, the tactical screen, the pause menu and the debrief: what each screen does and what it changes."
 icon: Workflow
 ---
 
-Hardlock has four screens (title, hangar, briefing and playing) and three overlays that can sit on top of play (pause, settings and the tactical screen). The world keeps running behind the menus whenever the game is not paused.
+Hardlock has six screens (title, scenario list, editor, hangar, briefing and playing) and four overlays that can sit on top of play (pause, settings, the tactical screen and the debrief). The world keeps running behind the menus whenever the game is not paused.
 
 ```mermaid
 flowchart LR
     T[Title] -->|START ENGAGEMENT| B[Briefing map]
+    T -->|SCENARIOS| S[Scenario list]
+    S -->|PLAY| B
+    S -->|EDIT| E[Editor]
+    B -->|EDIT SCENARIO| E
     T -->|HANGAR| H[Hangar]
     H -->|BRIEFING| B
     B -->|LOADOUT| H
     B -->|LAUNCH| P((Playing))
+    E -->|TEST FLY| P
     P <-->|Esc| M[Pause menu]
     P <-->|Tab, paused| X[Tactical screen]
+    P -->|match ends| D[Debrief]
     M -->|RESTART ENGAGEMENT| P
     M -->|MAIN MENU| T
 ```
@@ -24,6 +30,7 @@ flowchart LR
 | Item | What it does |
 | --- | --- |
 | START ENGAGEMENT | Opens the briefing map. |
+| SCENARIOS | Opens the scenario list. See [Scenarios and the editor](/world/scenarios/). |
 | HANGAR | Opens the hangar, where you pick an aircraft and its missiles. |
 | SETTINGS | Opens settings on the Display page. |
 | CONTROLS | Opens settings on the Keybinds page. |
@@ -48,15 +55,16 @@ The hangar shows the selected aircraft with its full load of missiles on their s
 
 ## The briefing map
 
-The briefing is a high, orbiting view over the terrain, centred between the two bases. Drag to orbit and use the wheel to zoom. The map shows range rings every 10 km from your base, north, the dashed edge of the area the enemy pilots stay inside, the enemy base (HOSTILE AIRFIELD) and every enemy aircraft in the air as T1, T2… Point at one to open its card.
+The briefing is a high, orbiting view over the terrain, centred between the two bases. Drag to orbit and use the wheel to zoom. The map shows range rings every 10 km from your base, north, the dashed edge of the area the enemy pilots stay inside, the enemy base (HOSTILE AIRFIELD) and every enemy aircraft in the air as T1, T2… Point at one to open its card. A scenario with more flights or zones also draws them where they start, with friendly flights marked as such in the map key.
 
-The column on the right sets up the fight. Its rows work like [Settings](/interface/settings/): arrows or <Key k="←" />/<Key k="→" /> step a value. Pointing at a row describes it in the panel below; with nothing under the cursor, that panel shows the SITUATION (the distance to the enemy base, how many hostiles are airborne, their skill and whether the opening repeats). The map key sits at the bottom left.
+The column on the right sets up the fight. Its rows work like [Settings](/interface/settings/): arrows or <Key k="←" />/<Key k="→" /> step a value. Pointing at a row describes it in the panel below; with nothing under the cursor, that panel shows the SITUATION: the scenario's mode, the distance to the enemy base, how many hostiles are airborne, their skill, whether the opening repeats, then any time limit, your jets and other flights, and the scenario's briefing text. The map key sits at the bottom left. **EDIT SCENARIO** opens the setup in the [editor](/world/scenarios/#the-editor).
 
 | Group | Setting | Options | Notes |
 | --- | --- | --- | --- |
 | SCENARIO | Scenario | CUSTOM, then every saved scenario | Picking one sets every row below. See [Scenarios](#scenarios). |
 | | Name and SAVE | | Saves the rows under the name you type. |
 | ENGAGEMENT | You fly | SAM SITE or FIGHTER | See [The ground launcher](/world/ground-launcher/). |
+| | Mode | SANDBOX, RAID CAMPAIGN, ENDLESS RAIDS | SAM site only. The raid modes are [Base defence](/world/base-defence/); they hide the Aircraft, Their aircraft, Distance and Start height rows, and LOADOUT lists the base's launchers. |
 | | Terrain | MOUNTAINS or FLAT | See [The theater](/world/theater/). |
 | OPPOSITION | Aircraft | 1 to 20 | The formation respawns after each step, or when you let go of the bar. |
 | | Skill | ROOKIE, VETERAN, ACE | Takes effect at once. See [Enemy pilots](/world/enemy-pilots/). |
@@ -72,22 +80,13 @@ The column on the right sets up the fight. Its rows work like [Settings](/interf
 
 ### Scenarios
 
-A scenario is the whole briefing setup saved under a name: your role, the terrain, your aircraft and missiles, and every OPPOSITION row. The Scenario row lists the ones the game ships first, then your own.
+The Scenario row lists every [scenario](/world/scenarios/), the ones the game ships first, then your own. Picking one sets every row below, along with its rules, its other flights and its script.
 
-| Scenario | What it sets up |
-| --- | --- |
-| Sandbox | Two veterans in a mixed flight, 48 km out, over the mountains. |
-| Duel | You in an F-15C against one ace in an Su-35S, 30 km out, over flat ground. |
-| Outnumbered | Four veterans in a mixed flight, 48 km out. |
-| Target practice | Three rookie MiG-29s, 24 km out, over flat ground. They never fire and their radars are off. |
-| Valley ambush | Three veterans starting 2000 m above the mountains, 20 km out, with the same opening every launch. |
-| Launch site | You are the SAM site, against four veterans 30 km out. |
-
-Change any row after picking a scenario and the row reads CUSTOM: the setup is yours until you save it. Type a name in the field under the row and press **SAVE**. Saving under a name you already used replaces that scenario. Your scenarios are kept as files in the `config/scenarios` folder next to the game, so you can copy one to a friend, who drops it in the same folder. The list is read again each time you open the briefing.
+Change any row after picking a scenario and the row reads CUSTOM: the setup is yours until you save it, and it keeps the scenario's rules and flights. Type a name in the field under the row and press **SAVE**. Saving under a name you already used replaces that scenario. Your scenarios are kept as files in the `config/scenarios` folder next to the game. The list is read again each time you open the briefing.
 
 ## The tactical screen
 
-Press <Key k="Tab" /> in flight to open the full-screen tactical screen. **It pauses the simulation.** It has four categories: WEAPON, TARGETS, WORLD and TELEMETRY. [The tactical screen](/interface/tactical-screen/) goes through every control.
+Press <Key k="Tab" /> in flight to open the full-screen tactical screen. **It pauses the simulation.** It has five categories: WEAPON, TARGETS, WORLD, TELEMETRY and MISSION. [The tactical screen](/interface/tactical-screen/) goes through every control.
 
 ## Pausing and restarting
 
@@ -97,8 +96,8 @@ Press <Key k="Tab" /> in flight to open the full-screen tactical screen. **It pa
 | <Key k="Enter" /> | Pause or resume without a menu. |
 | <Key k="Tab" /> | Tactical screen, paused. |
 
-The pause menu offers RESUME, RESTART ENGAGEMENT, SETTINGS, CONTROLS, MAIN MENU and QUIT TO DESKTOP. RESTART ENGAGEMENT, MAIN MENU and QUIT TO DESKTOP have to be held to confirm. Restarting draws a new seed, just like LAUNCH, unless **Same opening** is on.
+The pause menu offers RESUME, RESTART ENGAGEMENT, SETTINGS, CONTROLS, MAIN MENU and QUIT TO DESKTOP. RESTART ENGAGEMENT, MAIN MENU and QUIT TO DESKTOP have to be held to confirm. Restarting draws a new seed, just like LAUNCH, unless **Same opening** is on. While you test fly a scenario from the editor, MAIN MENU reads BACK TO EDITOR.
 
-## No score screen
+## The debrief
 
-Hardlock is a sandbox. There is no debrief, score, lives counter or end-of-mission screen. The feedback is in the moment: **SPLASH** when one of your missiles destroys an aircraft, and **SHOT ENDED** with a reason whenever a missile ends its flight. [The HUD](/interface/hud/#notices-above-the-weapon-line) describes both, and [Kills, crashes and rearming](/world/outcomes/) covers what happens when you go down.
+A scenario that can be won or lost ends with the debrief: victory or defeat, the reason, your results and, for waves and the sandbox, a score. From it you restart, go back to the briefing or leave for the title screen; [Scenarios and the editor](/world/scenarios/#the-debrief) has the details. The open sandbox never ends on its own, so its feedback stays in the moment: **SPLASH** when one of your missiles destroys an aircraft, and **SHOT ENDED** with a reason whenever a missile ends its flight. [The HUD](/interface/hud/#notices-above-the-weapon-line) describes both.

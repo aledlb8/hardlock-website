@@ -11,8 +11,8 @@ The HUD is drawn in **one white ink** with no coloured boxes. When something mat
 | Screen area | What is there |
 | --- | --- |
 | Top left | Mission state, a detail line, the flight data |
-| Top centre | Heading tape, camera name, PAUSED, the MISSILE / LAUNCH banner |
-| Top right | The target list |
+| Top centre | Heading tape, camera name, scenario messages, PAUSED, the MISSILE / LAUNCH banner |
+| Top right | The target list, then any friendlies and the match |
 | Centre | Aim circle, nose cross and the [target symbols](/interface/symbols/) |
 | Bottom left | Radar scope and DATALINK list (fighter), key hints |
 | Bottom centre | The weapon line, with notices above it |
@@ -57,7 +57,7 @@ The block under the mission state shows your jet's numbers, or the missile's whe
 
 ## Heading tape and camera name
 
-The tape at the top centre spans 60°, with a figure every 10° printed in tens (`27` is 270°) and N, E, S, W at the cardinal points. In the fighter camera it follows your nose; in other cameras it follows the camera. Under it: the key that changes view (<Key k="V" />) and FREE CAMERA, MISSILE CAMERA or FIGHTER CAMERA. If you pause with <Key k="Enter" />, an inverted PAUSED chip appears below.
+The tape at the top centre spans 60°, with a figure every 10° printed in tens (`27` is 270°) and N, E, S, W at the cardinal points. In the fighter camera it follows your nose; in other cameras it follows the camera. Under it: the key that changes view (<Key k="V" />) and FREE CAMERA, MISSILE CAMERA or FIGHTER CAMERA. A scenario's messages appear under that, between two short rules, and fade after a few seconds. If you pause with <Key k="Enter" />, an inverted PAUSED chip appears below.
 
 ## The MISSILE and LAUNCH banners
 
@@ -65,13 +65,19 @@ When your warning receiver hears a missile coming at you, a large **MISSILE** ch
 
 ## The target list
 
-At the top right: TARGETS and a count of living aircraft, then one row per aircraft (up to eight): its number (T1, T2…), what it is doing, and its range. Destroyed aircraft read DOWN and go faint. The target your missile is tracking is an inverted chip.
+At the top right: TARGETS and a count of living enemy aircraft, then one row per aircraft (up to eight): its number (T1, T2…), what it is doing, and its range. Destroyed aircraft read DOWN and go faint. The target your missile is tracking is an inverted chip.
 
 The state words are PATROL, INTERCEPT, ATTACK, CRANK, OFFENSIVE, NEUTRAL, DEFENSIVE, EVADING, EXTEND and RECOVER. ATTACK, CRANK, OFFENSIVE and EVADING are drawn brighter because they are the ones to worry about. [Enemy pilots](/world/enemy-pilots/#what-it-is-doing) explains each one. With the cursor free (not steering the jet), point at a row for the aircraft's card.
 
 <Callout kind="note" title="The list knows more than your radar">
   The target list shows every enemy aircraft's state and range, whatever your radar sees. The symbols drawn over the world come only from what your radar, your seeker and your own eyes know.
 </Callout>
+
+## Friendlies and the match
+
+In a scenario with friendly flights, a **FRIENDLIES** list sits under the target list: how many are still flying, then each callsign (VIPER 1, EAGLE 2…) with its range, or DOWN. Each friendly also has a ring over it in the world with its callsign and range.
+
+Under that, in a match that can be won, comes the match block: the mode, then a line such as `WAVE 2 / 4 · NEXT IN 12 S · 4:30 LEFT · 1 SPARE` (LAST JET when no spare is left), then the objectives with a box each: empty while open, filled when complete, crossed when failed. [Scenarios and the editor](/world/scenarios/#objectives-and-messages) explains them.
 
 ## Aim circle and nose cross
 
@@ -103,7 +109,7 @@ When one of your missiles destroys an aircraft, **SPLASH** appears in large capi
 
 ## SHOT DOWN and CRASHED
 
-When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile got you) or **CRASHED** (you hit the ground) appears in the same place, with `ESC · RESTART ENGAGEMENT` under it. It stays up until you restart. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
+When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile got you) or **CRASHED** (you hit the ground) appears in the same place. Under it: `ESC · RESTART ENGAGEMENT` when you are down for good in the sandbox, NEXT JET TAKING OFF when the scenario gives you another jet, or MISSION OVER when the match ends. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
 
 ## The flash along the bottom edge
 
@@ -119,7 +125,7 @@ A quiet row at the bottom left shows <Key k="Tab" /> TACTICAL, <Key k="Z" /> CHA
 - The weapon line reads <Key k="F" /> LAUNCH (or why it can't, such as CAGED or NO TARGET) and <Key k="R" /> SEEKER CUE ON or OFF.
 - There is no radar scope and no RWR, except in the fighter camera, which rides behind the chased aircraft and shows its **missile warning**: the incoming missile's bearing, its range and its time to closest approach (TCA).
 
-[The ground launcher](/world/ground-launcher/) covers the role itself.
+[The ground launcher](/world/ground-launcher/) covers the role itself. In the raid modes the HUD shows the base instead: its assets at the top left, contacts at the top right, the base scope at the bottom left and the three launchers on the weapon line, all described in [Base defence](/world/base-defence/).
 
 ## What the HUD does not have
 
