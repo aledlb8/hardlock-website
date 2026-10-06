@@ -1,0 +1,166 @@
+---
+title: "Missile catalog"
+description: "Every heat seeker and radar missile in the game with the numbers that change how it plays, and which of them fly alike."
+icon: Table2
+---
+
+The game has **38 heat seekers** and **27 named radar missiles**, plus a fictional **reference** radar round. In the tables below, **† marks a published figure**. Everything else is a sim choice, an inference or a fictional game profile.<SimChoice /> The in-game card shows each round's sources in full; this page only lists what changes how a round plays.
+
+## What every heat seeker shares
+
+- **The same fin coefficient**, from the AIM-9B, so a brochure g figure never makes a round turn harder at the same speed and height.
+- **The same guidance** (with the hard turn past 40° off the collision course).
+- Where a g limit was never published, it is **30 g**. Where a motor was never published, the round gets a fictional motor class scaled by its mass.
+
+[How a missile flies](/weapons/missile-flight/) and [How a missile steers](/weapons/guidance/) explain both.
+
+## Heat seekers: seeker and launch
+
+**Launch** is LBL (lock before launch), LAL (lock after launch), or LAL+ (lock after launch, at targets anywhere around you). **IRCCM** is the seeker's flare rejection ([Heat seekers](/weapons/heat-seekers/#flares)).
+
+| Round | Aspect | Launch | Gimbal | IRCCM |
+| --- | --- | --- | --- | --- |
+| AIM-9B | rear | LBL | 25°† | none |
+| AIM-9D | rear + afterburner nose | LBL | 40°† | none |
+| AIM-9H | rear | LBL | 40° | none |
+| AIM-9J | rear | LBL | 40° | none |
+| AIM-9L | all | LBL | 40° | kinematic |
+| AIM-9M | all | LBL | 40° | rise-rate |
+| AIM-9P-5 | all | LBL | 40° | rise-rate |
+| AIM-9X Block I | all | LBL | 90°† | imaging |
+| AIM-9X Block II | all | LAL+ | 90°† | imaging |
+| AIM-9X Block II+ | all | LAL+ | 90°† | imaging |
+| AIM-9L/I | all | LBL | 40° | kinematic |
+| AIM-9L/I-1 | all | LBL | 40° | rise-rate |
+| R-3S | rear | LBL | 28°† | none |
+| R-13M | rear | LBL | 40° | none |
+| R-13M1 | rear | LBL | 40° | none |
+| R-60 | rear | LBL | 35° | none |
+| R-60M | all | LBL | 35° | none |
+| R-73 | all | LAL, 45° cue† | 75°† | none |
+| R-73M | all | LAL, 45° cue† | 75°† | kinematic |
+| RVV-MD | all | LAL, 60° cue† | 75°† | kinematic |
+| R-27T | all | LBL | 55° | none |
+| R-27ET | all | LBL | 55° | none |
+| Magic I | rear cone (70°) | LBL | 30°† | none |
+| Magic II | all | LBL | 30°† | rise-rate |
+| IRIS-T | all | LAL+ | 90°† | imaging |
+| ASRAAM | all | LAL+ | 90°† | imaging |
+| MICA IR | all | LAL+ | 60° | imaging |
+| Shafrir 2 | rear | LBL | 10°† | none |
+| Python 3 | all | LBL | 40°† | none |
+| Python 4 | all | LBL | 60° | kinematic |
+| Python 5 | all | LAL+ | 90° | imaging |
+| PL-5EII | all | LBL | 40° | kinematic |
+| PL-8 | rear | LBL | 40° | none |
+| PL-9C | all | LBL | 40° | kinematic |
+| PL-10 | all | LAL | 90° | imaging |
+| AAM-3 | all | LBL | 40° | kinematic |
+| AAM-5 | all | LAL | 60° | imaging |
+| A-Darter | all | LAL | 90°† | imaging |
+
+**Narrow, slow heads.** The AIM-9B (4° field of view, 11°/s†), AIM-9D (2.5°, 12°/s†), AIM-9H (2.5°, 20°/s†) and R-3S (3.5°) hold their lock only inside that narrow field and can lose a hard-turning target. Every other round holds its lock anywhere inside its gimbal.
+
+**Lock range**, against a fighter from dead astern. It shrinks as the aspect moves forward; nose-on, an all-aspect head locks at under half of it ([Heat seekers](/weapons/heat-seekers/#heat-and-aspect)).
+
+- RVV-MD: about 22.4 km. PL-5EII: 16 km.
+- Imaging rounds, the R-73 and the R-73M: 18 km.<SimChoice />
+- Every other all-aspect round: 10 km.<SimChoice />
+- Rear-aspect rounds, the Magic I and the AIM-9D: 6 km.<SimChoice /> The AIM-9D sees twice as far when the target is in afterburner.
+
+## Heat seekers: airframe, motor and fuze
+
+**Motor.** "Published" is a published or derived average thrust; legacy, general, agile and extended are fictional game classes. **Fuze** values not marked † are sim estimates by warhead size.<SimChoice /> **Arms after** values not marked † are inferred from employment minimums or reused from the AIM-9D.
+
+| Round | Mass | Motor | Burn | Thrust vectoring | g limit | Fuze | Arms after |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| AIM-9B | 72.6 kg† | published | 2.2 s† | | 10 g† | 9.14 m† | 150 m† |
+| AIM-9D | 88.5 kg | published | 5.0 s† | | 30 g | 5.2 m | 304.8 m† |
+| AIM-9H | 84.4 kg | legacy | 2.2 s | | 30 g | 6 m | 304.8 m |
+| AIM-9J | 77 kg | legacy | 2.2 s | | 30 g | 6 m | 304.8 m |
+| AIM-9L, AIM-9M | 86 kg | general | 4.0 s | | 30 g | 8 m | 304.8 m |
+| AIM-9P-5 | 86.2 kg | general | 4.0 s | | 30 g | 8 m | 304.8 m |
+| AIM-9X (all three) | 84.4 kg | agile | 3.5 s | yes | 30 g | 8 m | 304.8 m |
+| AIM-9L/I, AIM-9L/I-1 | 84 kg | general | 4.0 s | | 30 g | 8 m | 304.8 m |
+| R-3S | 75.3 kg | published | 2.45 s | | 30 g | 9 m† | 0.4 s after burnout |
+| R-13M | 90 kg | legacy | 2.2 s | | 30 g | 6 m | 150 m |
+| R-13M1 | 90.6 kg | legacy | 2.2 s | | 30 g | 6 m | 150 m |
+| R-60 | 43.5 kg | legacy | 2.2 s | | 47 g† | 5 m | 250 m |
+| R-60M | 44 kg | general | 4.0 s | | 47 g† | 5 m | 150 m |
+| R-73 | 105 kg | agile | 3.5 s | yes | 40 g† | 3.5 m† | 300 m |
+| R-73M | 110 kg | agile | 3.5 s | yes | 40 g† | 8 m | 300 m |
+| RVV-MD | 106 kg | agile | 3.5 s | yes | 30 g | 8 m | 300 m |
+| R-27T | 245 kg | extended | 7.0 s | | 8 g† | 12 m | 500 m |
+| R-27ET | 343 kg | extended | 7.0 s | | 30 g | 12 m | 500 m |
+| Magic I | 89 kg | legacy | 2.2 s | | 35 g† | 6 m | 300 m and 1.8 s† |
+| Magic II | 89 kg | general | 4.0 s | | 50 g† | 8 m | 150 m |
+| IRIS-T | 87.4 kg | agile | 3.5 s | yes | 60 g† | 8 m | 150 m |
+| ASRAAM | 88 kg | agile | 3.5 s | | 50 g† | 8 m | 300 m |
+| MICA IR | 112 kg | extended | 7.0 s | yes | 50 g† | 8 m | 500 m† |
+| Shafrir 2 | 94 kg | legacy | 2.2 s | | 30 g | 6 m | 600 m |
+| Python 3 | 120 kg | general | 4.0 s | | 40 g† | 8 m | 500 m |
+| Python 4 | 105 kg | general | 4.0 s | | 30 g | 8 m | 150 m |
+| Python 5 | 105 kg | agile | 3.5 s | | 30 g | 8 m | 150 m |
+| PL-5EII | 83 kg | general | 4.0 s | | 35 g† | 8 m | 150 m |
+| PL-8 | 115 kg | legacy | 2.2 s | | 38 g† | 6 m | 150 m |
+| PL-9C | 115 kg | general | 4.0 s | | 30 g | 8 m | 150 m |
+| PL-10 | 105 kg | agile | 3.5 s | yes | 60 g† | 8 m | 150 m |
+| AAM-3 | 91 kg | general | 4.0 s | | 30 g | 8 m | 150 m |
+| AAM-5 | 95 kg | agile | 3.5 s | yes | 30 g | 8 m | 150 m |
+| A-Darter | 93 kg | agile | 3.5 s | yes | 100 g† burning, 50 g† after | 8 m | 150 m |
+
+A published g limit is a cap, not an extra turn: at a given speed and height every round pulls whatever its weight and body width allow, up to its cap.
+
+### Heat-seeker timers
+
+Every heat seeker stops guiding, then destroys itself, after a set time:
+
+| Round | Guidance stops | Self-destructs |
+| --- | --- | --- |
+| AIM-9B | 20 s† | 24 s† |
+| AIM-9D | 60 s | 60 s |
+| AIM-9J | 40 s | 40 s |
+| R-3S | 21 s† | 22 s |
+| R-13M | 55 s | 55 s |
+| R-60, R-60M | 24 s | 25 s |
+| Magic I | 26 s | 26 s† |
+| R-27T, R-27ET, MICA IR | 60 s | 60 s |
+| Every other round | 40 s | 40 s |
+
+Times without † are sim estimates.<SimChoice /> A round also flies straight, unguided, for its first 0.4 s (0.2 s with thrust vectoring) unless a figure was published: 0.5 s† for the AIM-9B, 0.6 s for the R-3S.
+
+## Radar missiles
+
+All radar missiles share the same seeker (switching on at 16 km), the same 300 m/s² steering cap, the same 18 m fuze, the same drag and the same 120 s battery. Only the airframe, the motor and the loft differ. Where a card has no published size, a labelled estimate stands in and the hangar marks the round ESTIMATE.
+
+| Missile | Launch mass | Burn | Loft |
+| --- | --- | --- | --- |
+| Reference round | 114 kg | 6 s | direct |
+| AIM-54A Phoenix | 446.6 kg | 12 s | high arc |
+| AIM-54C, AIM-54C ECCM/Sealed | 446.8 kg | 12 s | high arc |
+| AIM-120A, B, C | 199.9 kg | 6 s | gentle |
+| AIM-120C-5, C-7, C-8 | 204.5 kg | 6 s | gentle |
+| AIM-120D, D-3 | 205.7 kg | 6 s | gentle |
+| AIM-260 | 180 kg (invented) | 18 s | long arc |
+| Meteor | 190 kg† | 24 s | long arc |
+| MICA RF, MICA NG | 141.9 kg | 6 s | gentle |
+| R-77 | 221.7 kg | 6 s | gentle |
+| RVV-SD | 240.7 kg | 6 s | gentle |
+| RVV-BD | 646 kg | 6 s | gentle |
+| RVV-SDM | 240.7 kg (estimate) | 6 s | gentle |
+| I-Derby ER | 154.5 kg | 6 s | gentle |
+| Gokdogan | 202.7 kg (estimate) | 6 s | gentle |
+| Astra Mk-1 | 195.1 kg | 6 s | gentle |
+| PL-15E | 266 kg | 6 s | gentle |
+| PL-12 | 198 kg | 6 s | gentle |
+| AAM-4 | 278.7 kg | 6 s | gentle |
+| AAM-4B | 281.2 kg | 6 s | gentle |
+| Fakour-90 | 637.3 kg | 15 s | high arc |
+
+<Callout kind="sim" title="Radar cards that fly alike">
+  - **The eight AIM-120 variants fly as three weights**: A/B/C, C-5/C-7/C-8 and D/D-3. Within a group the cards differ only in what they describe.
+  - RVV-SDM flies the RVV-SD's body, as an estimate.
+  - The datalink type, "home on jam", "semi-active midcourse", range claims and seeker notes on a card are history. They change nothing in flight.
+</Callout>
+
+**The enemy always fires the reference round**, whatever card you've selected, and the R-73 as its heat seeker.

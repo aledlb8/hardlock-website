@@ -1,0 +1,77 @@
+---
+title: "How the radar sees"
+description: "The game's radar has no detection range. Every pass of the beam rolls a chance to see each aircraft, set by range, the target's cross section at the angle it shows you, and the terrain in between."
+icon: Radar
+---
+
+Your radar has **no fixed detection range and no lock range**. Each time the beam passes over an aircraft, the game works out how strong the echo is and rolls a chance to detect it. Contacts appear and firm up gradually as you close, rather than popping in at a set distance.
+
+## Range and the reference target
+
+The echo falls with the **fourth power of range**: twice the range means a sixteenth of the signal. Each radar is set so that it sees its own reference target (head-on, clear of the ground, in the middle of the beam) with a **50 % chance on one pass** at its reference range. Around that range the chance falls off quickly:
+
+| Range compared with the reference range | half | 0.7× | 0.8× | 1× | 1.2× | 1.5× |
+| --- | --- | --- | --- | --- | --- | --- |
+| Chance of detection per pass | 96 % | 84 % | 74 % | 50 % | 26 % | 8 % |
+
+A target sitting between two beam positions, or seen at the edge of the beam, returns less than one in the middle of it.
+
+## Reference ranges by aircraft
+
+The last column works out the 50 % range against a 1 m² target seen nose-on, so the radars can be compared. All reference ranges are sim choices unless the source column says otherwise.
+
+| Aircraft | Radar | Reference | Source | Against 1 m² |
+| --- | --- | --- | --- | --- |
+| F-16C Block 50 | AN/APG-68(V)9 | 74 km vs 5 m² | game choice | about 49 km |
+| F-15C | AN/APG-63(V)1 | 90 km vs 5 m² | game choice | about 60 km |
+| F/A-18E | AN/APG-79 | 90 km vs 5 m² | game choice | about 60 km |
+| F-22A | AN/APG-77 | 201 km vs 1 m² | public estimate | 201 km |
+| F-35A | AN/APG-81 | 150 km vs 1 m² | game choice | 150 km |
+| JAS 39E Gripen | Raven ES-05 | 110 km vs 5 m² | game choice | about 74 km |
+| Typhoon | CAPTOR-M | 110 km vs 5 m² | game choice | about 74 km |
+| Rafale C | RBE2-AA | 110 km vs 5 m² | game choice | about 74 km |
+| MiG-29 9.13 | N019 | 70 km vs 3 m² | simulator manual range, game-choice size | about 53 km |
+| Su-27S | N001 | 90 km vs 3 m² | public | about 68 km |
+| Su-35S | N035 Irbis-E | 200 km vs 3 m² | public claim | about 152 km |
+| Su-57 | N036 | 250 km vs 3 m² | game choice | about 190 km |
+| J-20A | unnamed AESA | 170 km vs 1 m² | game choice | 170 km |
+
+## Cross section by aspect
+
+What the beam sees is the target's own cross section at the angle it shows you, plus whatever it carries. Aspect comes from the aircraft's **nose and wings, never its flight path**, so a jet pulling hard toward or away from you shows you its top or belly.
+
+Values in m². Nose figures are published (mostly analyst and press estimates), except the Gripen's, which is a game choice. The other aspects are worked out from the nose, and how they blend between angles is a sim choice.
+
+| Airframe | Nose | Side | Tail | Top | Belly |
+| --- | --- | --- | --- | --- | --- |
+| F-16C Block 50 | 1.2 | 100 | 3.2 | 710 | 480 |
+| F-15C | 10 | 200 | 6.3 | 1420 | 960 |
+| F/A-18E | 0.1 | 60 | 1.9 | 426 | 288 |
+| F-22A | 0.0001 | 0.026 | 0.001 | 1.2 | 0.72 |
+| F-35A | 0.0015 | 0.39 | 0.042 | 18 | 11 |
+| JAS 39E Gripen | 0.1 | 40 | 1.3 | 284 | 192 |
+| Typhoon | 0.1 | 60 | 1.9 | 426 | 288 |
+| Rafale C | 0.1 | 60 | 1.9 | 426 | 288 |
+| MiG-29 9.13 | 3 | 60 | 1.9 | 426 | 288 |
+| Su-27S | 10 | 200 | 6.3 | 1420 | 960 |
+| Su-35S | 3 | 200 | 6.3 | 1420 | 960 |
+| Su-57 | 0.1 | 21 | 0.54 | 65 | 40 |
+| J-20A | 0.05 | 2.4 | 0.26 | 115 | 68 |
+
+The side, top and belly values are strong only near square-on: for the F-16 the return is about 1.9 m² at 45° off the nose and 39 m² at 70°.
+
+**Missiles and rails hung outside add to the return**, and an empty rail still counts. The F-22A, Su-57 and J-20A carry everything inside and add nothing; the F-35A adds only its two heat seekers and their pylons.
+
+The echo also changes from pass to pass, so the same aircraft at the same range can be bright on one sweep and faint on the next.
+
+<Callout kind="tip">
+  Most fighters are small nose-on and far bigger broadside or showing their belly. Turning side-on does not hide you from a radar: it makes you brighter. What can hide you is your speed along the beam, covered in [Doppler, clutter and the notch](/radar/doppler-and-clutter/).
+</Callout>
+
+## Terrain masking
+
+**If terrain blocks the straight line between you and the target, there is no echo at all**, whatever the range. Warning receivers obey the same rule: a radar behind a ridge is not heard. See [Warnings](/survival/warnings/).
+
+## What the radar can see
+
+Your radar sees every aircraft not on your team. Your own side never appears on the scope, and missiles are not radar targets at all. Chaff can add interference to a jet's echo, but it never becomes a contact of its own on your scope.

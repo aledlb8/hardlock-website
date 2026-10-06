@@ -1,0 +1,37 @@
+---
+title: "Where the numbers come from"
+description: "The game's data policy: public figures first, published game data where public sources are silent, and labelled sim choices for everything else."
+icon: FileSearch
+---
+
+Every aircraft and weapon number in MissileSim is one of three things: a **public figure** (Wikipedia, a manufacturer brochure, a service fact sheet, a published paper), **published game data**, or a labelled **sim choice** tuned for gameplay. Classified or export-controlled data is never used. If a figure is not public, a rough estimate fills it as a labelled sim choice.
+
+A <SimChoice /> badge on this site marks a value chosen for gameplay. A table may say "All values are sim choices" once instead of badging every cell.
+
+## Public first, game data second
+
+The game uses a public figure whenever one exists, and fills a gap from another game's published stat card only when public sources say nothing. When the two disagree, the public figure wins: the F-15C flies its public +9 g, not the +12 on a game card, and the F/A-18E flies its public +7.5 g, not +11.
+
+- **An inequality is not a value.** The Gripen's published "above 1,400 km/h" is shown, but not flown as a speed.
+- **A brochure weight is not a flying weight.** Every jet flies empty weight plus half its internal fuel, two missiles and a pilot.
+- **When nothing is published, estimate and say so.** An empty cell gets an open-source figure or a rough estimate, labelled as one. The J-20A card marks every figure it flies as an estimate.
+
+## What the game's own cards show
+
+The hangar and tactical-screen cards follow the same rule: **a figure with no official source is drawn faint** and labelled an estimate. A heat seeker without a published motor shows "Thrust stand-in" and "Burn stand-in". A radar missile's range claim is always faint, because it does not change how the missile flies.
+
+## How radar figures are labelled
+
+| Label | Meaning | Example |
+| --- | --- | --- |
+| SOURCED | A public page states it. It is still a public or marketing claim, not a measurement. | The Rafale's RBE2-AA tracks 40 and engages 8. |
+| SIM-MANUAL | A published flight-simulator manual states it. It describes that sim's model, not a real radar. | The F-16's 10 numbered tracks. |
+| ANALYST | A community post or an independent analyst. The weakest tier. | The Typhoon's 20 tracks and 8 engaged. |
+| DERIVED | Worked out from sourced numbers. | The Su-27S's 2.0° beam, from its published antenna size. |
+| GAME CHOICE | No public number was found, so the game picks one. | The F-16's 74 km reference range against 5 m². |
+
+Radar cross sections follow the same pattern: the nose value is a published figure where one exists (mostly analyst or press estimates), the other aspects are worked out from it, and the Gripen's nose value is a game choice.
+
+## What the numbers are not
+
+The radar, seekers, warning displays and countermeasures are gameplay, built from simplified textbook models so the game feels plausible. **They are not a model of any fielded weapon**, and no number here predicts real performance. Some figures are deliberately left as sim choices because the real number is not public: every radar missile's own seeker switches on at 16 km for that reason.

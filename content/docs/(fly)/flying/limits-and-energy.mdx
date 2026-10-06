@@ -1,0 +1,69 @@
+---
+title: "G, angle of attack and energy"
+description: "The F-16's fly-by-wire limits, the point-mass jets' lift cap, speed limits, the ground, how turning costs speed, and corner speeds."
+icon: Activity
+---
+
+**You cannot over-stress or stall the jet.** On the F-16 a fly-by-wire holds every limit. On the other jets the lift cap and the card's g limits do the same job. Nothing breaks if you pull hard, because the game has no structural damage from g. **The ground is what kills you.**
+
+## The F-16's fly-by-wire limits
+
+| Limit | Value |
+| --- | --- |
+| Positive g | +9 g |
+| Negative g | −3 g |
+| Angle of attack | 25° |
+| Roll rate | Up to 308 °/s, less at low speed and at high angle of attack, never below 80 °/s |
+| Rudder | ±6° of sideslip, fading out at high angle of attack |
+| Spin prevention | Above 29° angle of attack, roll commands are ignored |
+
+Two limits govern every pull: 25° of angle of attack, and the angle that would make 9 g. **Whichever comes first wins.** Fast, you hit 9 g first. Slow, you hit 25° long before 9 g, and the pull just stops getting harder.
+
+## Limits on the other jets
+
+The point-mass jets fly their card's g limits. Where the card has none (F-22A, Su-57, J-20A), they fly +9 / −3 g.<SimChoice />
+
+- **Lift cap:** with a published wing area, the g available shrinks as you slow down. That is how these jets run out of pull at low speed. They cannot stall or spin.
+- **No lift cap** on the Su-35S, Su-57 and J-20A, which publish no wing area. They can pull their full g at any speed above 120 m/s.
+- **Roll:** up to 180 °/s, cut to as little as 30 % of that at low speed.<SimChoice />
+
+## Speed limits
+
+**No jet takes damage from speed.** The F-16 has no airspeed limit in flight: its card shows a 1,555 km/h indicated-airspeed limit, but the flight model does not enforce it. The point-mass jets are capped at 1,300 m/s.<SimChoice />
+
+## The ground
+
+**Coming within 1.5 m of the terrain is a crash**, and water counts as terrain. The jet has no landing gear and no runway. The whole path between two steps is checked, so you cannot skip through a ridge.
+
+The HUD's ALT row is height above your base's ground level, **not height above the ground under you**. The mountains reach about 2.6 km and higher. [The theater](/world/theater/) describes the terrain, and [Kills, crashes and rearming](/world/outcomes/) covers what happens after a crash.
+
+## How turning costs speed
+
+Pulling g costs speed on every jet, because making more lift makes more drag. The harder the pull, the faster it grows: on the point-mass jets the extra drag grows with the square of your g. A full 9 g pull in the F-16 at 3 km on afterburner bleeds about 100 m/s in 6 s.
+
+The point-mass jets reach exactly their card's sea-level speed at sea level on full thrust. Their thrust does not fall with height while drag does, so **they get much faster at altitude**, up to the 1,300 m/s cap.
+
+## Corner speed
+
+Corner speed here is the slowest speed at which a jet can reach its g limit. Below it, the lift limit binds first. This is the instantaneous figure, not a sustained turn. Worked out from each card's numbers:
+
+| Jet | Sea level | 3 km |
+| --- | --- | --- |
+| F-16C (estimate) | about 186 m/s | about 216 m/s |
+| F-15C | 165 m/s | 191 m/s |
+| F/A-18E (+7.5 g) | 170 m/s | 198 m/s |
+| F-22A | 169 m/s | 196 m/s |
+| F-35A | 196 m/s | 228 m/s |
+| JAS 39E Gripen | 176 m/s | 204 m/s |
+| Eurofighter Typhoon | 157 m/s | 182 m/s |
+| Rafale C | 160 m/s | 186 m/s |
+| MiG-29 9.13 | 180 m/s | 209 m/s |
+| Su-27S | 179 m/s | 207 m/s |
+
+The Su-35S, Su-57 and J-20A have no corner speed in this sense: their full g is there from 120 m/s up.
+
+<Callout kind="tip">
+  - Hard pulls are paid for in speed, and slow jets cannot pull much.
+  - Above corner speed you get full g but bleed fast.
+  - Watch the ground, not just the ALT row: over the mountains, the terrain can be thousands of metres above the level the HUD measures from.
+</Callout>

@@ -1,0 +1,99 @@
+---
+title: "Sound"
+description: "What every tone in your headset tells you (the seeker growl and lock tone, the warning receiver, your own radar), what you hear from the world, and how the game carries sound through the air."
+icon: Volume2
+---
+
+World sounds are field recordings of real jets, rockets, blasts and flares, **driven by the simulation while you play**: how loud each one is and how it changes follows the thing making it, such as a rocket motor's thrust, an engine's throttle or a flare's heat. Sounds come in two kinds. **Headset tones** are electronic signals in your helmet that tell you what your systems know. **World sounds** travel to the camera through the air, at the speed of sound.
+
+## Headset tones at a glance
+
+| You hear | It means |
+| --- | --- |
+| A soft low growl | Your heat seeker is uncaged and looking |
+| The growl rising in pitch and volume | An aircraft is near where the seeker is looking |
+| A steady clean high tone | Heat lock |
+| A short low chirp, now and then | An enemy radar beam swept over you |
+| A rising "dit-DAH", then quick ticks | An enemy radar has a soft lock on you |
+| Three falling tones, then a steady warbling tone | An enemy radar has a hard lock on you |
+| Rapid long beeps | A radar is guiding a missile at you |
+| A fast high two-tone warble | A missile's own radar is on you |
+| A lower two-tone warble, speeding up as it closes | A missile is closing on you |
+| A single click | You soft-locked a contact or stepped to the next target |
+| Two rising notes | Your hard lock |
+| Three falling notes | You lost your target |
+| A dull low buzz | Your lock key found nothing |
+
+All tone pitches, rhythms and levels are the game's own design.
+
+## The heat seeker tone
+
+While your heat seeker is powered (selected and not caged) it plays a soft, rough **growl**. As an aircraft comes nearer to where the head is looking, the growl rises in pitch and gets louder. When the seeker has picked an aircraft but has no heat lock yet, the growl sits a little higher still. **On a heat lock the growl gives way to a steady, clean tone.**
+
+On the ground launcher, with the seeker cue on, the growl follows how close an aircraft is to the middle of your view, and a designated target turns it into the steady lock tone.
+
+## Warning tones
+
+Your warning receiver plays one tone at a time: the most urgent warning it hears, with the nearest threat setting how urgent it sounds.
+
+| Warning | Sound |
+| --- | --- |
+| Search | A short low chirp while the beam is on you |
+| Soft lock | A rising "dit-DAH", then quick ticks |
+| Hard lock | Three falling tones, then a steady warbling tone |
+| Launch | Rapid long beeps |
+| Missile seeker | A high two-tone warble that speeds up as it closes |
+| Missile approach | A lower two-tone warble that speeds up as it closes |
+
+**Only a step up plays an entry cue**; dropping back to a lesser warning goes straight to its tone. The missile warbles speed up and get louder as the threat closes. If a missile's radar is on you and an approach warning is also up, you hear the seeker warble. [RWR and missile warnings](/survival/warnings/) explains what sets off each warning.
+
+<Callout kind="threat" title="Listen for the three falling tones">
+  A hard lock on you is the warning that comes before a radar missile. The steady warbling tone that follows keeps going while that lock is the most urgent thing your receiver hears, even with the HUD hidden.
+</Callout>
+
+## Your own radar's sounds
+
+Your radar has its own cues, quieter than the warning receiver and a plain tone, so the two never sound alike.
+
+| Event | Sound |
+| --- | --- |
+| A contact soft-locked, or the target stepped with <Key k="T" /> | A click |
+| A hard lock | Two rising notes |
+| The target lost without you pressing a key | Three falling notes, and LOST on the scope |
+| <Key k="T" /> or <Key k="L" /> found nothing | A dull low buzz, and NO TGT |
+
+Letting go of a lock yourself is silent, and so is a lock that drops because you just shot its aircraft down.
+
+## What you hear from the world
+
+| Sound | Where it comes from | Mixer channel |
+| --- | --- | --- |
+| Jet engines | Every aircraft, your own included: fan whine ahead of it, roar behind it, and a thump as the afterburner lights | Jet engines |
+| Rocket motors | Every missile while its motor burns, with a sputtering tail-off at burnout | Missiles |
+| Launch | A ground launch: a deep slam as the round leaves its cell, then a rush of venting gas. From a rail: the motor lighting with a crack | Missiles |
+| Explosions | Warheads, ground impacts and missiles that break up | Explosions |
+| Flares | A cartridge pop, then a burn that fades as the flare cools | Countermeasures |
+| Chaff | A short dispenser crack, then a rustle that follows the cloud | Countermeasures |
+| Wind | Air rushing past the camera, growing with its speed | Wind |
+
+**You hear your own jet from the chase camera**: mostly the roar from its exhaust, rising with the throttle, plus the wind on the camera.
+
+Menus answer with soft, short tones, the same every time for the same action: a faint tick as you move over items, a tone that rises when you confirm and one that falls when you go back. They keep playing while the game is paused. When you pause, the world and the headset fade out, and the title screen is silent apart from menu sounds.
+
+Every sound belongs to one channel in [Settings > Audio](/interface/settings/#audio). **Turning one channel down never makes the others louder**, and cockpit tones always reach your headset at a fixed level, however loud the world around you is.
+
+## How sound travels
+
+- **Delay and Doppler.** Each sound is heard when it would arrive, travelling at the speed of sound: you see a far blast before you hear it, and a passing missile drops in pitch.
+- **Sonic booms.** A missile or jet faster than sound is silent ahead of its shock cone. When the cone sweeps over the camera you hear a sharp boom, then the sound it was making.
+- **Distance.** Sound gets quieter and duller with distance, because the air absorbs high frequencies first. A reflection comes off the ground, and echoes roll back from the terrain, more of them for distant sounds. High above the ground there is little to echo from. **A far explosion is a low, rolling rumble**, not a crack.
+- **Direction.** With Headphones (3D audio) on in [Settings > Audio](/interface/settings/#audio), each sound is placed around your head the way your ears would hear it, so you can tell a jet behind you from one ahead, and one above from one below. Turn it off on speakers.
+- **Slow motion.** In slow motion or fast forward the sound stays in step with what you see.
+
+<Callout kind="sim" title="The echoes are not the real terrain">
+  The terrain echo is the same everywhere: it does not follow the mountains around you, and the ground reflection uses flat ground.
+</Callout>
+
+## The ear model
+
+The final mix behaves like hearing rather than a fixed volume. Quiet scenes are lifted and loud ones brought down, but an engine at full power still sounds louder than at idle. **A blast far louder than everything around it muffles the world for a moment and leaves a faint ringing**, which fades over about 3 s. Steady roar, however loud, never does this.

@@ -1,0 +1,57 @@
+---
+title: "Doppler, clutter and the notch"
+description: "Why your scope loses an aircraft flying across your line of sight: the speed gate each radar applies in search and track-while-scan, the notch when the beam looks at the ground, and when a hard lock still holds the target."
+icon: AudioWaveform
+---
+
+Your radar sorts echoes by their speed along the beam. **The ground's echo moves at your own speed along the beam, so an aircraft with almost no speed of its own along your line of sight sits right on top of it.** Two rules follow from that: the speed gate and the notch.
+
+This page covers your radar and your scope. [Notching](/survival/the-notch/) covers the same rules from the other side: enemy radars and missiles looking at you.
+
+## The speed gate
+
+**In search and track-while-scan, an echo moving slower than the radar's speed gate over the ground, along your line of sight, is thrown away.** This applies whether you look up or down. A hard lock does not apply it.
+
+| Radar | Speed gate | Source |
+| --- | --- | --- |
+| F-16C APG-68(V)9 | 71 kt (36.5 m/s) | simulator manual |
+| F/A-18E APG-79 | 90 kt (46.3 m/s) | simulator manual |
+| F-15C, MiG-29, Su-27S | 100 kt (51.4 m/s) | game choice |
+| F-22A, F-35A, Gripen E, Typhoon, Rafale, Su-35S, Su-57, J-20A | 90 kt (46.3 m/s) | game choice |
+
+## The notch
+
+When the beam meets the ground, echoes whose speed matches the ground's are **blanked**. Your own motion cancels out, so what decides it is **the target's own speed along your line of sight over the ground**. Each radar has a notch guard of half its speed gate (18.3 m/s on the F-16), and the blanked band reaches a few m/s past it (about ±21 to ±24 m/s on the F-16). It is wider when the beam looks far off your flight path at speed.<SimChoice />
+
+The notch only exists when there is ground behind the target in the beam:
+
+| | Looking down (ground in the beam) | Looking up (only sky in the beam) |
+| --- | --- | --- |
+| Notch | yes, in every mode, hard lock included | no |
+| Speed gate (search, TWS) | yes | yes |
+| Ground clutter competing with the echo | strong | weak |
+
+Ground clutter also makes a slow-closing echo harder to see even outside the notch. It is strongest over mountains and wooded hills and weakest over water, and it varies from look to look. A fast-closing target still stands out clearly against it.
+
+## Why a beaming target flickers
+
+An aircraft flying across your line of sight (beaming) has almost no speed along it:
+
+1. **In search and track-while-scan it is never detected**, looking up or down, once its speed along your line of sight drops under the speed gate.
+2. **Looking down, it sits in the notch** in every mode, a hard lock included.
+3. **Near the edges** of the gate and the notch, the chance roll decides, so some passes hit and some miss. On the scope the track goes hollow (coasting) after two missed looks, and is lost once three frames pass without a hit. See [Track numbers and locks](/radar/locking/).
+4. **Its cross section goes up**, not down: broadside is the brightest aspect.
+
+## When a hard lock still holds it
+
+A hard lock skips the speed gate. Against the sky there is no notch, so **a hard lock can keep a beaming target that search and track-while-scan have dropped**. Looking down, the notch blanks it in a hard lock too.
+
+A held beam only accepts echoes within **40 m/s** of the closing speed it expects. A target that changes its closing speed faster than that between looks drops out.<SimChoice />
+
+<Callout kind="tip">
+  If a contact flickers and goes hollow, check its ASPECT readout. BEAM means it is crossing your line of sight. A hard lock with <Key k="L" /> can hold it while there is only sky behind it. Below you, against the ground, nothing will hold it until it turns.
+</Callout>
+
+## Chaff on your scope
+
+Chaff never becomes a contact on your scope: a bundle slows down far harder than any aircraft, so it never builds a track, and it soon drops under the speed gate. A fresh bundle can add interference when it sits at the same range and speed as the jet that dropped it. [Chaff](/survival/chaff/) covers the rest.

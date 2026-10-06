@@ -1,0 +1,10 @@
+{
+  "title": "Learn to fly",
+  "description": "Start here: the game, the controls and the jet",
+  "icon": "Plane",
+  "root": true,
+  "pages": [
+    "start",
+    "flying"
+  ]
+}

@@ -1,0 +1,115 @@
+---
+title: "Controls"
+description: "Every default key and mouse button, whether you tap or hold it, which role and camera it works in, and how to rebind it in Settings > Keybinds."
+icon: Keyboard
+---
+
+Every gameplay key can be rebound, and each action has two slots, a primary and a secondary. The tables below list the defaults. A key marked (hold) works for as long as you hold it; every other key acts once per press.
+
+Most keys only work in one role or one camera. **The flight keys only work in the fighter role, in the fighter camera.** That is how <Key k="W" /> can pitch the jet and also move the free camera: the two meanings never apply at the same time. While a menu is open or you are typing in a text field, the gameplay keys do nothing, except screenshot and fullscreen.
+
+## Flying the jet
+
+These work in the fighter role, in the fighter camera. [Mouse aim and the stick](/flying/mouse-aim/) explains how they mix with the mouse.
+
+| Key | Action | What it does |
+| --- | --- | --- |
+| Mouse | Aim | Moves the aim circle. The jet flies its nose to it. |
+| <Key k="W" hold /> | Pitch down | Pushes the nose down, overriding the mouse aim. |
+| <Key k="S" hold /> | Pitch up | Pulls the nose up, overriding the mouse aim. |
+| <Key k="A" hold /> / <Key k="D" hold /> | Roll left / right | Rolls while held. |
+| <Key k="Q" hold /> / <Key k="E" hold /> | Yaw left / right | Rudder. |
+| <Key k="Shift" hold /> | Throttle up | Opens the throttle. Past 100 % it lights the afterburner. |
+| <Key k="Ctrl" hold /> | Throttle down | Closes the throttle. |
+| <Key k="X" /> | Afterburner | Lights or cancels the afterburner. |
+| <Key k="RMB" hold /> or <Key k="C" hold /> | Free look | Look around while the jet holds its course. |
+| Mouse wheel | Camera distance | Moves the chase view in or out. It cannot be rebound. |
+
+Both Shift keys and both Ctrl keys work by default.
+
+## Weapons
+
+| Key | Action | When it works |
+| --- | --- | --- |
+| <Key k="F" /> | Launch | Ground launcher: any camera. Fighter: only in the fighter camera. With the radar round selected and nothing targeted, **hold it for 0.5 s** to fire MADDOG. |
+| <Key k="B" /> | Switch weapon | Fighter role, any camera. Swaps between the heat seekers and the radar round. |
+| <Key k="R" /> | Uncage seeker | Either role, any camera. |
+| <Key k="G" /> | Rearm | Fighter role in the fighter camera, or from the tactical screen. |
+
+[Taking the shot](/weapons/launching/) covers launch clearance and MADDOG.
+
+## Radar
+
+The radar keys work in the fighter role, in any camera. [Track numbers and locks](/radar/locking/) explains what each step does.
+
+| Key | Action | In short |
+| --- | --- | --- |
+| <Key k="T" /> | Target | Soft-locks the contact nearest the aim circle, or steps to the next numbered track. |
+| <Key k="L" /> | Hard lock | Single-target track on the target. Press again to release it. |
+| <Key k="U" /> | Back | One step back: out of dogfight mode, then hard lock to soft lock, then drops the track number. |
+| <Key k="K" /> | Dogfight radar | Hard-locks the nearest aircraft inside the HUD box within 10 nm. |
+| <Key k="Y" /> | Scope range | Steps the scope through 10, 20, 40 and 80 km. |
+| <Key k="↑" /> <Key k="↓" /> | Antenna up, down | Hold to tilt the search above or below the horizon. |
+| <Key k="N" /> | Hostile radar | Turns the enemy fighters' radars on or off. |
+
+From any camera other than the fighter camera, <Key k="T" /> and <Key k="L" /> pick the contact nearest your jet's nose instead of the aim circle.
+
+## Countermeasures
+
+| Key | Action | When it works |
+| --- | --- | --- |
+| <Key k="Z" hold /> | Chaff | Fighter role, any camera. One bundle every 0.2 s while held. |
+| <Key k="Space" hold /> | Flares | Fighter role, **every camera except the free camera**, where Space moves the camera up. One pair every 0.3 s while held. |
+
+See [Chaff](/survival/chaff/) and [Flares](/survival/flares/).
+
+## Cameras
+
+| Key | Action | When it works |
+| --- | --- | --- |
+| <Key k="V" /> | Cycle camera | Always. Free, then missile, then fighter, then back to free. |
+| <Key k="RMB" hold /> | Look around | Free and chase cameras. Drag to turn the free camera or orbit a chase camera. |
+| <Key k="C" /> | Frame the engagement | Free and chase cameras. Jumps to the free camera with the whole fight in view. In the fighter camera, C is the second free-look key instead. |
+
+### Free camera
+
+| Key | Action |
+| --- | --- |
+| <Key k="W" hold /> / <Key k="S" hold /> | Move forward / back |
+| <Key k="A" hold /> / <Key k="D" hold /> | Move left / right |
+| <Key k="Space" hold /> / <Key k="Ctrl" hold /> | Move up / down |
+| <Key k="Shift" hold /> | Move faster |
+
+[Cameras](/flying/cameras/) describes each view.
+
+## Game and menus
+
+| Key | Action |
+| --- | --- |
+| <Key k="Esc" /> | Pause menu. Esc cannot be rebound. |
+| <Key k="Enter" /> | Pause or resume without a menu. Keypad Enter works too. |
+| <Key k="Tab" /> | Tactical screen. It pauses the simulation. |
+| <Key k="H" /> | Show or hide the HUD. |
+| <Key k="F12" /> | Screenshot to the screenshots folder. |
+| <Key k="F11" /> | Window or borderless fullscreen. |
+
+Menu navigation (the arrow keys, Enter and Esc) is fixed and is not part of the keybind list. On Settings, the hangar and the tactical screen, <Key k="Q" /> and <Key k="E" /> change page, list or category. On the tactical screen, <Key k="G" /> rearms, <Key k="F" /> closes the screen and fires if a launch is cleared, and <Key k="Tab" /> or <Key k="Esc" /> closes it.
+
+## Rebinding keys
+
+Open the **Keybinds** page of Settings, or choose CONTROLS on the title screen or the pause menu.
+
+- **Change a key:** click a slot, then press the new key or mouse button. Esc cancels.
+- **Clear a slot:** right-click it, or click its cross.
+- **Undo a change:** a changed row gets a reset arrow that puts back its defaults. RESET ALL KEYS (<Key k="R" />, pressed twice) resets every action.
+- **Find an action:** the search field matches action names and keys.
+
+You can bind any key and mouse buttons 1 to 8, except Esc, the Windows keys and Print Screen.
+
+**A key can only do one thing in a given camera.** If the key you press already does something else in a camera this action also works in, it moves to the new action, and a notice offers UNDO. Sharing a key between actions whose cameras never overlap, such as pitch down and free-camera forward on <Key k="W" />, is allowed.
+
+Key names follow your keyboard layout. Only the bindings you change are saved.
+
+<Callout kind="tip">
+  If the jet stops answering <Key k="W" /> and the view starts sliding across the map, you are in the free camera. Press <Key k="V" /> until the line under the heading tape reads FIGHTER CAMERA.
+</Callout>

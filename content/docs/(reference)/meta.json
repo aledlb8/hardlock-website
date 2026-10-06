@@ -1,0 +1,12 @@
+{
+  "title": "Reference",
+  "description": "The world, the interface, aircraft and sources",
+  "icon": "BookOpen",
+  "root": true,
+  "pages": [
+    "world",
+    "interface",
+    "aircraft",
+    "about"
+  ]
+}

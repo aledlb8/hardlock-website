@@ -1,0 +1,80 @@
+---
+title: "Out-flying a missile"
+description: "The kinematic side of a miss: how hard each enemy missile can turn, when it slows, how wide its seeker sees, how long it can fly, and how close it has to pass to hurt you."
+icon: TrendingUp
+---
+
+The two missiles the enemy fires at you behave very differently once they have to turn:
+
+- **The R-73 heat seeker** turns on its fins once its motor burns out. High and slow, it can pull very little.
+- **The radar missile** can pull about 30 g at any height and speed, and turning costs it no speed.
+
+[How a missile flies](/weapons/missile-flight/) covers the flight model itself.
+
+## The radar missile
+
+The enemy always fires the game's reference radar missile:
+
+<Facts>
+  <dt>Motor</dt><dd>6 s burn</dd>
+  <dt>Turn limit</dt><dd>300 m/s², about 30.6 g, at any height and speed</dd>
+  <dt>Seeker field of view</dt><dd>about 29° around its flight path</dd>
+  <dt>Seeker switches on</dt><dd>within 16 km of where it expects you</dd>
+  <dt>Battery</dt><dd>120 s</dd>
+</Facts>
+
+**Making the radar missile turn hard will not wear it down.** Only its normal drag and gravity take speed away. What works against it is breaking its seeker's track ([Notching](/survival/the-notch/) and [Chaff](/survival/chaff/)), getting outside its field of view, or terrain: it needs a clear line to you on every look.
+
+## The R-73
+
+<Facts>
+  <dt>Structural limit</dt><dd>40 g, published</dd>
+  <dt>Seeker gimbal</dt><dd>75° from the missile's body, published</dd>
+  <dt>Motor</dt><dd>not published: a 3.5 s stand-in with thrust vectoring</dd>
+  <dt>Track memory</dt><dd>3 s</dd>
+  <dt>Flight timer</dt><dd>none</dd>
+</Facts>
+
+While its motor burns, thrust vectoring lets it turn hard at any height. **After burnout only the fins are left, and they depend on the air**, so every turn also bleeds its speed:
+
+| R-73 speed after burnout | Sea level | 6 km | 10 km |
+| --- | --- | --- | --- |
+| 600 m/s | about 27 g | about 14 g | about 9 g |
+| 400 m/s | about 12 g | about 6 g | about 4 g |
+
+## When its seeker loses you
+
+**R-73.**
+
+- **Losing lock.** The lock needs you within 75° of the missile's body.
+- **Memory.** It then spends 3 s steering at where you would be if you had held your course.
+- **After memory.** It gets no steering at all, but relocks if you come back inside 75°.
+- **No terrain check.** A ridge does not break its lock.
+
+**Radar missile.** Three missed looks put it into memory, which never times out. [Notching](/survival/the-notch/#what-the-missile-does-when-it-loses-you) covers what happens next.
+
+## How a shot ends without hitting you
+
+| Ending | R-73 | Radar missile |
+| --- | --- | --- |
+| Flies into the ground | yes | yes |
+| Out of energy (motor out, slower than 15 m/s) | yes | yes |
+| Battery spent (120 s) | no | yes |
+| Left the arena (150 km out or above 30 km) | yes | yes |
+
+A missile slower than 15 m/s is long past being a threat, so in practice a missile that misses you flies on until it hits the ground, leaves the arena or, for the radar missile, runs out of battery. Until then it can still come back for you.
+
+## The miss distance that counts
+
+A missile only hurts you if it passes close enough to set off its fuze, or hits you. Counting your 5 m radius:
+
+| Missile | Fuze radius | Bursts if it passes closer than this to your centre |
+| --- | --- | --- |
+| R-73 | 3.5 m (published) | about 8.5 m |
+| Radar missile | 18 m | about 23 m |
+
+Damage is full inside the fuze radius and fades to nothing at twice that. Inside its first 300 m of flight the R-73 is unarmed, and a hit is a dud. [Fuzes, hits and misses](/weapons/fuze-and-hits/) has the full rules.
+
+<Callout kind="tip" title="In the cockpit">
+  Against an R-73, make it turn hard **after** its 3.5 s burn, up high where the air is thin, and try to get outside 75° of its nose. Once it is out of memory and you are outside that cone, it flies on unguided. Against the radar missile, turning alone will not drain it. Work its seeker instead.
+</Callout>

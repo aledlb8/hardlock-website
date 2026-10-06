@@ -1,0 +1,43 @@
+---
+title: "Throttle, afterburner and fuel"
+description: "The throttle's range and speed, how the afterburner works, how the F-16's engine spools compared with the other jets, why you never run out of fuel, and what the afterburner does to your heat signature."
+icon: Flame
+---
+
+**There is no fuel in MissileSim's jets.** No fuel is burned, the weight never changes, and you cannot run dry. The throttle and the afterburner only decide how much thrust you get.
+
+## The throttle
+
+The throttle runs from 0 to 110 %. **100 % is full dry power, and anything above it is afterburner.**
+
+| Control | What it does |
+| --- | --- |
+| <Key k="Shift" hold /> | Opens the throttle at 50 % per second, so 0 to 100 % takes 2 s. |
+| <Key k="Ctrl" hold /> | Closes it at the same rate. |
+| <Key k="X" /> | Lights the afterburner by jumping the throttle to 110 %. Press it again to go back to where the throttle was before, at most 100 %. |
+
+Every start and restart puts you at 85 %. The HUD's THR row shows the throttle as a percentage, with an inverted AB chip beside it while the afterburner is lit. **The afterburner is all or nothing**: anywhere past 100 % gives the same full afterburner.
+
+## The F-16's engine
+
+The F-16's engine follows the NASA study's engine data, scaled to the Block 50's F110-GE-129. At a standstill at sea level it gives 14,807.7 lbf dry and 24,655.2 lbf with afterburner, and its thrust changes with altitude and Mach.
+
+**It spools.** From idle it takes about 4 s to reach military power and about 5 s to reach full afterburner. From military power the afterburner lights in about half a second.
+
+At idle and high speed the engine pushes backwards, so chopping the throttle at speed slows you faster than drag alone would.
+
+## The other jets
+
+The point-mass jets have **no spool lag**: thrust changes the moment you move the throttle, and it does not fall off with altitude or Mach.
+
+Every jet has a dry and an afterburner rating, so lighting the afterburner always adds thrust. The J-20A's ratings are estimates.<SimChoice />
+
+## The afterburner and your heat signature
+
+Your heat signature is the same at any throttle setting, with one exception: **the AIM-9D** sees a lit afterburner four times brighter from behind, and can see it within 20° of your nose head-on. Every other heat seeker, including the R-73 the enemy fires, sees you the same whatever your throttle. [Heat seekers](/weapons/heat-seekers/) explains the seeker side.
+
+<Callout kind="tip">
+  - On the F-16, open the throttle before you need the speed.
+  - Against the enemy's R-73, cancelling the afterburner makes no difference.
+  - On the F-22A, Su-57 and J-20A, there is nothing to gain by lighting the afterburner.
+</Callout>

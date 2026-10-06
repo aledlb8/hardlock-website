@@ -1,0 +1,83 @@
+---
+title: "Heat seekers (Fox 2)"
+description: "How the rail seeker is powered, aimed and locked, what an aircraft's heat looks like from each angle, lock before and after launch, and how flares pull it away."
+icon: Thermometer
+---
+
+Your fighter carries two heat seekers, and the enemy fires the R-73. A heat seeker sees aircraft and flares, nothing else. **Every aircraft in the game gives off exactly the same heat**, whatever its throttle or speed. What the seeker gets depends on the angle it views that heat from.
+
+## Powering and aiming the seeker
+
+The rail seeker only works while heat seekers are the selected weapon (<Key k="B" /> switches). It is then **powered** in either of two ways:
+
+- **Uncaged** with <Key k="R" />. The head searches along your nose and takes the enemy aircraft closest to it.
+- **Slaved** to your radar's target, soft or hard lock. The head swings towards the radar's estimate of the target, as far as its gimbal allows.
+
+**Firing cages the seeker again**, so uncage it again for the next shot.
+
+On the HUD, a small circle shows where the head is looking. The seeker tone tells you what it has:
+
+| Seeker state | Tone |
+| --- | --- |
+| Searching | a growl that rises as an aircraft nears the head's line of sight |
+| Designated, not locked | the growl, a little higher |
+| Locked | a steady clean tone |
+
+## Lock before and after launch
+
+To pick an aircraft at all, the seeker looks inside a **designation cone** around your nose: the whole sphere for rounds that can fire over the shoulder, the cue angle for the R-73, R-73M and RVV-MD, and the gimbal for everything else. The seeker has an **infrared lock** when it can see the aircraft (see below) inside its gimbal.
+
+- **Lock-before-launch rounds** need that infrared lock to fire. Without it the launch is refused with "Needs an infrared lock".
+- **Lock-after-launch rounds** only need a designated aircraft, and only one inside the round's lock range from astern (see Range below). They leave the rail flying towards where it will be and lock on the way.
+
+The lock-after-launch rounds are:
+
+- **Over the shoulder, whole sphere:** AIM-9X Block II, AIM-9X Block II+, IRIS-T, ASRAAM, MICA IR and Python 5.
+- **Inside their cue angle:** R-73, R-73M (45°) and RVV-MD (60°).
+- **Inside their gimbal:** PL-10, AAM-5 and A-Darter.
+
+## Holding the lock in flight
+
+In flight the head can never look further from the missile's body than its **gimbal**. Four old rounds also have a narrow **field of view** and a slow head: the AIM-9B, AIM-9D, AIM-9H and R-3S. A slow head, like the AIM-9B's 11°/s, can fall behind a hard-turning target and lose it. Every other round holds its lock anywhere inside its gimbal.
+
+[The missile catalog](/weapons/catalog/) lists each round's gimbal and seeker.
+
+## Heat and aspect
+
+The seeker reads the aircraft's heat times an **aspect factor** that depends on the seeker type:
+
+| Seeker aspect | What it sees |
+| --- | --- |
+| Rear | Only from behind. **Nothing at or ahead of the target's beam.** |
+| Rear cone (Magic I) | Only within 70° of the tail. |
+| All-aspect | From every angle, but head-on only a fifth as bright as from dead astern. |
+| Afterburner nose gate (AIM-9D only) | Rear, **four times brighter** when the target is in afterburner, and head-on within 20° of its nose while the afterburner is lit. |
+
+**Afterburner only matters to the AIM-9D.** No other seeker reads it.
+
+**Range.** Every seeker has a **lock range** against a fighter seen from dead astern, from 6 km for the rear-aspect rounds to about 22 km for the RVV-MD; [the missile catalog](/weapons/catalog/) lists them. It shrinks as the aspect moves forward: nose-on, an all-aspect head locks at under half of it. Beyond it the seeker sees nothing, even slaved to a radar lock. Whether a round can *reach* that far is down to its motor.
+
+**What it ignores.** A heat seeker has **no line-of-sight check against the terrain**: a hill between it and the target does not break its lock. There is no sun and no ground heat either.
+
+## Flares
+
+A flare takes the seeker only if it is **at least twice as bright as the aircraft** from where the missile sits, inside the seeker's view, and not thrown out by the seeker's flare rejection. There is no random roll. While it follows a flare, the missile steers at the flare; once the flare fades below twice the aircraft's brightness, the seeker goes back to the aircraft if it can still see it.
+
+| Flare rejection | Throws out a flare that is |
+| --- | --- |
+| None | never thrown out |
+| Imaging | more than **1°** from the aircraft<SimChoice /> |
+| Kinematic | slower than 85 % of the aircraft's speed and more than 2° from it<SimChoice /> |
+| Rise-rate | brightening suddenly, the way a fresh flare does<SimChoice /> |
+
+The flare has no aspect factor but the aircraft does, so a flare out-shines a target seen head-on for much longer than one seen from behind. [Flares](/survival/flares/) covers releasing them.
+
+## Enemy heat seekers
+
+The enemy always fires the **R-73**: all-aspect, lock after launch, 75° gimbal, 40 g, and no flare rejection. [Enemy pilots](/world/enemy-pilots/) lists when it fires.
+
+<Callout kind="tip" title="In the cockpit">
+  - **A rear-aspect round sees nothing ahead of the target's beam.** If the target turns its nose to the missile, the lock drops. The round flies 3 s of memory, then goes ballistic unless it locks again.
+  - Lock with the radar (<Key k="T" />) and the seeker slaves to that target.
+  - Against a target dropping flares, imaging seekers (AIM-9X, IRIS-T, ASRAAM, PL-10…) are the hardest to decoy.
+</Callout>

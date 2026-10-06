@@ -1,0 +1,8 @@
+{
+  "title": "Aircraft",
+  "icon": "PlaneTakeoff",
+  "defaultOpen": true,
+  "pages": [
+    "roster"
+  ]
+}

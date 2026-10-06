@@ -1,0 +1,56 @@
+---
+title: "How a missile steers"
+description: "Proportional navigation in plain words, the heat seeker's hard turn on off-boresight shots, lock memory, and the radar missile's game-made loft."
+icon: Navigation
+---
+
+Every missile in the game steers by **proportional navigation**: it turns to stop the line of sight to its target from rotating. If the target sits still in the missile's view while the range shrinks, the two are on a collision course and the missile asks for no turn at all. Each missile caps the turn at what its airframe can pull ([How a missile flies](/weapons/missile-flight/)).
+
+The missile turns **four times** as fast as the line of sight rotates. A heat seeker scales that by its own speed, so it keeps full steering in beam and tail-chase shots where the closing speed is small.
+
+## The heat seeker's hard turn
+
+Proportional navigation asks for very little while the line of sight barely moves, which would make an off-boresight shot start its turn late and gently. So a heat seeker also aims at the **collision point**, where it would meet the target flying straight on, and adds a turn at **full available g** towards it:
+
+- it starts to blend in once the flight path is **more than 15°** off the collision course;
+- it is at full strength from **40°**;
+- it fades back to plain proportional navigation as the error closes.
+
+These angles are sim choices.<SimChoice /> The AIM-9B and R-3S wait 0.5 s and 0.6 s after launch before they steer at all.
+
+## Lock memory
+
+When a heat seeker loses its lock, it keeps flying at **the last track for 3 s**, moved on at the target's last velocity, and its seeker looks there to pick the target up again.<SimChoice /> The HUD's seeker label reads "Memory" meanwhile.
+
+After those 3 s, a round that had a lock **stops steering** until its seeker finds the target again. Its label reads "Ballistic".
+
+A lock-after-launch heat seeker that has not locked yet flies towards where the target will be, with the label "Inertial".
+
+## What a radar missile aims at
+
+A radar missile steers at its own **estimate** of the target, never at the aircraft itself: first the last datalink update from your radar, moved on in time, then its own seeker's measurement once the seeker has the target. It also adds a constant upward push so long shots don't sag. [Radar missiles](/weapons/radar-missiles/) explains when it uses each.
+
+## The loft
+
+Named radar missiles climb on long shots. **This is a game-made arc, not a modelled trajectory.**
+
+- **It's decided once, at launch.** The arc happens only if the missile's first estimate of the target is **more than 24 km away**. A close shot never starts lofting later, even if the target runs.
+- **It's an upward push**, rising and falling smoothly, then the normal homing brings the missile back down. It fades out by 16 km from the target, before the seeker switches on.
+
+| Style | Who gets it |
+| --- | --- |
+| Gentle arc | most named radar missiles, including every AIM-120 |
+| High arc | the Phoenix family and Fakour-90 |
+| Long arc | Meteor and AIM-260 |
+| Direct | the reference round |
+
+**Enemy radar missiles never loft.** They always fly the reference round.
+
+## The ground launcher's custom round
+
+The SAM site's custom round steers by a simpler law, with its navigation gain set by "Lead aggressiveness". It also pulls up when it predicts it will come too close to the ground, and **destroys itself** if its target drifts outside its seeker's field of view. [The ground launcher](/world/ground-launcher/) covers its settings.
+
+<Callout kind="tip" title="In the cockpit">
+  - **Off-boresight heat-seeker shots turn hard from the rail.** A target well off the nose puts the round past the 40° threshold, so it pulls everything it has straight away.
+  - A radar missile fired from beyond 24 km climbs first. Inside that it flies direct.
+</Callout>

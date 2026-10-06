@@ -1,0 +1,12 @@
+{
+  "title": "The world",
+  "icon": "Mountain",
+  "defaultOpen": true,
+  "pages": [
+    "game-flow",
+    "theater",
+    "enemy-pilots",
+    "ground-launcher",
+    "outcomes"
+  ]
+}

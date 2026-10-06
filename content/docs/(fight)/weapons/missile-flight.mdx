@@ -1,0 +1,54 @@
+---
+title: "How a missile flies"
+description: "How a missile's motor burns, how hard it can turn at different heights and speeds, and what ends its flight."
+icon: Rocket
+---
+
+A missile's motor pushes it for a few seconds, then it coasts. Gravity and drag slow it the whole way, and its guidance turns it. How hard it can turn depends on the kind of missile.
+
+## The motor
+
+Heat seekers burn for **2.2 to 7 s**, then coast. Radar missiles burn for 6 s or more; the reference radar round burns for 6 s. Most heat-seeker motors were never published, so those rounds get a fictional motor class.<SimChoice /> [The missile catalog](/weapons/catalog/) lists every round's motor.
+
+After burnout a missile only slows down. Drag is heaviest low down, where the air is thick.
+
+## How hard a heat seeker can turn
+
+A heat seeker turns on its fins, and **fin authority falls fast with altitude and with speed**. Every round uses the same fin coefficient (from the AIM-9B), so a brochure g figure never makes a round turn harder at the same speed and height. For the AIM-9X:
+
+| | Sea level | 6 km | 12 km |
+| --- | --- | --- | --- |
+| Mach 1.0 | 6.0 g | 2.8 g | 1.1 g |
+| Mach 1.5 | 13.4 g | 6.2 g | 2.6 g |
+| Mach 2.5 | 30 g (its cap) | 17.4 g | 7.1 g |
+
+A lighter round with a wider body turns harder: the R-60 gets about 23 g at Mach 1.5 at sea level.
+
+- **Thrust vectoring** adds the motor's thrust as turning force while it burns. After burnout only the fins are left.
+- **Every turn costs a heat seeker speed**, through the drag of the lift it makes.
+- **The structural g limit caps it all.** Published limits run from 8 g (R-27T) to 100 g (A-Darter while burning, 50 g after). Rounds with no published limit get **30 g**.<SimChoice />
+
+## How hard a radar missile can turn
+
+A radar missile's steering is capped at **300 m/s²** (about 30.6 g), at any speed and any height.<SimChoice /> It has no fin limit, and **turning costs it no speed**. Only plain drag slows it, and that is several times heavier low down than high up.
+
+<Callout kind="sim" title="Two different airframes">
+  Heat seekers lose turning power as the air thins and they slow down. The radar round doesn't: it can always command about 30 g. Making a radar missile turn hard will not wear it down.
+</Callout>
+
+## What ends a flight
+
+1. **It hits or fuzes on an aircraft.** See [Fuzes, hits and misses](/weapons/fuze-and-hits/).
+2. **It hits the ground.** An armed round goes off there.
+3. **It destroys itself** when its self-destruct timer runs out (some heat seekers only).
+4. **It leaves the arena**: more than 150 km from the centre or above 30 km.<SimChoice />
+5. **It runs out of energy**: motor out, more than 2 s of flight, and slower than **15 m/s**.<SimChoice />
+6. **A radar missile's battery runs out** after 120 s.<SimChoice />
+
+Some older heat seekers also stop guiding after a set time and fly on unguided; [the catalog](/weapons/catalog/#heat-seeker-timers) lists them.
+
+<Callout kind="tip" title="In the cockpit: why it fell short">
+  - A heat seeker's motor is done within 2.2 to 7 s. After that it only slows, and every hard turn costs it extra speed.
+  - Higher and slower means a weaker turn. A heat seeker at Mach 1 at 12 km has about 1 g of fin authority, unless it vectors thrust and its motor is still burning.
+  - A radar missile coasting low down loses speed several times faster than one coasting high.
+</Callout>

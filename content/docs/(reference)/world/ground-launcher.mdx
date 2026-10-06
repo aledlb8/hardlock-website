@@ -1,0 +1,71 @@
+---
+title: "The ground launcher"
+description: "Run the SAM site: aim with the free camera, uncage the seeker, fire a custom round you design yourself, and watch its cold-launch sequence."
+icon: Castle
+---
+
+The game has two player roles: **fighter** and **SAM site**. In the SAM role you don't fly. You run one launch cell on the ground and shoot at the enemy flight with a missile you design yourself on the tactical screen. A new install starts in the SAM role.
+
+## How the launcher works
+
+- **One cell, unlimited rounds.** The next round is ready **2 s** after each launch.<SimChoice /> While the cell is empty the HUD reads RELOADING.
+- **No radar.** The radar, chaff, flare and weapon-switch keys only work in the fighter.
+- **The site can't be destroyed.** The enemy pilots never attack it. They patrol 12 km from your site and defend themselves against your rounds, but never shoot back.
+
+## Taking a shot
+
+1. **Look** with the free camera: <Key k="W" /><Key k="A" /><Key k="S" /><Key k="D" /> to move, <Key k="Space" />/<Key k="Ctrl" /> for up and down, <Key k="Shift" /> to go faster, and hold the right mouse button to look around.
+2. **Uncage the seeker** with <Key k="R" />. A seeker ring appears at the centre of the screen.
+3. **Put an aircraft in the ring.** The aircraft nearest the centre of the screen becomes the round's target, and stays designated while it remains on screen and **within 10 km** of the launcher.<SimChoice /> Farther aircraft are ignored. The ring gets heavier when it's locked.
+4. **Fire** with <Key k="F" />. Launching cages the seeker again for the next round.
+
+If the launch is refused, the HUD says why: RELOADING (wait 2 s), SEEKER CAGED (press <Key k="R" />) or NO TARGET IN THE SEEKER (put an aircraft inside the ring).
+
+<Key k="V" /> cycles the cameras: free, then the **missile camera** following your round, then a **chase camera** behind the aircraft your round is after. From the chase camera, the HUD shows that aircraft's own missile warning, so you can watch it react.
+
+To rearm in this role, use the tactical screen (<Key k="G" /> there, or the REARM button).
+
+## Designing the round
+
+The SAM fires the **custom round**, not a catalog missile. Every value is set on the tactical screen's WEAPON page; changes load into the next round, and **APPLY TO THE ROUND IN THE CELL** rebuilds the one already loaded. All values are sim choices for the sandbox round.
+
+| Group | Setting | Range | Default |
+| --- | --- | --- | --- |
+| Launcher | Launch position X / Z | −2000 to 2000 m | 0 m |
+| | Launch position Y (height) | 0 to 500 m | 0 m |
+| | Launch velocity X / Y / Z (air launch only) | −300 to 300 m/s | 0 / 0 / 50 m/s |
+| Airframe | Dry mass | 10 to 1000 kg | 100 kg |
+| | Drag coefficient | 0.01 to 1 | 0.1 |
+| | Cross-section | 0.01 to 1 m² | 0.1 m² |
+| Propulsion | Thrust (the sustainer) | 1000 to 50,000 N | 10,000 N |
+| | Propellant | 10 to 1000 kg | 100 kg |
+| | Burn rate | 0.1 to 10 kg/s | 0.5 kg/s |
+| Guidance | Guidance | off / on | on |
+| | Lead aggressiveness (navigation gain) | 1 to 4 | 4 |
+| | Seeker field of view (half-angle) | 5 to 180° | 85° |
+| | Proximity fuse | 0 to 75 m | 18 m |
+| | Flare rejection (1 = immune) | 0 to 1 | 0.65 |
+| Terrain | Terrain avoidance | off / on | on |
+| | Minimum clearance | 0 to 400 m | 90 m |
+| | Look-ahead | 0.5 to 12 s | 6 s |
+
+- **Launch velocity** only matters for an air launch, and only its overall speed counts: the round always leaves pointed at its target, at 26 m/s or more. A round on the ground ignores it.
+- **Seeker field of view:** if the target drifts outside it, the round destroys itself.
+- **Terrain avoidance:** the round pulls up when it predicts it will come closer to the ground than the minimum clearance within the look-ahead time.
+- **Flare rejection:** the higher it is, the brighter a flare has to be to pull the round off its target. At 0.65 a flare needs about twice the aircraft's brightness.
+
+## The cold launch
+
+A round standing on the ground is **cold-launched**: a gas charge throws it clear of the cell, and the motor lights only once it is in the air. All timings are sim choices.
+
+<Diagram name="cold-launch" />
+
+| Time after launch | What happens | HUD state |
+| --- | --- | --- |
+| 0 s | **Ejection.** The round leaves the cell nearly vertical, leaning towards the target. Motor cold, guidance off. | EJECT |
+| 0.85 s | **Ignition.** The booster lights at **4×** the sustainer thrust. | IGNITION |
+| from 0.85 s | **Pitch-over.** The motor turns the round towards the target. | IGNITION |
+| by 1.3 s | **Guidance takes over**, once the round is pointing within 55° of the target. | INTERCEPT while the seeker holds the target |
+| 2.35 s | **Booster burns out.** Thrust drops to the sustainer value. | |
+
+If you raise the launch position more than about 13.6 m above the ground, the round is air-launched instead and lights almost at once.

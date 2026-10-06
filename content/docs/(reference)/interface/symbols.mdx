@@ -1,0 +1,75 @@
+---
+title: "Target symbols"
+description: "What every symbol over the world means: radar contacts, the soft and hard lock boxes, MEMORY and SHOOT, the heat seeker's circle, the dogfight box, edge arrows and the ground launcher's markers."
+icon: Shapes
+---
+
+One rule runs through every display: **dashed means a soft lock, solid means a hard lock**, on the HUD, the radar scope and the RWR alike. The radar and seeker symbols over the world are drawn only in the fighter camera, and they come from what your radar and seeker know, never from the aircraft themselves. Only your own eyes mark aircraft directly, and only inside visual range.
+
+<Figure
+  src="/img/hud/symbols.png"
+  alt="A sheet of HUD symbols: a chevron with 5.21 km over a small square, a faint square, a dashed TWS box, a solid LOCK box, a faint dashed MEMORY box, a dashed box with a SHOOT chip, then four seeker circles: plain, with four ticks, inside a LOCK box, and with a centre dot and SHOOT."
+  caption="Top row: a spotting chevron with its range over a radar contact, a faint coasting contact, then the lock box as TWS (soft), LOCK (hard), MEMORY and SHOOT. Bottom row: the heat seeker's circle searching, slaved, designated inside a hard-lock box, and locked with SHOOT."
+/>
+
+## Radar contacts
+
+A **small square** marks each track your radar holds, with its track number beside it once it has one. A coasting track is drawn faint. A blip seen only once is not drawn. Your current target gets the lock box instead of a square.
+
+## The lock box
+
+Your radar target gets a box on the radar's estimate of where it is, with a tag above it and the track number, range and closing speed under it (`+412 m/s` means the gap is shrinking).
+
+| Box | Tag | Meaning |
+| --- | --- | --- |
+| Dashed | TWS | Soft lock: the target has a track number and the radar keeps scanning. |
+| Solid, a size larger | LOCK | Hard lock: the beam is held on it. |
+| Faint, dashed or solid | MEMORY | The track is coasting; the radar is not seeing it right now. |
+| Outer box breathing around it | SHOOT (inverted chip) | The selected weapon is cleared to fire on it. |
+
+SHOOT and MEMORY never change the dashed or solid shape, so you can still tell a soft lock from a hard one.
+
+When the target is off the screen, an **arrow at the screen edge** points to it, labelled `LOCK 2  9.80 km` or `TWS 2  9.80 km`, at half strength while the track coasts.
+
+## The heat seeker's circle
+
+With the heat seeker selected and uncaged, a circle shows **where the seeker's head is looking**. Its size is a display choice, not the seeker's field of view. It is not drawn while the seeker is caged.
+
+| Look | Seeker state |
+| --- | --- |
+| Thin, slightly faint circle | Searching along your nose |
+| Circle with four short ticks | Slaved: your radar lock is pointing it |
+| Bright circle | Designated: it has an aircraft, no heat lock yet |
+| Thicker circle, a pulsing outer ring and a centre dot | Heat lock |
+
+The same states read on the weapon line as SEARCH, SLAVED, DESIGNATED and IR LOCK. [Heat seekers](/weapons/heat-seekers/) explains them.
+
+## The dogfight box
+
+In dogfight (ACM) mode, four corner marks labelled **ACM** pulse over the world. Put an aircraft inside and the radar hard-locks the nearest one within 10 nm on its own. The box disappears once the radar has its lock.
+
+## What your eyes mark
+
+With **Target labels** on, a small **downward chevron** with the range above it hangs over every aircraft you could see: within 8 km<SimChoice /> and with no terrain in the way. Every aircraft other than yours is an enemy.
+
+## Missiles in the air
+
+With **Target labels** on, each of your missiles in flight carries a small **diamond** labelled FOX3 for a radar missile or FOX2 for anything else. The one the HUD is following is filled. You only see your own missiles this way; incoming missiles show only through your [warnings](/survival/warnings/).
+
+## On the scope and the RWR
+
+The radar scope and the RWR use the same language in miniature. [Reading the radar scope](/radar/reading-the-scope/#track-symbols) and [RWR and missile warnings](/survival/warnings/#reading-the-rwr-scope) go through each symbol.
+
+## On the ground launcher
+
+Running the SAM site, the world markers are different, because the launcher has full knowledge of the sky:
+
+- **Corner brackets** on every aircraft, larger the closer it is, with T1, T2… and its range under it. Off-screen aircraft get an edge arrow.
+- The aircraft your round is tracking gets thicker brackets, a centre dot and a **LOCK** chip.
+- An aircraft whose own missile warner has gone off gets a blinking **MAWS** chip.
+
+With the seeker cue on, a ring at the middle of the view shows the round's seeker: SEEKER SEARCH while it looks, or a heavier ring on the target with an inverted SEEKER LOCK chip.
+
+## Seeker x-ray
+
+The **Seeker x-ray** overlay (off by default, in the tactical screen's WORLD category) shows what the missile you are following is chasing, through terrain: its aim point gets a bold bracket with its range and **LOCK**, or **FLARE** when the seeker has been decoyed by a flare.

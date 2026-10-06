@@ -1,0 +1,69 @@
+---
+title: "Notching"
+description: "The speed band in which the game's radars and radar seekers lose you, why the ground has to be behind you, what beaming means in numbers, and what a radar missile does after it loses you."
+icon: MoveHorizontal
+---
+
+The game's radars and radar-missile seekers throw away echoes whose speed matches the ground behind them. **If your speed along their line of sight, measured against the ground, is inside the notch band, you are blanked, but only while the ground is behind you in their beam.** [Doppler, clutter and the notch](/radar/doppler-and-clutter/) explains the same rule from your own scope.
+
+## The band, in numbers
+
+| Looking at you | Notch guard | Speed gate (search and TWS only) |
+| --- | --- | --- |
+| Enemy radar missile's seeker | ±20 m/s | none |
+| Su-27S radar (N001) | ±25.7 m/s | 51.4 m/s |
+| MiG-29 radar (N019) | ±25.7 m/s | 51.4 m/s |
+| Su-35S radar (Irbis-E) | ±23.15 m/s | 46.3 m/s |
+
+All values are sim choices. The blanked band reaches a few m/s past the guard, and is wider when the radar looks far off its own flight path at speed. Enemy airframes cycle Su-27S, MiG-29, Su-35S, Su-27S, so the default flight of two is a Su-27S and a MiG-29. The briefing's **Their aircraft** row can put the whole flight in one type.
+
+## The speed gate
+
+On top of the notch, a fighter radar in search or track-while-scan **ignores any echo slower than its speed gate along the line of sight, whether or not there is ground behind it**. A hard lock has no speed gate. So crossing an enemy's line of sight can drop you from its search scope even against the sky, but a hard lock keeps you unless the ground behind you notches you.
+
+## The ground has to be behind you
+
+- **Radar or missile above you, looking down:** the ground is in its beam and the notch applies.
+- **Radar below you, looking up:** the sky is behind you and there is no notch. A fighter radar's search speed gate can still drop you, but a missile seeker has no speed gate.
+
+The rougher the ground behind you, the more it helps: mountains and wooded hills return far more clutter than flat ground or water.
+
+## What beaming means here
+
+Your speed along the line of sight is your speed times the cosine of the angle between your flight path and the line to the radar. To get under the band you fly nearly at right angles to that line. At 250 m/s:
+
+| Band | Angle off perpendicular, at 250 m/s |
+| --- | --- |
+| ±20 m/s (missile seeker) | about ±4.6° |
+| ±25.7 m/s (Su-27S, MiG-29 radars) | about ±5.9° |
+
+The real window is a little wider, because the band reaches past the guard. The band is fixed in m/s, so **the faster you fly, the narrower the window in angle**.
+
+Try it below. Set your speed and heading and pick who is looking. The explorer applies the same rules as this page: the notch guard, the search speed gate, and the ground-behind condition.
+
+<NotchExplorer />
+
+Detections are rolls, not fixed rules, so a target low over the ground near the notch comes and goes rather than vanishing all at once.
+
+## What the missile does when it loses you
+
+The enemy radar missile's seeker looks 40 times a second. **Three missed looks in a row, 75 ms, put it into memory.** In memory it keeps flying at where it predicts you are, keeps looking with its search growing over time, and re-acquires you the moment you show up inside it. If the shooter's radar has measured you more recently, the missile searches around the radar's position instead. **There is no memory timeout**: only its 120 s battery ends it.
+
+## Why holding the notch matters
+
+Dropping the seeker into memory takes only 75 ms. What decides the shot is where you are when you **leave** the notch:
+
+- **Still inside its search and its field of view (about 29° around its nose):** it picks you up again.
+- **Outside them:** it keeps flying at an empty point.
+
+The shooter's radar matters too. It only feeds the missile while its track on you is confirmed and freshly measured. After two missed looks it stops feeding the missile, and after three sweeps without a hit (at least 4 s) it drops the track. The same notch that blinds the missile can blind the radar too.
+
+<Callout kind="radar" title="You can watch it happen">
+  When the shooter loses its hard lock on you, the launch warning goes away. The missile's seeker warning stays on in memory, because the seeker keeps transmitting.
+</Callout>
+
+<Callout kind="tip" title="In the cockpit">
+  Put the missile on your wing line with ground behind you: let it be higher than you, and keep your angle off perpendicular to a few degrees. Hold it longer than feels necessary, because a missile in memory re-acquires you if you wander back into its search. Add [chaff](/survival/chaff/) while you are in the notch, which is when chaff helps most.
+</Callout>
+
+The enemy AI uses the notch too: its missile-defence plan rewards holding its speed along a radar missile's line of sight under 30 m/s while that missile is above it. [Enemy pilots](/world/enemy-pilots/) has the details.

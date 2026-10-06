@@ -1,0 +1,50 @@
+---
+title: "Cameras"
+description: "The free, missile and fighter cameras: how to switch between them, what each one shows when you fly the jet and when you run the ground launcher, and the settings that change how they move."
+icon: Video
+---
+
+There are three cameras, and <Key k="V" /> cycles through them: **free, then missile, then fighter, then back to free**. The HUD names the current one under the heading tape: FREE CAMERA, MISSILE CAMERA or FIGHTER CAMERA.
+
+Choosing the fighter role puts you straight into the fighter camera.
+
+## Fighter camera, flying the jet
+
+In the fighter role, this is the only camera you can fly from. Mouse aim and the flight keys only work here.
+
+- **Placement:** behind and above the jet. The mouse wheel moves it in or out.
+- **Follow:** it turns toward your aim circle with a short lag, so your aim stays precise while the view stays smooth.
+- **No flips:** its up is the horizon, and it blends smoothly through the vertical so the view never flips.
+- **Free look:** <Key k="RMB" hold /> or <Key k="C" hold /> freezes your aim and lets you look around. See [Mouse aim and the stick](/flying/mouse-aim/).
+
+Two settings change this camera:
+
+- **Camera lag** (Settings > Controls) sets how quickly the view catches up, from 25 ms to 300 ms. The default is about 83 ms.
+- **Field of view** (Settings > Display) runs from 30° to 100° and defaults to 50°.
+
+## Fighter camera, running the ground launcher
+
+As the ground launcher you have no jet, so the fighter camera rides behind the enemy aircraft your missile is chasing, or the best target when no shot is in the air. Hold <Key k="RMB" hold /> and drag to orbit it.
+
+## Missile camera
+
+The missile camera chases the round you are following, in either role. It sits closer behind at low speed and drops back as the missile speeds up, looking ahead of the missile so you see where it is going. Hold <Key k="RMB" hold /> and drag to orbit; when you let go, the view eases back behind the missile.
+
+When a missile detonates, the missile camera holds its position and keeps the blast centred.
+
+## Free camera
+
+The free camera is a spectator view for watching the whole fight. It moves level with the ground whichever way it faces.
+
+| Key | Movement |
+| --- | --- |
+| <Key k="W" hold /> <Key k="A" hold /> <Key k="S" hold /> <Key k="D" hold /> | Forward, left, back, right |
+| <Key k="Space" hold /> / <Key k="Ctrl" hold /> | Up / down |
+| <Key k="Shift" hold /> | Faster |
+| <Key k="RMB" hold /> + drag | Turn the view |
+
+<Key k="C" /> frames the engagement: it jumps to the free camera and frames your base, the missile you are following and every live enemy aircraft, and sets the movement speed to the size of the fight. If you leave the free camera and come back with <Key k="V" />, it returns to where you left it.
+
+<Callout kind="threat" title="Your jet keeps flying">
+  Switching away from the fighter camera does not pause anything. While you watch from another camera the flight keys stop working, and the jet holds whatever the aim circle last asked for. Flares also do not fire from the free camera, because Space moves it up there.
+</Callout>

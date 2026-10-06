@@ -1,0 +1,47 @@
+---
+title: "Kills, crashes and rearming"
+description: "What destroys an aircraft, what happens when you go down, when a new enemy flight takes off, and the rules for rearming."
+icon: Skull
+---
+
+## What destroys an aircraft
+
+- **A missile hit**: an armed missile touching it, or a warhead bursting close enough. A dud (a missile that strikes before arming) takes 60 % of its structure, so two duds bring it down. [Fuzes, hits and misses](/weapons/fuze-and-hits/#how-damage-works) has the rules.
+- **The ground**: any aircraft that comes within **1.5 m** of the terrain, or whose path crosses it, is destroyed. Water counts as solid. A crash is not credited to anyone, so it never shows a SPLASH.
+
+An enemy that is damaged but still flying keeps its damage, and when badly hurt its pilot usually turns for home.
+
+## When you go down
+
+There are no lives and no ejection. If your fighter is destroyed, by a missile or by the ground, **it explodes and you stay down**:
+
+- **The HUD** drops your flight data, radar and warnings and shows **SHOT DOWN** or **CRASHED**. It stays up until you restart.
+- **The camera** stays where your jet went down, and the fight carries on around it.
+- **Missiles:** enemy heat seekers chasing you lose their target. Your own missiles already in the air keep flying.
+- **To fly again**, open the pause menu with <Key k="Esc" /> and hold **RESTART ENGAGEMENT**. You start over the base again with a new enemy formation.
+
+## A new enemy flight
+
+Destroyed enemies don't respawn one by one. Once **every** enemy aircraft is down and no missile is in the air, a **new formation takes off** from a freshly moved enemy base.
+
+You can also force it:
+
+- Tab › TARGETS › **RESPAWN THE FORMATION**, or change the aircraft count;
+- the pause menu's **RESTART ENGAGEMENT**, which also draws a new random seed.
+
+## Rearming
+
+<Key k="G" /> rearms everything at once, as often as you like. There is no cooldown, no limit and no need to land. Missiles already in flight keep flying.
+
+- **Fighter:** both heat seekers, all **4 radar missiles**, **120 chaff** and **120 flares**. In flight, <Key k="G" /> works from the fighter camera.
+- **SAM site:** the cell is reloaded with the round currently set on the tactical screen. Rearm from the tactical screen in this role.
+
+<Callout kind="tip">
+  Missile stations do **not** reload on their own. After two heat-seeker shots there are none left until you press <Key k="G" />.
+</Callout>
+
+## Time and replays
+
+- **Time scale** runs from 0.1× to 10×, set on Tab › WORLD.
+- If your PC falls behind, the game runs slower rather than skipping simulation steps.
+- The same seed and the same inputs replay the same fight. The seed is shown on Tab › TELEMETRY.

@@ -1,0 +1,14 @@
+{
+  "title": "Missiles",
+  "icon": "Crosshair",
+  "defaultOpen": true,
+  "pages": [
+    "missile-flight",
+    "guidance",
+    "heat-seekers",
+    "radar-missiles",
+    "launching",
+    "fuze-and-hits",
+    "catalog"
+  ]
+}

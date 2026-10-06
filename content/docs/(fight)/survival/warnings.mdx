@@ -1,0 +1,82 @@
+---
+title: "RWR and missile warnings"
+description: "What your radar-warning receiver and missile-approach warner pick up, how the game tells search from soft lock, hard lock and launch, what each symbol means, and the shots that give no warning at all."
+icon: Siren
+---
+
+Your fighter has two warning receivers:
+
+- **The RWR** hears enemy radars.
+- **The missile-approach warner (MAWS)** sees missiles closing on you from behind.
+
+They only report what they pick up. A heat seeker fired at you from the front sets off nothing.
+
+## What the RWR hears
+
+- **Enemy fighter radars**, but only while their beam is actually on you, not whenever you are inside their scan area.
+- **Radar-missile seekers.** An enemy radar missile with its seeker switched on shows up as its own warning, even one chasing somebody else.
+
+Infrared is never an RWR hit, including a heat seeker locked on you. When **Hostile radar** is off (<Key k="N" />), the enemy radars are silent.
+
+## Search, soft lock, hard lock, launch
+
+The receiver never reads what mode an enemy radar is in. It times **how often the beam lands on you, and for how long**. All the thresholds are sim choices.<SimChoice />
+
+| Reading | What the beam does |
+| --- | --- |
+| Search | Sweeps over you. Lasts only while the beam is on you. |
+| Soft lock | Keeps coming back: 3 separate passes within 3.5 s. |
+| Hard lock | Stays on you for at least 40 % of the last 0.5 s (about 0.2 s of steady beam). Holds for 1 s after the beam lets go. |
+| Launch | A hard lock whose radar is guiding one of its missiles off that track. |
+
+A missile guided off a soft lock gives no launch warning.
+
+<Callout kind="threat" title="The usual order">
+  An enemy pilot follows you as a soft lock. When it wants to shoot, it asks for a hard lock and holds it for **1.5 s** before firing. So you normally hear soft lock, then hard lock, then launch. [Enemy pilots](/world/enemy-pilots/) covers when the AI shoots.
+</Callout>
+
+## The missile-approach warner covers your rear only
+
+The MAWS warns about any missile you didn't fire when all of these are true:
+
+- it is within **8 km**;
+- it is within **about 57°** either side of your tail;
+- terrain is not in the way;
+- it is flying towards you.
+
+It doesn't care whether the missile is a heat seeker or a radar missile. The enemy jets get a better warner than you: it covers all round, out to 10 km.<SimChoice />
+
+<Callout kind="threat" title="Frontal heat-seeker shots are silent">
+  A heat seeker is not a radar, so the RWR never hears it, and from ahead the approach warner doesn't see it either. **An R-73 fired at you from ahead gives no warning at all.** A radar missile from ahead shows up as LAUNCH (if the shooter holds a hard lock) and later as the seeker warning.
+</Callout>
+
+## Reading the RWR scope
+
+The scope sits at the bottom right of the HUD. Your jet is in the middle, nose up, and a symbol's angle around the ring is its bearing. The more urgent a threat, the closer to the centre it sits:
+
+| Threat | Symbol | Status text |
+| --- | --- | --- |
+| Search | F on the outer ring | SEARCH |
+| Soft lock | F in a dashed ring | SOFT LOCK |
+| Hard lock | F in a solid ring | HARD LOCK (steady box) |
+| Launch | F in a double ring, with a line from the centre | LAUNCH (blinking) |
+| Missile seeker | M in a diamond on the inner ring | MISSILE (blinking) |
+| Missile approach | arrowhead on the inner ring, pointing in | MISSILE (blinking) |
+
+<Figure src="/img/hud/missile.png" alt="The radar scope with a datalink list, and the RWR scope showing a double-ringed F with a line to the centre, an arrowhead, an M in a diamond, a faint F, and the status MISSILE" caption="The RWR showing a launch (double ring and line), an approach arrowhead and a missile seeker (M diamond), with the status MISSILE. (An example scene drawn by the game's HUD.)" />
+
+- **Nothing heard** reads CLEAR.
+- **Your chaff and flares** read CHF and FLR under the scope, and blink when empty.
+- **Memory.** A symbol stays for **8 s** after it was last heard, fading. A lock you can no longer hear drops back to a search symbol, so the scope never claims a lock that has ended.
+
+On the HUD itself, a large blinking **MISSILE** box appears under the heading tape whenever a missile seeker or an approach is being heard. It reads **LAUNCH** when a launch is the worst threat.
+
+Every reading also has its own tone in your headset; [Sound](/interface/sound/#warning-tones) describes each one.
+
+## Terrain blocks warnings
+
+The RWR hears a radar only if terrain isn't in the way, and the approach warner needs the same clear line to the missile. Behind a ridge you won't hear a radar that can't see you anyway, but you also won't get an approach warning for a missile coming over the crest.
+
+<Callout kind="tip" title="In the cockpit">
+  Treat silence as "nothing heard", not "nothing coming". A hard lock is the step before a launch. When LAUNCH or MISSILE appears, the line on the RWR points at the threat.
+</Callout>

@@ -1,0 +1,130 @@
+---
+title: "Enemy pilots"
+description: "How the AI sees you, picks what to do, decides to shoot and dodges your missiles, and exactly what the Rookie, Veteran and Ace settings change."
+icon: BrainCircuit
+---
+
+Every enemy aircraft has its own pilot, its own radar, its own missiles and its own chaff and flares. It flies the same flight model you do. It does not get to read the game's state: each pilot decides only from what its own sensors tell it.
+
+## How a pilot thinks
+
+1. **Reflexes, all the time.** Don't hit the ground, then stay inside the arena.
+2. **Tactics, at intervals.** Every behaviour gets a score, and survival beats combat, which beats routine. A pilot sticks with what it is doing unless something is clearly better.
+3. **Flying it.** The chosen behaviour sets a direction, a g limit, a throttle and a minimum height.
+
+## Every pilot is different
+
+Plans and habits are dealt afresh every match, so two matches rarely open the same way, and no two pilots in a flight fly alike. All values in this section are sim choices.
+
+### How it comes in
+
+The lead takes the main axis: **Direct** most often, otherwise **High** or **Low**. Each wingman is dealt a different plan from the rest, so the first five wingmen never share one.
+
+| Plan | What it flies |
+| --- | --- |
+| **Direct** | Straight at you on a collision course. |
+| **Flank left / right** | Swings **60° to 84°** off the line to you and turns back in between 28 and 12 km. It arrives later than the others, from the side. |
+| **Low** | Dives to **350 to 650 m** above the ground and runs in there, down in the clutter your radar looks into, then climbs for its shot from 20 km. |
+| **High** | Climbs on afterburner to **9.4 to 11.2 km** (at least 2.5 km above you) until 15 km out, for a fast, long shot. |
+| **Lurk** | Stays on patrol until you come within **24 to 36 km**, or for 70 to 150 s, then commits. Never the lead. |
+
+Every pilot also waits **up to 12 s** after it first learns where you are before it commits. A hard lock on it or one of your missiles ends any wait at once, and once a pilot has joined the fight it never goes back to lurking. When a pilot comes back for you after breaking off (evading, extending, defending a lock or a dogfight that drifted apart), it takes a new line half the time, never Lurk.
+
+### Its habits
+
+- **Its skill, nudged.** Each pilot's numbers move a little from its skill level's: the g it will use (up to 8 % less), its reaction time (±30 %), how often it re-thinks (±20 %), how readily it presses while spiked, and how good a shot must be. Two Veterans may differ: one fires at long range, another waits for a shot you can't turn away from.
+- **Its own patch of sky.** It patrols up to 3 km either side of the flight's station, 2.5 km ahead or behind and 800 m up or down, on an orbit of **6 to 12 km** radius, turning either way.
+- **The way it fights.** A favourite hand to crank to, a break turn that goes nose low or climbs, how often it throws in a yo-yo, how much lead it pulls on you, and how quickly it pumps chaff and flares (±30 %).
+
+## What a pilot can see
+
+All of these are sim choices.
+
+| Sense | What it gives the pilot |
+| --- | --- |
+| **Eyes** | You, within **8 km**, if terrain doesn't block the line and you're not in its blind spot behind it. |
+| **Its own radar** | Its strongest track. That can be a chaff cloud, because the radar has no way to know it isn't you. |
+| **Ground controller (datalink)** | Your position every **8 s**, up to about 800 m off. This is how the flight finds you from across the map. |
+| **Warning receiver** | Your radar, through the same model as your own RWR. Search and soft lock change nothing. **A hard lock or a launch makes it "spiked".** |
+| **Missile warner** | Any of your missiles within **10 km**, in any direction, in line of sight, flying towards it. |
+
+<Callout kind="radar" title="Your soft lock is quiet">
+  Enemy pilots react to your hard lock and your launches, not to your search or a soft lock. A soft lock lets you watch a target without making it defend. [Track numbers and locks](/radar/locking/) explains the difference.
+</Callout>
+
+## What it is doing
+
+The word in capitals is what the HUD's target list and the tactical screen show for that aircraft.
+
+| Behaviour | Shown as | When it wins |
+| --- | --- | --- |
+| **Evade** | EVADING | It has heard one of your missiles for at least its reaction time. |
+| **Defend lock** | EVADING | Spiked by your hard lock, at least 6 km away, with no radar shot of its own in the air. |
+| **Extend** | EXTEND | Too slow, and you're not pressing it at close range. |
+| **Support** | CRANK | Its own radar missile is in the air and needs its radar. |
+| **Return home** | EXTEND | Out of weapons, or badly damaged. |
+| **Dogfight** | OFFENSIVE / NEUTRAL / DEFENSIVE | You're inside about 8 km. |
+| **Intercept** | INTERCEPT, or ATTACK once its radar has a shot-quality track on you | It knows where you are, has weapons, and you're further out. |
+| **Patrol** | PATROL | Nothing better to do, or it is still holding back before it commits. |
+| **Ground avoidance** | RECOVER | It is pulling away from the ground, whatever else it wanted. |
+
+### What each one flies
+
+- **Patrol:** an orbit around its own spot near the station, about 7000 m up.
+- **Intercept:** a lead collision course towards you, on the line its plan gives it. Far out it climbs above you; closer in it matches your height plus 500 m.
+- **Support (crank):** after firing a radar missile, it turns **48° off** the line to you, slowing the closure while keeping you inside its radar's view so it can keep guiding the missile.
+- **Defend lock:** it **beams** your radar, flying across your line of sight, and descends if it is high, so it sits low against the ground clutter you are looking down into. [Notching](/survival/the-notch/) explains why this works.
+- **Extend:** it unloads and runs away on afterburner to rebuild speed.
+- **Return home:** it flies back towards its base, high.
+- **Dogfight:** it points at you, chases your position or a point behind you depending on the geometry, and breaks hard into you if you're behind it. It pulls full g above corner speed, eases off below it, and may throw in a high or low yo-yo.
+
+## When it shoots
+
+A pilot considers its weapons in every behaviour except Evade and Return home, and only fires a shot it predicts will hit you if you hold your course.
+
+**Heat seeker** (the R-73):
+
+- it can see you right now, by eye or radar;
+- range over **600 m**, and under **3.5 km head-on, stretching to 8 km from dead astern**;
+- you're within **25°** of where it is flying;
+- at least 4 s since its last heat-seeker shot.
+
+**Radar missile** (the reference round):
+
+- hostile radar is on, it has radar missiles, and its radar holds a good track on you;
+- **none of its own radar missiles is already in the air**, and at least 8 s since its last one;
+- you're within 20° of its nose and more than 2 km away;
+- the shot is good enough for its skill (see below).
+
+<Callout kind="threat" title="You will hear it coming">
+  Before a radar shot the pilot holds you on track-while-scan for **at least 2.5 s** (your warning receiver hears a soft lock), then asks its radar for a hard lock and **holds it for 1.5 s** before firing, so you hear the soft lock, then the hard lock, then the launch. The whole enemy flight never has more than **two** radar missiles in the air at once.
+</Callout>
+
+## Skill levels
+
+All values are sim choices, and changing the skill takes effect immediately. Each pilot's own numbers are [nudged](#its-habits) a little from these.
+
+| | Rookie | Veteran | Ace |
+| --- | --- | --- | --- |
+| Share of the airframe's g limit it will use | 65 % | 85 % | 100 % |
+| How long a missile warning must last before it reacts | 1.0 s | 0.5 s | 0.25 s |
+| How often it re-thinks inside 12 km | 1.3 s | 0.9 s | 0.5 s |
+| Radar shots it takes | anything that hits you flying straight | usually the same | only shots you can't turn away from |
+| When spiked with no shot of its own | usually beams you | usually beams you | usually keeps pressing in |
+| Plans its missile defence | no, beams on reflex | yes | yes |
+
+## How it dodges your missiles
+
+Once a pilot has heard one of your missiles for its reaction time, it switches to **Evade**.
+
+- **Rookies beam on reflex**: they turn across the missile's line and keep doing it.
+- **Veterans and Aces plan.** They test a set of escapes against their estimate of every missile they know about (running away, slicing off, beaming, turning in, each level, low or high) and fly the one with the biggest predicted miss. Running the missile out of energy and holding the Doppler notch against a radar missile both score well. The plan is redone every 0.5 s, and under 6 s from impact it becomes a maximum-performance break turn.
+
+While evading it uses full g (of its skill's share), afterburner, and goes as low as 150 m. The plan is the pilot's estimate, not the real missile, so it can still fail.
+
+It also releases its own chaff and flares; [Flares](/survival/flares/#what-the-enemy-does-with-flares) and [Chaff](/survival/chaff/#what-the-enemy-does-with-chaff) give the rules. Enemy aircraft carry four radar missiles, two R-73s, **24 flares and 30 chaff**.
+
+## Settings that change the enemy
+
+- **Weapons free off:** they still fly, chase, defend and drop countermeasures, but never launch anything.
+- **Hostile radar off** (<Key k="N" />): no radar tracks, no radar missiles and no locks. They hunt you by eye and by datalink from their ground controller, and only shoot heat seekers.

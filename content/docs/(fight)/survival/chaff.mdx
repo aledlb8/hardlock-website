@@ -1,0 +1,55 @@
+---
+title: "Chaff"
+description: "How many chaff bundles you carry, how a cloud blooms, stops and fades, why a radar seeker only falls for chaff when you have little speed along its line of sight, and what chaff does to enemy radars."
+icon: CloudFog
+---
+
+In this game a chaff cloud is a second radar echo that stops in the air while you fly on. **It only fools a radar missile's seeker while your own speed along the seeker's line of sight is small.** That is the same geometry as [the notch](/survival/the-notch/), so the two work together. On its own, chaff rarely saves you.
+
+## Your chaff
+
+| | |
+| --- | --- |
+| Bundles carried | **120**<SimChoice /> |
+| Key | <Key k="Z" hold />, from any camera |
+| While held | one bundle every **0.2 s**<SimChoice /> |
+| Refill | <Key k="G" /> (rearm) |
+
+You can release chaff at any time, with or without a warning. A full stream empties the box in 24 s.
+
+## How a cloud blooms, stops and fades
+
+All values are sim choices.
+
+- **Bloom.** A new bundle starts with no echo at all. It peaks at about 15 m² after about 1.4 s, then shrinks.
+- **Stop.** It brakes from your speed to a slow fall within about two seconds.
+- **Fade.** At 8 s the cloud is gone.
+
+<Callout kind="sim" title="The jet is often the bigger echo">
+  Seen side-on, most jets are a far stronger echo than a fully bloomed bundle: the F-16 is 100 m² from the side. See [How the radar sees](/radar/how-the-radar-sees/#cross-section-by-aspect).
+</Callout>
+
+**Heat seekers never see chaff, and radar seekers never see flares.**
+
+## Why chaff needs low line-of-sight speed
+
+A radar missile's seeker only accepts an echo at about the range, direction and closing speed it predicts for you (within 40 m/s on speed). Echoes too close together to tell apart blend into one point, and the seeker steers at that point.
+
+Now follow a fresh bundle. It leaves at your velocity and then brakes hard. How fast its speed along the seeker's line of sight parts from yours depends on how much speed **you** have along that line:
+
+- **You are closing on or running from the seeker.** The bundle's speed parts from yours almost at once, and it falls out of the seeker's gates. It barely moves the aim point.
+- **You are flying across the seeker's line of sight.** The bundle's speed along the line stays close to yours. It stays inside the gates and can drag the aim point away from you.
+
+In short, **chaff works best with you already in the notch.**
+
+## Chaff and enemy radars
+
+A scanning radar never turns chaff into a contact: a bundle slows down far harder than any aircraft, so it never builds a track of its own and never takes over an aircraft's track. Within a single look, a fresh bundle at the same range and speed as you can still add interference that makes you harder to see.
+
+## What the enemy does with chaff
+
+Enemy jets carry **30 bundles**, released in pairs with at least 0.8 s between bursts. Each pilot chaffs against one of your radar missiles once it is under 12 s from impact, every 1.2 s, and every 0.6 s once it is under 5 s.<SimChoice />
+
+<Callout kind="tip" title="In the cockpit">
+  Chaff is worth a lot while you are crossing the missile's line of sight and little while you run straight away from it or towards it. Turn to put the missile on your beam first, then hold <Key k="Z" />.
+</Callout>

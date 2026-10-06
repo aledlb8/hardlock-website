@@ -1,0 +1,13 @@
+{
+  "title": "Staying alive",
+  "icon": "ShieldAlert",
+  "defaultOpen": true,
+  "pages": [
+    "warnings",
+    "flares",
+    "chaff",
+    "the-notch",
+    "out-flying-a-missile",
+    "what-makes-a-miss"
+  ]
+}

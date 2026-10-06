@@ -1,0 +1,126 @@
+---
+title: "The HUD"
+description: "Every element of the in-flight HUD: where it sits, when it shows, and what each word on it means, from the flight data to the MISSILE banner and SPLASH."
+icon: ScanEye
+---
+
+The HUD is drawn in **one white ink** with no coloured boxes. When something matters it becomes an inverted chip (white box, dark letters) or it blinks. So a white box with dark text, like SHOOT or MISSILE, is always the thing to look at.
+
+## Where everything sits
+
+| Screen area | What is there |
+| --- | --- |
+| Top left | Mission state, a detail line, the flight data |
+| Top centre | Heading tape, camera name, PAUSED, the MISSILE / LAUNCH banner |
+| Top right | The target list |
+| Centre | Aim circle, nose cross and the [target symbols](/interface/symbols/) |
+| Bottom left | Radar scope and DATALINK list (fighter), key hints |
+| Bottom centre | The weapon line, with notices above it |
+| Bottom right | The RWR, with your chaff and flare counts |
+
+The HUD only appears while you are playing, with **Show HUD** on and no menu or tactical screen open. <Key k="H" /> hides and shows it. Hiding it does not stop anything: the tones still play.
+
+## Mission state and detail line
+
+The large word at the top left says what you, or the missile you are following, are doing:
+
+| Word | Meaning |
+| --- | --- |
+| PAUSED | The game is paused. |
+| DETONATION | The camera is holding on a blast. |
+| READY | Nothing in flight, a round ready to fire. |
+| EMPTY | Nothing in flight and no round ready (fighter). |
+| RELOADING | Nothing in flight and no round ready (ground launcher). |
+| EJECT / IGNITION | A cold-launched round: ejected, motor not lit yet / motor lit, guidance not armed yet. |
+| BOOST / BALLISTIC | A heat seeker (or the launcher's custom round) without a target, motor burning / burnt out. |
+| INTERCEPT / GLIDE | The same with a target, motor burning / burnt out. |
+| DATALINK / COAST | A radar missile in midcourse, with / without fresh updates from your radar. |
+| SEARCH | A radar missile's own seeker is looking. |
+| TERMINAL | A radar missile's own seeker has the target. |
+| MEMORY / ENDED | A radar missile flying on memory / done homing. |
+
+Under it, a smaller **detail line**. In the jet with nothing in flight it reads your radar mode and your heat seeker's state (`off`, `caged`, `searching`, `slaved to the radar`, `designated` or `heat lock`). Once a missile is in the air it reads that missile's seeker state instead, such as `Seeker tracking flare`, plus how many are in the air.
+
+## Flight data
+
+The block under the mission state shows your jet's numbers, or the missile's when the missile camera is riding one:
+
+| Label | What it shows |
+| --- | --- |
+| SPD | Speed in km/h. |
+| ALT | Height in metres above your base's ground level, **not above the ground under you**. |
+| M | Mach number. |
+| G | Load factor. |
+| THR | Your throttle in %, with an inverted AB chip while the afterburner is lit (jet only). |
+| FUEL | Propellant left in % (missile only). |
+| T+ | Seconds since launch (missile only). |
+
+## Heading tape and camera name
+
+The tape at the top centre spans 60°, with a figure every 10° printed in tens (`27` is 270°) and N, E, S, W at the cardinal points. In the fighter camera it follows your nose; in other cameras it follows the camera. Under it: the key that changes view (<Key k="V" />) and FREE CAMERA, MISSILE CAMERA or FIGHTER CAMERA. If you pause with <Key k="Enter" />, an inverted PAUSED chip appears below.
+
+## The MISSILE and LAUNCH banners
+
+When your warning receiver hears a missile coming at you, a large **MISSILE** chip blinks under the heading tape. A radar guiding a missile at you gives **LAUNCH** instead. A search, soft lock or hard lock on you never raises a banner; those show on the RWR only. [RWR and missile warnings](/survival/warnings/) explains each warning.
+
+## The target list
+
+At the top right: TARGETS and a count of living aircraft, then one row per aircraft (up to eight): its number (T1, T2…), what it is doing, and its range. Destroyed aircraft read DOWN and go faint. The target your missile is tracking is an inverted chip.
+
+The state words are PATROL, INTERCEPT, ATTACK, CRANK, OFFENSIVE, NEUTRAL, DEFENSIVE, EVADING, EXTEND and RECOVER. ATTACK, CRANK, OFFENSIVE and EVADING are drawn brighter because they are the ones to worry about. [Enemy pilots](/world/enemy-pilots/#what-it-is-doing) explains each one. With the cursor free (not steering the jet), point at a row for the aircraft's card.
+
+<Callout kind="note" title="The list knows more than your radar">
+  The target list shows every enemy aircraft's state and range, whatever your radar sees. The symbols drawn over the world come only from what your radar, your seeker and your own eyes know.
+</Callout>
+
+## Aim circle and nose cross
+
+In the fighter camera the **circle** is where your mouse is asking the nose to go, and the **cross** is where the nose points now. During free look the circle dims. [Mouse aim and the stick](/flying/mouse-aim/) covers how the jet follows it. Everything else in the middle of the view is on [Target symbols](/interface/symbols/).
+
+## Radar scope, DATALINK list and RWR
+
+When you fly the jet, the radar scope sits at the bottom left in every camera, with the DATALINK list above it while your radar missiles are in the air. The RWR sits at the bottom right with your stores as `CHF 120   FLR 120`, each blinking when empty.
+
+- [Reading the radar scope](/radar/reading-the-scope/) explains the scope.
+- [Radar missiles](/weapons/radar-missiles/#the-datalink-list) explains the DATALINK list.
+- [RWR and missile warnings](/survival/warnings/#reading-the-rwr-scope) explains the RWR.
+
+## The weapon line
+
+Along the bottom centre: the key that switches weapon (<Key k="B" />), the selected missile's name, the rounds left, then a status word and, when there is something to press, a key and a hint. [Taking the shot](/weapons/launching/#the-weapon-line) lists every status.
+
+## Notices above the weapon line
+
+One short message at a time appears just above the weapon line, in this order of priority:
+
+1. **Why a launch was refused**, for 2.5 s, such as NO LAUNCH-QUALITY TRACK.
+2. **PITBULL**, for 2.5 s, once per radar missile, when its own seeker takes the target.
+3. **SHOT ENDED · reason**, for 4 s, whenever any missile in the air ends its flight. [Fuzes, hits and misses](/weapons/fuze-and-hits/#shot-ended-reasons) lists the reasons.
+
+## SPLASH
+
+When one of your missiles destroys an aircraft, **SPLASH** appears in large capitals a quarter of the way down the screen, with the target's number, the weapon and how far away it fell, as in `T3 · AIM-9X BLOCK II · 2.4 KM`. It holds for 2.4 s.
+
+## SHOT DOWN and CRASHED
+
+When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile got you) or **CRASHED** (you hit the ground) appears in the same place, with `ESC · RESTART ENGAGEMENT` under it. It stays up until you restart. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
+
+## The flash along the bottom edge
+
+A brief wash of light rises from the bottom edge of the screen, so you catch it in the corner of your eye. It is strongest for a MISSILE or LAUNCH banner and for SPLASH, softer for your own launch and for a radar or heat lock, and faintest when you release chaff or flares.
+
+## Key hints
+
+A quiet row at the bottom left shows <Key k="Tab" /> TACTICAL, <Key k="Z" /> CHAFF, <Key k="Space" /> FLARES and ESC MENU (the ground launcher shows <Key k="H" /> HUD instead of chaff and flares). It fades away after the first 12 s of the engagement.
+
+## On the ground launcher
+
+- The flight data shows the round on the launcher or in flight.
+- The weapon line reads <Key k="F" /> LAUNCH (or why it can't, such as CAGED or NO TARGET) and <Key k="R" /> SEEKER CUE ON or OFF.
+- There is no radar scope and no RWR, except in the fighter camera, which rides behind the chased aircraft and shows its **missile warning**: the incoming missile's bearing, its range and its time to closest approach (TCA).
+
+[The ground launcher](/world/ground-launcher/) covers the role itself.
+
+## What the HUD does not have
+
+The HUD has **no pitch ladder, no flight-path marker, no horizon line**, no stall, pull-up or over-g warning, and no fuel gauge for your own jet.

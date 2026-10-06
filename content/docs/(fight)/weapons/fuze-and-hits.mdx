@@ -1,0 +1,85 @@
+---
+title: "Fuzes, hits and misses"
+description: "Which missiles have a proximity fuze and how far it reaches, when a fuze arms, how damage is worked out with no dice roll, and every SHOT ENDED reason on the HUD."
+icon: Bomb
+---
+
+**Every missile in the game carries a proximity fuze.** Heat seekers burst within 3.5 to 12 m, radar missiles within 18 m. Whether a missile kills is then a fixed rule: there is **no kill-probability roll** anywhere.
+
+## Proximity fuzes
+
+| Missile | Fuze radius |
+| --- | --- |
+| AIM-9B | **9.144 m** (30 ft, published) |
+| R-3S | **9 m** (published) |
+| R-73 | **3.5 m** (published) |
+| R-27T, R-27ET | **12 m**<SimChoice /> |
+| Other all-aspect heat seekers | **8 m**<SimChoice /> (R-60M: 5 m) |
+| Other rear-aspect heat seekers | **6 m**<SimChoice /> (AIM-9D: 5.2 m, R-60: 5 m) |
+| Every radar missile | **18 m**<SimChoice /> |
+| Ground launcher's custom round | your setting, 18 m by default |
+
+## What counts as a hit
+
+The game sweeps the missile's path against every aircraft's path, yours included, and takes the first of:
+
+- **Proximity:** an armed missile comes within the aircraft's radius plus its fuze radius.
+- **Contact:** the missile touches the aircraft's radius.
+
+Enemy aircraft get a radius between **3 and 7 m**, drawn at random when they spawn. Yours is **5 m**.<SimChoice />
+
+**A proximity fuze can't tell who is who.** It fires on the first aircraft to enter its reach, which isn't necessarily the one the seeker was chasing. A missile ignores the aircraft that fired it until its fuze arms.
+
+## When a fuze arms
+
+A heat seeker arms after a minimum distance flown from the launch point, and on some rounds a minimum time as well:
+
+| Missiles | Arms after |
+| --- | --- |
+| AIM-9B | 150 m (published) |
+| AIM-9D | 304.8 m (1000 ft, published) |
+| Other Sidewinders | 304.8 m (the AIM-9D figure, reused) |
+| R-3S | 0.4 s after its motor burns out |
+| Magic I | 300 m and 1.8 s |
+| MICA IR | 500 m (published) |
+| Others | 150 m to 600 m (see [the catalog](/weapons/catalog/)) |
+
+A **radar missile** arms once it has flown 300 m or for 1 s, whichever comes first.<SimChoice /> The ground launcher's round is armed from launch.
+
+## How damage works
+
+Every aircraft starts with full structure.
+
+| What happened | Damage |
+| --- | --- |
+| **Armed missile touches an aircraft** | Destroyed. |
+| **Warhead bursts** (proximity, or an armed round hitting the ground or destroying itself) | Full damage inside the fuze radius, measured to each aircraft's surface, falling evenly to zero at **twice** that radius. |
+| **Dud**: an unarmed missile touches an aircraft | 60 % of its structure, and no blast. Two duds bring an aircraft down.<SimChoice /> |
+
+<Callout kind="threat" title="Bursts hit everyone in range">
+  A burst damages every aircraft inside its reach, including the one that fired it. With an 18 m radar fuze, damage reaches 36 m from the burst to an aircraft's surface.
+</Callout>
+
+## SHOT ENDED reasons
+
+Every shot ends exactly once, with one reason. When any shot in the world ends, yours or the enemy's, the HUD shows SHOT ENDED with the reason for **4 s**:
+
+| On screen | What happened |
+| --- | --- |
+| PROXIMITY FUZE | The proximity fuze fired the warhead. |
+| DIRECT HIT | An armed missile struck an aircraft. |
+| DUD STRIKE | An unarmed missile struck an aircraft: damage, no blast. |
+| HIT THE GROUND | It flew into the terrain. An armed round bursts there. |
+| SELF-DESTRUCT | A heat seeker's self-destruct timer ran out, the custom round lost its target, or a MADDOG found nothing in 30 s. |
+| OVERSHOT | The ground launcher's custom round flew past its target and the range was opening. |
+| OUT OF ENERGY | Motor out, more than 2 s of flight, slower than 15 m/s. |
+| LEFT THE ARENA | More than 150 km from the centre or above 30 km. |
+| BATTERY SPENT | A radar missile flew for its whole 120 s battery. |
+| REMOVED | Cleared by a restart or reset. |
+
+A heat seeker's self-destruct bursts if it is armed. A radar missile ending by MADDOG time-out or by its battery doesn't burst.
+
+<Callout kind="tip" title="In the cockpit">
+  - **The R-73 is the least forgiving heat seeker**: it has to pass within 3.5 m of your target's 3 to 7 m radius. Most others forgive 6 to 8 m, and a radar missile forgives 18.
+  - Inside the arming distance, a hit is a DUD STRIKE. Two of those still destroy an aircraft.
+</Callout>

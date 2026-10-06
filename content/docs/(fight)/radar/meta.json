@@ -1,0 +1,12 @@
+{
+  "title": "Radar",
+  "icon": "Radar",
+  "defaultOpen": true,
+  "pages": [
+    "how-the-radar-sees",
+    "scan-and-modes",
+    "locking",
+    "doppler-and-clutter",
+    "reading-the-scope"
+  ]
+}

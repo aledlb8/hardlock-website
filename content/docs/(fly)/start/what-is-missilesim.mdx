@@ -1,0 +1,29 @@
+---
+title: "What MissileSim is"
+description: "A real-time 3D air-combat sandbox: fly a jet or run a ground launcher against AI pilots, and dodge their shots with chaff and flares."
+icon: Info
+---
+
+MissileSim is a hobby game: a real-time 3D air-combat sandbox. You either **fly a fighter** or **run a ground launcher** against a flight of AI aircraft. You find them on your radar, lock them, and shoot. They hunt you, shoot back, and dodge your missiles with chaff, flares and hard turns. Every sound in it is driven by the simulation while you play.
+
+## What's in it
+
+- **Thirteen jets you can fly**, from the F-16C to the Su-57. The F-16C has a full flight model built on published NASA wind-tunnel data; the others use a simpler model fed from public figures. See [the roster](/aircraft/roster/).
+- **A radar you actually operate**, with search, track-while-scan, soft and hard locks and a dogfight mode. A target flying across your beam low against the ground can drop off your scope. See [Radar](/radar/how-the-radar-sees/).
+- **Heat-seeking and radar-guided missiles** that fly with thrust, drag, gravity and limited turning, and can be decoyed. See [Missiles](/weapons/missile-flight/).
+- **Defences**: a radar warning receiver, a missile approach warning, 120 chaff and 120 flares. See [Staying alive](/survival/warnings/).
+- **AI pilots** that only know what their own eyes, radar and warning receivers tell them, and plan their own missile defence. See [Enemy pilots](/world/enemy-pilots/).
+- **A 128 km theater** of mountains, valleys, a river, a lake and a coast. Terrain blocks line of sight and hides low targets in ground clutter. See [The theater](/world/theater/).
+- **Physical sound**: the speed-of-sound delay, Doppler, sonic booms and air absorption. See [Sound](/interface/sound/).
+
+## What it is not
+
+The radar, seekers, warning displays and countermeasures are **gameplay**. They decide what the scope draws, what the HUD says, and whether a shot in this sandbox hits. They are not a model of any real weapon.
+
+- Guidance, radar and seekers are simplified textbook models. They exist so the game feels plausible, not to predict real performance.
+- Aircraft and weapon numbers come from public pages, such as Wikipedia and manufacturer brochures, or from published game data. Anything else is a labelled **sim choice**, tuned for gameplay. [Where the numbers come from](/about/sources/) explains how this guide marks them.
+
+## How to read this guide
+
+- A <SimChoice /> badge marks a number chosen for gameplay rather than taken from a published source.
+- Coloured notes use the game's own colour language: <span className="text-heat">amber</span> for heat seekers, <span className="text-radar">cyan</span> for radar, <span className="text-threat">red</span> for things aimed at you, and <span className="text-friendly">green</span> for practical tips.

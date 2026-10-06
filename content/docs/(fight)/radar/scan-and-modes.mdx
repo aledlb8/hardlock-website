@@ -1,0 +1,93 @@
+---
+title: "Scan, modes and range"
+description: "How the beam sweeps ±60°, how long a sweep takes on each jet, what search, track-while-scan, hard lock and dogfight mode do to the scan, how to tilt the search, how mechanical and electronic radars differ, and the scope range and hostile radar keys."
+icon: ScanLine
+---
+
+Every radar in the game searches **±60° either side of the nose**. The beam paints that area one beam position at a time, row after row, always left to right, so a wide scan is a slow one. One full pass is a **frame**. What you do with <Key k="T" />, <Key k="L" /> and <Key k="K" /> changes where it looks.
+
+## Scan areas by mode
+
+| Mode | Width | Height | Notes |
+| --- | --- | --- | --- |
+| Search (SRCH) | ±60° | about 10° | Held on the horizon whatever your bank or pitch; tilt it with <Key k="↑" /> <Key k="↓" /> |
+| Track-while-scan (TWS) on a mechanical radar | ±25° | 3 rows | Centred on your target, at most 35° off the nose |
+| Hard lock (STT) | the beam is held on the target | | |
+| Dogfight (ACM) | ±15° | 20° tall, centred 6° above the nose | Fixed to the airframe, not levelled |
+
+With a target selected, the scan's centre follows it up or down, by at most 30°. An electronic radar **never narrows to the ±25° box**: it keeps searching ±60° while it holds soft locks.
+
+## Antenna tilt
+
+Search stays on the horizon when you climb, dive or bank, so it keeps finding aircraft near your own height. It reaches about 5° above and below: some 4 km of height difference at 45 km, but under 1 km at 10 km. To look for aircraft well above or below you, hold <Key k="↑" /> or <Key k="↓" />. The search tilts 10° a second, up to 30° either way.<SimChoice /> The [elevation strip](/radar/reading-the-scope/#the-elevation-strip) and the EL figure on the scope show the tilt, and every match starts level. Once you select a target, the scan centres on it instead.
+
+## The four modes
+
+**Search** (SRCH): the full raster. Every confirmed contact shows on the scope.
+
+**Soft lock, track-while-scan** (<Key k="T" />, TWS): the contact gets a number and becomes your target, and the scan goes on. A mechanical radar narrows to the ±25° box around the target. An electronic radar keeps ±60° and gives each numbered track an extra look about every 0.25 s.<SimChoice />
+
+**Hard lock, single-target track** (<Key k="L" />, STT): the beam is held on the target's predicted position. A hard lock can keep a target that search drops; see [Doppler, clutter and the notch](/radar/doppler-and-clutter/).
+
+**Dogfight mode** (<Key k="K" />, ACM): the small box up the HUD. The radar hard-locks the nearest confirmed contact inside the box within 10 nm by itself.
+
+[Track numbers and locks](/radar/locking/) walks through the keys step by step.
+
+## Mechanical and electronic radars
+
+The scope names the antenna: MSA is a mechanically steered dish, PESA and AESA are electronically steered.
+
+| | Mechanical (MSA) | Electronic (PESA, AESA) |
+| --- | --- | --- |
+| Soft lock | Narrows to a ±25° box, 3 rows | Keeps ±60°, plus a look at each numbered track every 0.25 s |
+| Hard lock | Beam on the target, **search stops** | Target every other look, **search goes on at half speed** |
+| Other tracks during a hard lock | Not revisited: they coast, then drop | Still revisited by the search |
+| Ground clutter let in | Most | Less (PESA), least (AESA) |
+
+### How far a lock can follow
+
+A hard lock can follow its target further off the nose than the search covers, out to the antenna's field of regard: 60° on most jets, 100° on the Gripen E and 120° on the Su-35S. Past that limit the beam goes back to scanning and the track coasts.
+
+## Radar figures by aircraft
+
+The frame time is how long a full search sweep takes, which sets how often a contact is revisited and how long a track survives without a hit. The TWS box only applies to mechanical radars.
+
+| Aircraft | Antenna | Field of regard | Numbered tracks | Targets guided at once | Search frame | TWS box frame |
+| --- | --- | --- | --- | --- | --- | --- |
+| F-16C Block 50 | MSA | ±60° | 10 | 6 | about 3.7 s | about 1.6 s |
+| F-15C | MSA | ±60° | 14 | 6 | about 4.9 s | about 1.5 s |
+| F/A-18E | AESA | ±60° | 10 | 6 | about 3.7 s | |
+| F-22A | AESA | ±60° | 20 | 6 | about 6.1 s | |
+| F-35A | AESA | ±60° | 20 | 6 | about 4.9 s | |
+| JAS 39E Gripen | AESA | ±100° | 15 | 6 | about 3.7 s | |
+| Typhoon | MSA | ±60° | 20 | 8 | about 4.8 s | about 1.5 s |
+| Rafale C | AESA | ±60° | 40 | 8 | about 3.6 s | |
+| MiG-29 9.13 | MSA | ±60° | 10 | 2 | about 3.7 s | about 1.5 s |
+| Su-27S | MSA | ±60° | 10 | 1 | about 6.1 s | about 1.5 s |
+| Su-35S | PESA | ±120° | 30 | 8 | about 6.1 s | |
+| Su-57 | AESA | ±60° | 30 | 16 | about 3.7 s | |
+| J-20A | AESA | ±60° | 20 | 6 | about 4.9 s | |
+
+Every figure is labelled in the game with where it comes from; [Where the numbers come from](/about/sources/) explains the labels. [Track numbers and locks](/radar/locking/) explains the two limits.
+
+## Scope range
+
+<Key k="Y" /> steps the scope through **10, 20, 40 and 80 km**, then wraps.
+
+- When a new target is locked, the scope jumps to the smallest scale that fits it. That can zoom in as well as out.
+- Entering dogfight mode sets 20 km.
+- **A contact beyond the current scale is not drawn at all.** The radar still tracks it, so step the range out if the scope looks empty.
+
+The scale only changes the display: the radar itself has no range setting.
+
+## Hostile radar on or off
+
+<Key k="N" /> turns the enemy aircraft's radars on or off. It is on by default and the setting is saved. The same switch is on the briefing and tactical screens. With it off, enemy radars stop scanning, your warning receiver hears no enemy radar, and enemy pilots fire no radar missiles. Your own radar is not affected. [Enemy pilots](/world/enemy-pilots/) covers how the AI then finds you.
+
+## How enemy radars scan
+
+Each enemy aircraft carries its own airframe's radar from the same catalog. It searches ±60° toward where its pilot believes you are. While it works a contact it uses the ±25°, 3-row box, **even on an electronic set**.
+
+<Callout kind="tip">
+  A wide search takes about 3.6 to 6 s to come back to the same spot. On a mechanical radar a soft lock's ±25° box comes round in about 1.5 s, so the target is revisited two to four times as often. An electronic radar keeps the wide picture and updates the target on top.
+</Callout>

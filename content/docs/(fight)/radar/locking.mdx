@@ -1,0 +1,79 @@
+---
+title: "Track numbers and locks"
+description: "What T, L, U and K do step by step, how a blip becomes a numbered track, how long a track survives without a hit, what the target's warning receiver hears in each mode, and how to fire on several targets."
+icon: Lock
+---
+
+Four keys run the radar. <Key k="T" /> soft-locks a contact and gives it a number. <Key k="L" /> hard-locks it. <Key k="U" /> backs out one step. <Key k="K" /> is dogfight mode. Your one target is shared by both weapons: the radar missile fires on it, and the heat seeker on the rail is slaved to it, soft lock or hard.
+
+## The keys, step by step
+
+<Key k="T" /> and <Key k="L" /> take the contact **nearest your aim circle** while you fly the jet, and the one nearest the nose from any other camera. Only confirmed and coasting tracks count: a blip seen once does not.
+
+| Key | What happens |
+| --- | --- |
+| <Key k="T" /> on a contact | It gets the lowest free number and becomes your target (a **soft lock**). Leaves a hard lock and dogfight mode. |
+| <Key k="T" /> on your target | The target steps to the next number, wrapping round. T never drops a track. |
+| <Key k="L" /> | **Hard lock** on your target, or first soft-locks the contact nearest the circle if you have none. |
+| <Key k="L" /> again | Back to the soft lock on the same track. Every number is kept, and dogfight mode ends. |
+| <Key k="U" /> | One step down: dogfight mode off; else hard lock to soft lock; else drop your target's number (the next number becomes the target); else clear everything and search. |
+| <Key k="K" /> | Dogfight mode on. It drops your current target (the numbers stay) and hard-locks the nearest confirmed contact inside its box within 10 nm by itself. <Key k="K" /> again leaves the mode and keeps the lock. |
+
+If T or L finds nothing, or every number is taken, nothing changes and the scope shows NO TGT for 2 s with a low buzz.
+
+The radar's mode follows from that state: **STT** while hard-locked, **SRCH** with no numbers and no target, and **TWS** otherwise.
+
+## Numbered tracks and the guidance limit
+
+Each radar keeps only so many numbered tracks, and can guide radar missiles onto only so many targets at once. [Scan, modes and range](/radar/scan-and-modes/#radar-figures-by-aircraft) lists both for every jet.
+
+A shot at one target too many is refused with "Radar is guiding all the targets it can". A missile counts against the limit until its own seeker has the target. **Another missile on a target already being guided is always allowed.** You carry 4 radar missiles, so in practice the limit only bites on the Su-27S (1 target) and the MiG-29 (2).
+
+**Dropping a number cuts that missile's datalink.** Your radar feeds a missile only while its track still has a number or is your target, even if the scope still shows the contact.
+
+## From blip to track
+
+All of these timings scale with the radar's frame, the time for one full sweep (see [Scan, modes and range](/radar/scan-and-modes/)). All values are sim choices.
+
+| Stage | Rule |
+| --- | --- |
+| New blip | A first detection is not shown on the scope yet. |
+| Confirmed | A second hit, at least ¾ of a frame after the first. |
+| Coasting | Two missed looks in a row with the beam on it. The track flies on in a straight line at its last velocity, and a new hit confirms it again. |
+| Lost | No hit for three frames, never less than **4 s** and never more than **16 s**. |
+
+For the F-16 the loss time works out to about 11 s in search and about 4.8 s in its track-while-scan box.
+
+**Two aircraft flying close together show as one track**: a detection within 2 km of an existing track joins it.
+
+### Ready to fire
+
+A radar missile needs a **launch-quality** track: confirmed, not coasting, and measured within the last 1.25 frames (never less than 2 s). Until then the weapon line reads LOCKING.
+
+## When a lock is lost
+
+If your hard-locked track is lost, the hard lock goes with it and the next number becomes your soft-locked target. When your target disappears without a key press, three falling notes play and the scope shows LOST and its number, blinking for 2 s. A lock that drops near an aircraft you just shot down is treated as that kill and stays silent.
+
+## What the target hears
+
+A warning receiver never reads your radar's mode. **It times how often your beam lands on it.** [RWR and missile warnings](/survival/warnings/) has the exact thresholds.
+
+| Your radar | How the beam behaves | What the target hears |
+| --- | --- | --- |
+| Search | one pass per frame, every 3.6 to 6.1 s | Search |
+| Mechanical soft lock | the ±25° box comes round about every 1.5 s | Soft lock |
+| Electronic soft lock | an extra look every 0.25 s | Soft lock |
+| Hard lock | every look (mechanical) or every other look (electronic) | Hard lock |
+| Hard lock with your missile flying on it | the same | Launch |
+
+Enemy pilots react only to a hard lock or a launch; search and soft lock change nothing. See [Enemy pilots](/world/enemy-pilots/).
+
+<Callout kind="radar" title="Guiding without a launch warning">
+  A launch warning needs a hard lock carrying the missile's datalink. A missile guided from a soft lock gives the target no launch warning: it hears only the soft lock. This works the same in both directions.
+</Callout>
+
+## Firing on several targets
+
+**An electronic radar keeps every missile's datalink fresh while it searches**, because each numbered track gets its own look about every 0.25 s. A mechanical radar updates only what sits inside its ±25° box, and a hard lock starves every other track.
+
+To fire on two targets: <Key k="T" /> to the first, <Key k="F" />, <Key k="T" /> to the next, <Key k="F" />. Keep both numbered until each missile shows PITBULL in the DATALINK list. [Radar missiles](/weapons/radar-missiles/) explains the list and MADDOG shots.

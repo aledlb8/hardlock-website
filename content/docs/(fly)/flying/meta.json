@@ -1,0 +1,12 @@
+{
+  "title": "Flying the jet",
+  "icon": "Plane",
+  "defaultOpen": true,
+  "pages": [
+    "flight-model",
+    "mouse-aim",
+    "engine-and-fuel",
+    "limits-and-energy",
+    "cameras"
+  ]
+}

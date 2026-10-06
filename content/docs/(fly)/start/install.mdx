@@ -1,0 +1,38 @@
+---
+title: "Installing and running"
+description: "What your PC needs, how to install and start the game, and the files it writes next to itself."
+icon: Download
+---
+
+## What you need
+
+- 64-bit Windows 10 or 11.
+- A graphics card with **OpenGL 4.5**: any NVIDIA or AMD card from roughly the last ten years, or a recent Intel integrated GPU.
+
+Nothing else needs installing.
+
+## Installing
+
+The game comes as a zip named `MissileSim-<version>-win64.zip`.
+
+1. Extract the **whole** zip somewhere, such as your Desktop or Documents. Keep the `assets` folder next to `MissileSim.exe`.
+2. Double-click `MissileSim.exe`.
+3. Choose **START ENGAGEMENT** on the title screen, then **LAUNCH** on the briefing map.
+
+<Callout kind="note" title="SmartScreen warning">
+  The game is not code-signed, so Windows SmartScreen may say it comes from an unknown publisher. Click **More info**, then **Run anyway**.
+</Callout>
+
+If the game can't start, for example on a GPU without OpenGL 4.5, it shows a dialog explaining why.
+
+## Files it creates
+
+Next to the executable:
+
+| File | What it is |
+| --- | --- |
+| `config\user_settings.ini` | Your settings. Delete it to go back to the defaults. |
+| `imgui.ini` | Interface layout state. |
+| `missilesim.log` | A log of the last run. Send it along if something goes wrong. |
+
+Settings save themselves as you change them. There is no save button.

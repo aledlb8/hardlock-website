@@ -1,0 +1,288 @@
+---
+title: "The roster"
+description: "All thirteen aircraft in the game: which flight model each one uses, its weight, thrust, wing, g limits, radar and signature, and where every number comes from."
+icon: PlaneTakeoff
+---
+
+The game has thirteen aircraft and **you can fly every one of them**. The F-16C Block 50 is the default and the only jet with a full flight model built on NASA wind-tunnel data. The other twelve are point-mass airframes fed only by the numbers on their catalog card. [How the jet flies](/flying/flight-model/) explains both models.
+
+Enemy aircraft fly the same flight models you do. The enemy flight is an Su-27S leading, then a MiG-29 9.13, an Su-35S and another Su-27S, repeating if there are more aircraft.<SimChoice /> You cannot choose the enemy's aircraft.
+
+## The fleet side by side
+
+<Tabs items={["Flight", "Radar and signature"]}>
+<Tab value="Flight">
+
+"Flown mass" is the weight the game actually flies (see [How a card becomes a flying jet](#how-a-card-becomes-a-flying-jet)).
+
+| Aircraft | Flight model | Flown mass | Maximum thrust | Wing area | g limits |
+| --- | --- | --- | --- | --- | --- |
+| F-16C Block 50 | Full airframe | 10.4 t | 24,655.2 lbf at sea level | 27.87 m² | +9 / −3 |
+| F-15C | Point mass | 16.5 t | 2 × 23,770 lbf | 56.42 m² | +9 / −4 |
+| F/A-18E | Point mass | 17.4 t | 2 × 22,000 lbf | 500 ft² | +7.5 / −5 |
+| F-22A | Point mass | 24.0 t | 2 × 35,000 lbf class | 78.04 m² | +9 / −3 |
+| F-35A | Point mass | 17.7 t | 40,000 lbf | 460 ft² | +9 / −3 estimate |
+| JAS 39E Gripen | Point mass | 10.0 t | 98 kN | 30.03 m² | +9 / −3 |
+| Eurofighter Typhoon | Point mass | 13.6 t | 2 × 90 kN | 51.2 m² | +9 / −3 |
+| Rafale C | Point mass | 12.6 t | 2 × 7.5 t | 45.55 m² | +9 / −3.2 |
+| MiG-29 9.13 | Point mass | 13.2 t | 2 × 8,300 kgf | 38.06 m² | +9 / −5 |
+| Su-27S | Point mass | 21.3 t | 2 × 12,500 kgf | 61.92 m² | +9 / −4 |
+| Su-35S | Point mass | 25.0 t | 2 × 14,500 kgf | 62.0 m² | +9 / −4 estimate |
+| Su-57 | Point mass | 23.6 t | 2 × 142.2 kN | 78.8 m² | +9 / −3 estimate |
+| J-20A | Point mass | 25 t | 2 × 142 kN estimate | 73 m² estimate | +9 / −3 estimate |
+
+</Tab>
+<Tab value="Radar and signature">
+
+The radar set and its type are published. Its detection range in this game is mostly a sim choice; [Scan, modes and range](/radar/scan-and-modes/#radar-figures-by-aircraft) and [How the radar sees](/radar/how-the-radar-sees/) have every radar and signature figure.
+
+| Aircraft | Radar set | Type | Field of regard | Frontal RCS | Missiles carried |
+| --- | --- | --- | --- | --- | --- |
+| F-16C Block 50 | AN/APG-68(V)9 | MSA | ±60° | 1.2 m² | outside |
+| F-15C | AN/APG-63(V)1 | MSA | ±60° | 10 m² | outside |
+| F/A-18E | AN/APG-79 | AESA | ±60° | 0.1 m² | outside |
+| F-22A | AN/APG-77 | AESA | ±60° | 0.0001 m² | internal bays |
+| F-35A | AN/APG-81 | AESA | ±60° | 0.0015 m² | internal bays |
+| JAS 39E Gripen | Raven ES-05 | AESA | ±100° | 0.1 m² | outside |
+| Eurofighter Typhoon | CAPTOR-M | MSA | ±60° | 0.1 m² | outside |
+| Rafale C | RBE2-AA | AESA | ±60° | 0.1 m² | outside |
+| MiG-29 9.13 | N019 | MSA | ±60° | 3 m² | outside |
+| Su-27S | N001 | MSA | ±60° | 10 m² | outside |
+| Su-35S | N035 Irbis-E | PESA | ±120° | 3 m² | outside |
+| Su-57 | N036 | AESA | ±60° | 0.1 m² | internal bays |
+| J-20A | designation not published | AESA | ±60° | 0.05 m² | internal bays |
+
+</Tab>
+</Tabs>
+
+## How a card becomes a flying jet
+
+Every card can carry two weights. The **brochure mass** is whatever the public source printed, often a maximum takeoff or an empty weight; it is shown on the card but not flown. The **flown mass** is built the same way for every jet: empty weight, plus half the internal fuel, plus two short-range missiles and a pilot. No aircraft burns fuel, so that weight never changes.
+
+For the point-mass jets:
+
+- **Thrust** is the card's military rating, and the afterburner switches to the maximum rating.
+- **Sea-level speed**, where the card states one, is the speed the jet reaches at sea level on full thrust. It is a drag target, not a hard limit.
+- **No cell is empty.** Where nothing is published, the card carries an open-source figure or a labelled estimate, and the jet flies it.<SimChoice />
+- **No point-mass jet can pass 1,300 m/s.**<SimChoice />
+
+Every jet also has the same heat signature; only its radar cross section differs.
+
+## Loadout
+
+Every jet carries the same stores: two heat seekers, four radar missiles, 120 chaff and 120 flares.<SimChoice /> Any heat seeker and any radar missile fits any jet. Where the missiles ride follows each type's usual air-to-air carriage:<SimChoice />
+
+| Aircraft | Heat seekers | Radar missiles |
+| --- | --- | --- |
+| F-16C, F/A-18E, JAS 39E Gripen, Rafale C, Su-27S | Wingtip rails | Wing pylons, two each side |
+| MiG-29 9.13, Su-35S | Outer wing pylons | Wing pylons, two each side |
+| Eurofighter Typhoon | Outer wing pylons | Under the fuselage |
+| F-15C | Wing pylons | Under the fuselage |
+| F-35A | Outer wing pylons | Internal bays |
+| F-22A, J-20A, Su-57 | Internal bays | Internal bays |
+
+You see every missile still carried, on your jet and on the enemy's; one in a bay stays hidden. Each one fired is gone from its station until it is rearmed. [Taking the shot](/weapons/launching/#at-launch) describes how each one leaves.
+
+## The hangar card
+
+Point at an aircraft in the hangar or on the tactical screen to open its card. It shows the model type and the card status ("Full table", "Brochure" or "Open-source estimate"), then mass, flown mass, thrust, wing area, load limits, sea-level speed and the radar, with the card's note underneath. **A figure with no official source is drawn faint** and says it is an estimate.
+
+Under the aircraft in the hangar, four stat bars compare it with the fleet: THRUST / WEIGHT, WING LOADING, LOAD LIMIT and SEA-LEVEL SPEED.
+
+In the sections below, "public" means a named public source, "open sources" means press and reference figures with no official card behind them, "published game data" means a figure taken from another game's stat card where public sources leave the cell empty, and "estimate" is a labelled sim choice.
+
+## F-16C Block 50
+
+<Figure src="/img/aircraft/f-16c-block-50.webp" alt="Grey render of the game's F-16C Block 50 model in three-quarter front view" caption="The game's F-16C Block 50 model." width={960} height={720} />
+
+The default jet and the only full airframe. Its forces, moments, inertia, control surfaces and engine come from NASA TP-1538, a 1979 wind-tunnel and simulator study of the F-16, with the engine scaled to the Block 50's F110-GE-129.
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Flown mass | 10.4 t (22,972 lb): 18,900 lb empty + half of 7,000 lb fuel + two AIM-9X + pilot | the same build-up as every jet |
+| Military thrust | 14,807.7 lbf at sea level, standing still | NASA engine data, scaled |
+| Afterburner thrust | 24,655.2 lbf at sea level, standing still | NASA engine data, scaled |
+| Wing area | 27.87 m² (300 ft²) | public, NASA TP-1538 |
+| g limits | +9 / −3 | +9 is the published F-16C limit; −3 has no published source |
+| Angle of attack, roll rate | 25°, 308 °/s | public, NASA TP-1538 |
+| Speed | 1,555 km/h indicated-airspeed limit | published game data; shown on the card, not enforced in flight |
+
+## F-15C
+
+<Figure src="/img/aircraft/f-15c.webp" alt="Grey render of the game's F-15C model in three-quarter front view" caption="The game's F-15C model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 31,700 lb | public, USAF fact sheet |
+| Flown mass | 16.5 t: 29,000 lb empty + half of 13,455 lb fuel | public, Wikipedia |
+| Military thrust | 6,070 kgf each | published game data |
+| Maximum thrust | 23,770 lbf each, with afterburner | public, museum F100-PW-220 figure |
+| Wing area | 56.42 m² | published game data |
+| g limits | +9 / −4 | +9 public; −4 published game data |
+| Sea-level speed | 1,629 km/h | published game data (an airspeed limit) |
+
+The game flies the public +9 g, not the higher figure on a game card.
+
+## F/A-18E
+
+<Figure src="/img/aircraft/fa-18e.webp" alt="Grey render of the game's F/A-18E model in three-quarter front view" caption="The game's F/A-18E model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 66,000 lb maximum takeoff | public |
+| Flown mass | 17.4 t: 30,564 lb empty + half of 14,460 lb fuel | public, Naval Aviation News and Navy training plan |
+| Military thrust | 6,030 kgf each | published game data |
+| Maximum thrust | 22,000 lbf static each | public, NAVAIR |
+| Wing area | 500 ft², approximate | public, Naval Aviation News |
+| g limits | +7.5 / −5 | +7.5 public design load factor; −5 published game data |
+| Sea-level speed | 1,497 km/h | published game data (an airspeed limit) |
+
+**The F/A-18E is the only jet held to +7.5 g.**
+
+## F-22A
+
+<Figure src="/img/aircraft/f-22a.webp" alt="Grey render of the game's F-22A model in three-quarter front view" caption="The game's F-22A model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 83,500 lb maximum takeoff | public |
+| Flown mass | 24.0 t: 43,340 lb + half of 18,000 lb fuel | public, Lockheed and USAF |
+| Dry / afterburner thrust | 26,000 / 35,000 lbf class, each engine | public, Pratt & Whitney F119 |
+| Wing area | 78.04 m² | public, Lockheed |
+| g limits | +9 / −3 | public |
+| Sea-level speed | 1,482 km/h (Mach 1.21) | public |
+
+## F-35A
+
+<Figure src="/img/aircraft/f-35a.webp" alt="Grey render of the game's F-35A model in three-quarter front view" caption="The game's F-35A model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 29,300 lb empty | public |
+| Flown mass | 17.7 t: 29,300 lb + half of 18,250 lb fuel | public, Lockheed |
+| Military / maximum thrust | 25,000 lbf / 40,000 lbf, one engine | public, Lockheed product card |
+| Wing area | 460 ft² | public |
+| g limits | +9 / −3 | +9 public; −3 estimate<SimChoice /> |
+| Sea-level speed | 1,296 km/h | public, the 700 kt flight-test limit |
+
+## JAS 39E Gripen
+
+<Figure src="/img/aircraft/gripen-e.webp" alt="Grey render of the game's JAS 39E Gripen model in three-quarter front view" caption="The game's JAS 39E Gripen model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 16,500 kg maximum takeoff | public, Saab |
+| Flown mass | 10.0 t: 8,000 kg + half of 3,400 kg fuel | public, Saab |
+| Military thrust | 6,060 kgf | published game data |
+| Maximum thrust | 98 kN | public, Saab |
+| Wing area | 30.03 m² | published game data |
+| g limits | +9 / −3 | public, Saab |
+| Sea-level speed | 1,543 km/h | published game data. Saab only publishes "above 1,400 km/h" |
+
+Its Raven ES-05 radar sits on a published roll-repositioning mount, so a hard lock can follow a target out to ±100°.
+
+## Eurofighter Typhoon
+
+<Figure src="/img/aircraft/typhoon.webp" alt="Grey render of the game's Eurofighter Typhoon model in three-quarter front view" caption="The game's Eurofighter Typhoon model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 15,990 kg with fuel | published game data |
+| Flown mass | 13.6 t: 11,000 kg basic mass empty + half of 4,650 kg fuel | empty weight public (Eurofighter), fuel published game data |
+| Dry / reheat thrust | 60 kN / 90 kN each | public, Bundeswehr |
+| Wing area | 51.2 m² | public |
+| g limits | +9 / −3 | public |
+| Sea-level speed | 1,530 km/h | public |
+
+## Rafale C
+
+<Figure src="/img/aircraft/rafale-c.webp" alt="Grey render of the game's Rafale C model in three-quarter front view" caption="The game's Rafale C model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 24.5 t maximum | public, Dassault |
+| Flown mass | 12.6 t: 10 t empty + half of 4.7 t fuel | public, Dassault |
+| Dry thrust | 4,900 kgf each | published game data |
+| Maximum thrust | 2 × 7.5 t | public, Dassault |
+| Wing area | 45.55 m² | published game data |
+| g limits | +9 / −3.2 | public |
+| Sea-level speed | 750 kt | public, DGA low-altitude figure |
+
+## MiG-29 9.13
+
+<Figure src="/img/aircraft/mig-29-9-13.webp" alt="Grey render of the game's MiG-29 9.13 model in three-quarter front view" caption="The game's MiG-29 9.13 model." width={960} height={720} />
+
+Second aircraft in the enemy flight.
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 15,600 kg normal takeoff | public, a museum table |
+| Flown mass | 13.2 t: 11,200 kg + half of 4,540 L fuel | public, museum card |
+| Military / afterburner thrust | 5,040 / 8,300 kgf each | public, Klimov |
+| Wing area | 38.06 m² | public, museum |
+| g limits | +9 / −5 | +9 public; −5 published game data |
+| Sea-level speed | 1,500 km/h near the ground | public |
+
+Its N019 radar can guide missiles onto **only 2 targets at once**.
+
+## Su-27S
+
+<Figure src="/img/aircraft/su-27s.webp" alt="Grey render of the game's Su-27S model in three-quarter front view" caption="The game's Su-27S model." width={960} height={720} />
+
+Lead and fourth aircraft in the enemy flight.
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 23,430 kg normal takeoff, with four missiles and 5,270 kg fuel | public, Sukhoi |
+| Flown mass | 21.3 t: 16,300 kg empty + half of 9,400 kg fuel | public |
+| Full power / afterburner | 7,670 / 12,500 kgf each | public, Sukhoi |
+| Wing area | 61.92 m² | published game data |
+| g limits | +9 / −4 | +9 public; −4 published game data |
+| Sea-level speed | 1,400 km/h | public, without stores |
+
+Its N001 radar can guide missiles onto **only 1 target at a time** (public).
+
+## Su-35S
+
+<Figure src="/img/aircraft/su-35s.webp" alt="Grey render of the game's Su-35S model in three-quarter front view" caption="The game's Su-35S model." width={960} height={720} />
+
+Third aircraft in the enemy flight.
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 25,300 kg normal takeoff, with four missiles | public, KnAAPO |
+| Flown mass | 25.0 t: 19,000 kg empty + half of 11,500 kg fuel | public |
+| Military / afterburner thrust | 8,800 / 14,500 kgf each | public |
+| Wing area | 62.0 m² | open sources |
+| g limits | +9 / −4 | +9 public; −4 estimate, the Su-27S figure<SimChoice /> |
+| Sea-level speed | 1,400 km/h at 200 m | public |
+
+Its N035 Irbis-E is the only **passive electronically scanned (PESA)** radar, on a hydraulic drive that lets a hard lock follow a target out to ±120°.
+
+## Su-57
+
+<Figure src="/img/aircraft/su-57.webp" alt="Grey render of the game's Su-57 model in three-quarter front view" caption="The game's Su-57 model." width={960} height={720} />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | 26,700 kg normal takeoff | public, export Su-57E |
+| Flown mass | 23.6 t: 18,500 kg + half of 9,700 kg fuel | open press, Su-57E |
+| Dry / afterburner thrust | 88.3 / 142.2 kN each | open sources, AL-41F1 |
+| Wing area | 78.8 m² | open sources |
+| g limits | +9 / −3 | +9 open sources; −3 estimate<SimChoice /> |
+| Sea-level speed | 1,350 km/h | public |
+
+## J-20A
+
+<Figure src="/img/aircraft/j-20a.webp" alt="Grey render of the game's J-20A model in three-quarter front view" caption="The game's J-20A model." width={960} height={720} />
+
+The J-20A's card status is "Open-source estimate": China publishes no mass, thrust, wing area, load limit or speed. **Every figure is an open-source or sim estimate.**<SimChoice />
+
+| Figure | Value | Where it comes from |
+| --- | --- | --- |
+| Brochure mass | about 17,000 kg empty | open sources |
+| Flown mass | 25 t air-combat weight | a secondary source, not an official figure |
+| Dry / afterburner thrust | about 89 / 142 kN each | afterburner open sources (WS-10C); dry an estimate |
+| Wing area | about 73 m² | open sources |
+| g limits | +9 / −3 | estimate |
+| Sea-level speed | about 1,400 km/h | estimate, the Su-27S and Su-35S figure |

@@ -1,0 +1,125 @@
+---
+title: "Reading the radar scope"
+description: "Every line, label and symbol on the radar display in the bottom-left corner: the mode readout, the scan line, the elevation strip, track bricks, rings, numbers, missile tags, the target readout and the key legends, and how they match the HUD lock box."
+icon: MonitorDot
+---
+
+The radar display in the bottom-left corner is a **B-scope: azimuth runs across, range runs up**, and your nose is the centre line. It shows only what your radar knows, its tracks, never the aircraft behind them. It is drawn in the fighter role whatever camera you use.
+
+<Figure
+  src="/img/hud/search.png"
+  alt="Radar scope in search: SRCH readout, 40 km scale, tracks with heading lines and altitudes, a hollow track labelled 2.4s, and a faint sweep line"
+  caption="Search on the 40 km scale: two confirmed tracks with heading lines and altitudes, a coasting track 2.4 s since its last hit, and the sweep line. The RWR is on the right. (An example scene drawn by the game's HUD.)"
+/>
+
+## The mode readout
+
+The top-left corner always says what the radar is doing:
+
+| Readout | Meaning |
+| --- | --- |
+| SRCH | Searching, nothing numbered (drawn dim) |
+| TWS 3 | Three numbered tracks, no target among them |
+| TWS 3 · TRK 2 | Three numbered tracks; track 2 is your target (soft lock) |
+| MEM 2 | Your soft-locked target is coasting on its estimate |
+| STT · TRK 2 | Hard lock on track 2, in an inverted box |
+| ACM / ACM STT | Dogfight mode, searching / hard-locked (inverted) |
+| LOST 2 | Your target was lost (blinks for 2 s) |
+| NO TGT | <Key k="T" /> or <Key k="L" /> found nothing (blinks for 2 s) |
+
+Next to it, in dim type, is your radar's name when there is room. The current range scale is at the top right, such as 40 KM.
+
+## The scan line
+
+Under the readout, one line describes this sweep: antenna type, half-width, rows and the scan's centre elevation, for example `MSA ±25° 3B EL +4°`. [Scan, modes and range](/radar/scan-and-modes/) explains what each mode does to these numbers.
+
+## The plot
+
+- **Grid.** Range lines at a quarter, half and three quarters of the scale, and azimuth lines every 30°, the nose line solid.
+- **Scan area.** Outside the azimuth the radar is scanning right now, the plot is shaded darker. A track-while-scan box or the dogfight box shows as a lighter band.
+- **Sweep.** A faint vertical line at the beam's position with a fading wake. **The sweep disappears while a mechanical radar holds a hard lock**, because it has stopped searching.
+- **10 NM line.** In dogfight mode, a dashed line marks how far the mode will reach for a lock.
+
+## The elevation strip
+
+The narrow strip down the left of the plot shows **where the radar is looking up and down**, from 30° above the horizon at the top to 30° below at the bottom. The brighter line across it is the horizon. In dogfight mode the strip measures from your nose instead.
+
+- **Band.** The lighter band is the height the scan covers, all its rows together. It moves when you tilt the antenna or select a target.
+- **Beam.** The bright line with a small arrow pointing at the plot is the row the beam is painting now. Searching, it steps through the band row by row. In a hard lock it marks where the beam is held.
+
+## Which tracks appear
+
+**Only confirmed and coasting tracks.** A blip seen once waits for its second hit. A track past the current range scale is not drawn at all. A track more than 60° off the nose is drawn as an arrowhead on the side edge.
+
+## Track symbols
+
+<Figure
+  src="/img/hud/tws.png"
+  alt="Radar scope in track-while-scan: TWS 2 · TRK 2, a lit scan band, numbered tracks 1 and 2, track 2 in a dashed ring, and the target readout row"
+  caption="Track-while-scan: tracks 1 and 2 carry their numbers, track 2 is your target in a dashed ring, and the readout row under the plot shows its range, closure, altitude and aspect."
+/>
+
+| Symbol | Meaning |
+| --- | --- |
+| Filled square (brick) | A confirmed track |
+| Hollow square, faint | A coasting track, flying on its last estimate |
+| Short line from the brick | Its heading compared with yours: straight up is the same way as you, straight down is head-on towards you |
+| Number above | Its track number. Bright on your target, dim on the others |
+| Figure to the right | Its altitude in km. On a coasting track, the seconds since its last hit instead, such as 2.4s |
+| Dashed ring | Your target, soft lock |
+| Solid ring with four ticks | Your target, hard lock |
+| Triangle to the left | One of your radar missiles is flying on this track. Filled once its own seeker has the target, faint if it has lost its datalink |
+| A9 / T6 beside the triangle | Seconds until that missile's seeker turns on (A), then seconds to arrival (T) |
+
+<Figure
+  src="/img/hud/lock.png"
+  alt="Radar scope in hard lock: STT · TRK 2 in an inverted box, track 2 in a solid ring with four ticks, L LOCK legend lit; RWR showing HARD LOCK"
+  caption="Hard lock: STT · TRK 2 in an inverted box, track 2 in a solid ring with four ticks, and the L LOCK legend lit."
+/>
+
+<Figure
+  src="/img/hud/aesa_multi.png"
+  alt="AESA scope with three numbered tracks, each with a missile triangle and timer, and the DATALINK list beside it"
+  caption="Several radar missiles in the air on an AESA: each track carries a missile triangle and a timer, and the DATALINK list sits beside the scope."
+/>
+
+The DATALINK list beside the scope is explained on [Radar missiles](/weapons/radar-missiles/#the-datalink-list).
+
+## The target readout
+
+With a target selected, a row of four figures appears under the plot:
+
+| Label | Meaning |
+| --- | --- |
+| RANGE | Range in km |
+| CLOSURE | Closing speed in m/s, positive while the range shrinks; dimmed while it opens |
+| ALT | The target's altitude in km |
+| ASPECT | Which way it is flying relative to you: HOT under 35° off the line to you, FLANK under 70°, BEAM up to 110°, DRAG beyond, and -- for a target slower than 20 m/s |
+
+With the radar missile selected, a reason the launch is blocked is printed under the readout, such as RADAR IS GUIDING ALL THE TARGETS IT CAN.
+
+## Key legends
+
+Under the frame, five key legends label the radar keys with their current bindings: TARGET, LOCK, BACK, ACM and RANGE. TARGET lights in track-while-scan, LOCK in a hard lock and ACM in dogfight mode.
+
+<Figure
+  src="/img/hud/acm.png"
+  alt="Radar scope in dogfight mode: ACM readout, 20 km scale, narrow lit band with a dashed 10 NM line, K ACM legend lit"
+  caption="Dogfight mode on the 20 km scale: a narrow lit band about the nose with the dashed 10 NM line, and the K ACM legend lit."
+/>
+
+## What the scope does not show
+
+- No notch or speed-gate marker. A target that drops into the notch simply stops being refreshed, goes hollow and later disappears. See [Doppler, clutter and the notch](/radar/doppler-and-clutter/).
+- No launch-quality mark on the tracks; the weapon line's LOCKING and SHOOT say it instead.
+- No friendly aircraft: your own side is never a radar target.
+
+## The scope and the HUD
+
+The scope and the HUD use the same rule: **dashed is a soft lock, solid is a hard lock**. In the fighter camera your target gets a box over the world, labelled TWS or LOCK, MEMORY while coasting, and SHOOT when you can fire. [Target symbols](/interface/symbols/) covers the HUD side.
+
+One difference: the scope's ring goes solid as soon as you press the hard-lock key, while the HUD box goes solid only when the beam is actually holding the target.
+
+<Callout kind="tip">
+  To check the radar mode at a glance, read the corner: SRCH dim, TWS plain, STT inverted. If your target's brick is hollow with a growing seconds count, the radar is not refreshing it, and a launch waits for LOCKING to clear.
+</Callout>

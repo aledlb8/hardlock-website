@@ -1,0 +1,65 @@
+---
+title: "Flares"
+description: "How many flares you carry, how long one holds a heat seeker, the rule the enemy's R-73 uses to choose between a flare and your jet, why aspect matters, and why throttle does not."
+icon: Sparkles
+---
+
+A flare pulls an enemy heat seeker off you while the flare is **at least twice as bright as your jet** in that seeker's eye. As soon as it fades below that, the seeker goes back to you if it still can. There is no random roll.
+
+## Your flares
+
+| | |
+| --- | --- |
+| Flares carried | **120**<SimChoice /> |
+| Key | <Key k="Space" hold /> |
+| While held | one **pair** every **0.3 s**<SimChoice /> |
+| Refill | <Key k="G" /> (rearm) |
+
+A pair is one flare from each side, so 120 flares make 60 pairs. You can drop them at any time, with or without a warning. Space also climbs in the free camera, so flares don't fire from that camera.
+
+A flare starts 5.5 times as hot as a jet, fades quickly and burns out after 4 s.<SimChoice /> It falls behind you fast: about 140 m back after one second at 250 m/s.
+
+## How the R-73 chooses: flare or jet
+
+The R-73, the only heat seeker the enemy fires, has **no flare rejection**. Every step it compares your brightness with each flare's, as seen from the missile:
+
+1. A flare counts only if it is inside the seeker's **75°** gimbal.
+2. A flare at least **2×** as bright as you takes the track. If several qualify, the brightest one wins.
+3. When no flare qualifies any more, the seeker locks you again, **if you are still inside its 75° gimbal**.
+
+## Why aspect matters
+
+For an all-aspect seeker like the R-73, you read **five times dimmer from the nose and anywhere ahead of your beam** than straight up your tail. A flare has no aspect, so it is relatively much brighter when the missile sees you from the front or side.
+
+How long one fresh flare holds the R-73, with the flare and your jet at the same range from the missile:
+
+| Missile sees you from | Flare holds the seeker for about |
+| --- | --- |
+| ahead or abeam | 2.0 s |
+| dead astern | 0.8 s |
+
+In a tail chase the slowing flare drops back towards the missile, which makes it read brighter for a little longer.
+
+## Throttle and afterburner don't matter
+
+**Your engine setting has no effect on what the R-73 sees.** Every aircraft has the same fixed heat. Only the old AIM-9D reads the afterburner. Aspect is the only part of your signature that changes.
+
+## What the enemy does with flares
+
+Enemy jets carry **24 flares**, released in pairs with at least 0.9 s between bursts. The pilot decides every release (all sim choices):
+
+- against one of your heat seekers under 5 s from impact, every 0.8 s;
+- in a defensive break with you inside 3.5 km, every 1.5 s;
+- when your nose is on it inside 3 km, every 2 s.
+
+Your own heat seekers' flare rejection decides whether those flares work on them; see [Heat seekers](/weapons/heat-seekers/#flares).
+
+<Callout kind="heat" title="Flares do nothing to radar missiles">
+  Radar seekers and radars only see aircraft and chaff. Against a radar missile, use [chaff](/survival/chaff/) and [the notch](/survival/the-notch/).
+</Callout>
+
+<Callout kind="tip" title="In the cockpit">
+  Keep releasing. One pair holds an R-73 for about two seconds at most, and it comes back to you as soon as the flare fades. Flares buy the most time when the missile sees your nose or side rather than your tail. If you're more than 75° off where the missile is pointing when the flare dies, it can't relock you.
+</Callout>
+
+The game never warns you about a heat seeker fired from ahead. [RWR and missile warnings](/survival/warnings/) explains why.

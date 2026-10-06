@@ -1,0 +1,84 @@
+---
+title: "Settings"
+description: "Every page and option in Settings (Display, Graphics, Audio, Controls and Keybinds), with its range and its default."
+icon: Settings
+---
+
+Settings opens from the title screen (SETTINGS opens the Display page, CONTROLS opens Keybinds) or from the pause menu with <Key k="Esc" />. **Changes apply immediately and save themselves.** <Key k="Esc" /> or BACK closes it.
+
+- **Pages** run along the top as tabs. <Key k="Q" /> and <Key k="E" /> step between them.
+- **Each row** shows its value between two arrows. Click an arrow, or point at the row and press <Key k="←" />/<Key k="→" />, to step it. Click or drag the bar under the value to set it directly.
+- **The panel on the right** describes the row under the cursor, with its current value and its default.
+- **RESET PAGE** (<Key k="R" />) puts every option on the open page back to its default. Press it twice: the first press arms it, the second within three seconds carries it out. Other pages keep their settings.
+
+Settings for the fight itself (enemy count, skill, terrain, the missiles you carry) live on the [briefing](/world/game-flow/#the-briefing-map) and the [tactical screen](/interface/tactical-screen/), not here.
+
+## Display
+
+| Option | Range | Default |
+| --- | --- | --- |
+| Display mode | Windowed, Borderless, Fullscreen | Windowed |
+| Vertical sync | off / on | on |
+| Interface size | 80 % to 150 % | 100 % |
+| Show HUD | off / on | on |
+| Target labels | off / on | on |
+| Field of view | 30° to 100° | 50° |
+
+- **Borderless** covers the screen without changing its resolution. <Key k="F11" /> switches between the window and borderless at any time.
+- **Interface size** scales every menu, panel and the HUD on top of the Windows display scale, in 5 % steps. A drag applies when you let go of the bar.
+- **Show HUD** is the same switch as <Key k="H" />.
+- **Target labels** turns the chevrons, brackets, ranges and missile diamonds over the world on and off. See [Target symbols](/interface/symbols/).
+
+## Graphics
+
+If your graphics driver can't run the game's lighting, this page only says "Advanced lighting is unavailable on this graphics driver."
+
+| Group | Option | Range | Default |
+| --- | --- | --- | --- |
+| IMAGE | Exposure | 0.1 to 5.0 | 1.4 |
+| | Bloom strength | 0 to 0.2 | 0.06 |
+| | Bloom reach | 0 to 10 (0 turns bloom off) | 5 |
+| | Haze | 0 to 3 | 1.0 |
+| HUD | HUD glass | off / on | on |
+| LIGHTING | Shadows | off / on | on |
+| | Effect lights | off / on | on |
+| | Sun direction | −180° to 180° | about −30° |
+| | Sun height | 5° to 89° | about 33° |
+| | Sun strength | 0.5 to 8 | 3.5 |
+
+- **HUD glass** draws the HUD as light on glass: a soft glow from its bright symbols and a dark halo underneath, so it stays readable against bright sky.
+- **Effect lights** lets explosions, launches and engine plumes light up the scene around them.
+
+## Audio
+
+Every volume runs from 0 % to 100 % and starts at 100 %. The arrows step it by 5 %. Volumes follow **loudness**, so half way sounds about half as loud.
+
+| Group | Slider | What it controls |
+| --- | --- | --- |
+| VOLUME | Master | Everything the game plays |
+| | Sound effects | The whole world mix below, together |
+| | Cockpit tones | The seeker tone and the warning and radar tones in your headset |
+| | Interface | Menu clicks, toggles and confirmations |
+| EFFECTS MIX | Jet engines | Every jet engine, your own included |
+| | Missiles | Rocket motors and launches |
+| | Explosions | Warheads and their echoes |
+| | Countermeasures | Flares burning and chaff blooming |
+| | Wind | Air rushing past the camera |
+| OUTPUT | Headphones (3D audio) | Places every sound around your head, above and behind included (on by default). Turn it off when playing on speakers |
+| | Mute in background | Silences the game while another window has focus (off by default) |
+
+Sound effects scales the world but leaves the cockpit tones alone, so you can turn the world down and still hear your warnings clearly. [Sound](/interface/sound/) describes what you hear.
+
+## Controls
+
+| Group | Option | Range | Default |
+| --- | --- | --- | --- |
+| MOUSE AIM | Aim sensitivity | 25 % to 300 % | 100 % |
+| | Invert vertical aim | off / on | off |
+| | Camera lag | 25 to 300 ms | about 83 ms |
+
+- **Camera lag** is how long the view takes to catch up with your aim. Lower is tighter.
+
+## Keybinds
+
+Every key and mouse button the game uses can be changed, except <Key k="Esc" />. Each action has a primary and a secondary slot, and pointing at an action shows its keys and defaults in the panel. On this page the reset reads RESET ALL KEYS. [Controls](/start/controls/#rebinding-keys) explains how to rebind and lists every default key.

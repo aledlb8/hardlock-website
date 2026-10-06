@@ -1,0 +1,63 @@
+---
+title: "Mouse aim and the stick"
+description: "How the game turns the aim circle into bank and pull, what W, S, A, D, Q and E do on top of it, free look, and the sensitivity settings."
+icon: MousePointer2
+---
+
+You never fly the stick directly. **The mouse moves an aim circle, and an instructor flies the jet's nose onto it.** On the HUD the circle is where you are asking the nose to go, and the small cross is where the nose points now.
+
+Mouse aim is on whenever you are in the fighter role, in the fighter camera, with no menu open.
+
+## Moving the aim circle
+
+Moving the mouse right always moves the circle right on screen, however the view is rolled.
+
+- **Aim sensitivity** (Settings > Controls) scales how far the circle moves, from 25 % to 300 %.
+- **Invert vertical aim** flips up and down.
+- While you fly, the cursor is captured and the game reads raw, unaccelerated mouse motion where the system supports it.
+
+## How the jet flies to the circle
+
+The instructor banks so the jet's lift points where the turn needs it, then pulls the nose onto the circle:
+
+- **Circle ahead:** wings level, small smooth corrections.
+- **Circle to the side:** a coordinated banked turn.
+- **Big correction:** the jet rolls first, then pulls as the bank comes round. It does not reverse halfway through a big roll.
+- **Circle well below the nose:** up to about 25° down the jet pushes. Beyond about 35° it rolls over and pulls instead of pushing negative g.
+- **Fine aiming:** within a few degrees of the circle it adds a touch of rudder to slide the nose across.
+
+The fly-by-wire (F-16) or the lift cap (other jets) still decides how hard the jet can actually pull.
+
+<Callout kind="threat" title="It will fly you into the ground">
+  The instructor has no terrain check and no automatic pull-up. If you put the circle on the ground, the jet flies there.
+</Callout>
+
+## What W, S, A, D, Q and E do
+
+The flight keys take one axis away from the instructor for as long as you hold them. The jet's limits still apply.
+
+| Key | Asks for |
+| --- | --- |
+| <Key k="S" hold /> | A maximum-performance pull |
+| <Key k="W" hold /> | A push to −3 g |
+| <Key k="A" hold /> / <Key k="D" hold /> | The jet's full roll rate, left or right |
+| <Key k="Q" hold /> / <Key k="E" hold /> | 6° of sideslip, left or right |
+
+**Holding a pitch key also takes the roll axis**, so the instructor cannot bank against your manual pull. The pitch keys work like a stick: <Key k="W" /> pushes the nose down.
+
+When you let go, that axis blends back to the instructor over 0.15 s.<SimChoice /> **The circle stays where the mouse left it, so the jet flies back to it.** A bank you set with a quick tap of the roll keys does not stay.
+
+## Free look
+
+Hold <Key k="RMB" hold /> or <Key k="C" hold /> to look around without turning the jet. **The aim circle freezes and dims, and the jet keeps flying to it** while the mouse moves your view. When you let go, the view swings back to the circle.
+
+In free look the flight keys behave differently: while you hold one, the circle rides on the nose, and when you let go the jet holds its new heading instead of turning back.
+
+<Callout kind="tip">
+  - Small mouse moves give smooth, wings-level corrections.
+  - A big flick makes the jet roll first, then pull, so lead your turns.
+  - Hold <Key k="S" /> when you want every bit of pull the jet has.
+  - To check your six without losing your heading, use free look.
+</Callout>
+
+How quickly the view follows the circle is the Camera lag setting. See [Cameras](/flying/cameras/).

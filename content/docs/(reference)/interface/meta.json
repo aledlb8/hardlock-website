@@ -1,0 +1,12 @@
+{
+  "title": "Interface",
+  "icon": "Gauge",
+  "defaultOpen": true,
+  "pages": [
+    "hud",
+    "symbols",
+    "tactical-screen",
+    "settings",
+    "sound"
+  ]
+}

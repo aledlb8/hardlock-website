@@ -1,0 +1,41 @@
+---
+title: "How the jet flies"
+description: "The F-16 is a full airframe built on NASA wind-tunnel data with a fly-by-wire. The other twelve jets are simpler point-mass models built from published figures. Enemy jets fly the same models you do."
+icon: Wind
+---
+
+The game has two flight models. **The F-16C Block 50 is a full airframe** with forces, moments, inertia and moving control surfaces. **Every other aircraft is a point mass** built from the figures on its catalog card. The hangar card labels each one "Six-degree-of-freedom model" or "Point-mass model".
+
+Whoever is flying, you or an enemy pilot, only says where the nose should go and how much thrust to use. The same flight model then flies the jet.
+
+## The F-16: wind-tunnel data and a fly-by-wire
+
+The F-16's aerodynamics and engine come from NASA TP-1538 (1979), a wind-tunnel and simulator study of the F-16, as printed in Stevens & Lewis, *Aircraft Control and Simulation*.
+
+- **Forces and moments** follow the jet's angle of attack, sideslip and control surfaces, so the way it responds changes with speed and with how hard you pull.
+- **It has real inertia** and control surfaces that move at limited rates, so it takes a moment to start and stop a roll or a pull.
+- **A fly-by-wire flies the surfaces for you** and holds the g, angle-of-attack and roll limits on [G, angle of attack and energy](/flying/limits-and-energy/).
+- **Its engine spools** and its thrust changes with altitude and Mach. See [Throttle, afterburner and fuel](/flying/engine-and-fuel/).
+
+<Callout kind="sim" title="Low-speed data at every speed">
+  The NASA tables are low-speed data, so lift and handling have no Mach effect. The only supersonic effect is a rise in drag past Mach 1.
+</Callout>
+
+## The other jets: point-mass airframes
+
+The other twelve jets fly a simpler model, fed only by the numbers on their catalog card: weight, thrust, wing area, g limits and a published sea-level top speed. Where nothing is published, a labelled estimate fills the cell.
+
+- **Lift is capped by speed.** With a published wing area, the g you can pull falls away at low speed. The Su-35S, Su-57 and J-20A publish no wing area, so they have no lift cap and can pull their full g at any speed above 120 m/s.
+- **Drag** is set so that, where the card gives a sea-level top speed, the jet reaches exactly that speed at sea level on full thrust. Pulling g adds drag, so turning costs speed.
+- **Thrust is a fixed rating.** It does not fall off with altitude or Mach, and it changes the instant you move the throttle.
+- **Short response lags** keep a point mass from snapping: rolls and pulls build up over a fraction of a second, and the roll rate tops out at 180 °/s.
+
+[The roster](/aircraft/roster/) lists each card's figures and where they come from.
+
+## Enemy jets fly the same model
+
+Enemy aircraft use the same flight models and the same mouse-aim style controls as you. Their pilot supplies an aim direction and a throttle. The enemy flight is all point-mass jets; [Enemy pilots](/world/enemy-pilots/) covers how they decide where to point.
+
+<Callout kind="tip">
+  The F-16 is the only jet whose surfaces, inertia and engine spool you can feel. The point-mass jets answer through short fixed lags and keep full thrust at any height, so the same climb or high-altitude sprint feels different in an F-16 and in any other jet.
+</Callout>

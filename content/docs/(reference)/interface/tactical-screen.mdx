@@ -1,0 +1,78 @@
+---
+title: "The tactical screen"
+description: "The full-screen Tab menu that pauses the fight: its WEAPON, TARGETS, WORLD and TELEMETRY categories and every control in them, with ranges and defaults."
+icon: LayoutDashboard
+---
+
+Press <Key k="Tab" /> during an engagement to open the tactical screen. **It pauses the simulation**, and closing it puts back whatever pause state you had before.
+
+## Keys and layout
+
+| Key | Effect |
+| --- | --- |
+| <Key k="Tab" /> or <Key k="Esc" /> | Close the screen |
+| <Key k="Q" /> / <Key k="E" /> | Previous / next category |
+| <Key k="←" /> / <Key k="→" /> | Change the value under the cursor |
+| <Key k="G" /> | Rearm |
+| <Key k="F" /> | Close the screen and fire, if a launch is cleared |
+
+Across the top: your role, the engagement clock and the four category tabs. The settings run down the left column. **Whatever your cursor rests on is explained in the panel on the right.** Along the bottom: **LAUNCH** when a launch is cleared (or the reason it isn't), then **REARM**. The game remembers your changes.
+
+## WEAPON
+
+**ROLE.** "You fly" switches between SAM SITE and FIGHTER. Changing it restarts the engagement.
+
+**As the fighter**, the rest of the category is:
+
+- **Hostile radar**, on by default: off, the enemy fighters hunt you by eye and datalink and only shoot heat seekers. <Key k="N" /> toggles it in flight.
+- **AIRCRAFT**: a tile for every jet, grouped United States, Europe, Russia and China. Your current choice is marked EQUIPPED.
+- **HEAT SEEKER** and **RADAR ROUND**: a tile for every missile in the catalog.
+
+Point at any tile and its full card appears in the right panel. [The roster](/aircraft/roster/) and the [missile catalog](/weapons/catalog/) cover the cards.
+
+**On the SAM site**, the category designs the custom round instead. [The ground launcher](/world/ground-launcher/#designing-the-round) lists every setting.
+
+## TARGETS
+
+| Setting | Range | Default |
+| --- | --- | --- |
+| Aircraft | 1 to 20 | 2 |
+| Skill | ROOKIE, VETERAN, ACE | VETERAN |
+| Weapons free | off / on | on |
+
+Changing the number of aircraft respawns the formation once you let go. Skill takes effect at once. With weapons free off, the enemy still flies, chases and defends itself but never fires. **RESPAWN THE FORMATION** brings everyone back. [Enemy pilots](/world/enemy-pilots/) explains what the skill levels change.
+
+Under the settings, one row per enemy aircraft: T1, T2…, what it is doing (or DOWN), then its height, its range, its missiles left as `R2  IR2` (radar, heat) and its flares and chaff left as `F24  C30`. Point at a row for the aircraft's full card.
+
+## WORLD
+
+| Group | Setting | Range | Default |
+| --- | --- | --- | --- |
+| SIMULATION | Time scale | 0.1× to 10× | 1.0× |
+| | Gravity | 0 to 20 m/s² | 9.81 m/s² |
+| | Sea-level air density | 0 to 2 kg/m³ | 1.225 kg/m³ |
+| | Terrain | MOUNTAINS or FLAT (restarts the engagement) | MOUNTAINS |
+| | Ground collision | off / on | on |
+| | Ground bounce (only with collision on) | 0 to 1 | 0.5 |
+| OVERLAYS | Predicted trajectory | off / on | on |
+| | Trajectory detail | 10 to 600 points | 140 |
+| | Prediction horizon | 0.5 to 60 s | 12 s |
+| | Target flight path | off / on | on |
+| | Intercept point | off / on | on |
+| | Target labels | off / on | on |
+| | Seeker x-ray | off / on | off |
+| CAMERA | Free camera speed | 1 to 800 m/s | 35 m/s |
+
+**FRAME THE ENGAGEMENT** closes the screen and moves the free camera to a view of the whole fight.
+
+What the overlays draw:
+
+- **Predicted trajectory** shows where the round you are following (or about to fire) would fly, shading from yellow to red. **Intercept point** adds a line to the meeting point, and **Target flight path** adds dots along the target's predicted path. They need a round that isn't a heat seeker and a target to aim at.
+- **Target labels** draws the chevrons, brackets and missile diamonds over the world. It is the same switch as Target labels in Settings.
+- **Seeker x-ray** shows what the missile you are following is tracking, through terrain. It is off again next time you start the game.
+
+[Target symbols](/interface/symbols/) shows what the labels and the x-ray look like.
+
+## TELEMETRY
+
+Live, read-only numbers about the missile you are following (or the one ready to fire): its state, seeker and target range, closest pass so far, flight time, position and speed, motor and propellant, and the air at its altitude. It also shows the scenario seed, which replays the same fight.

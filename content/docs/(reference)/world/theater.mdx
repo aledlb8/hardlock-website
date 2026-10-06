@@ -1,0 +1,56 @@
+---
+title: "The theater and terrain"
+description: "A 128 km square of fictional mountains, valleys, a river and a coast, with your base at the centre and theirs about 48 km north."
+icon: Map
+---
+
+## The map at a glance
+
+<Diagram name="theater" />
+
+| | Value |
+| --- | --- |
+| Size | 128 km × 128 km |
+| Your base | the centre of the map; its ground level is the HUD's altitude zero |
+| Their base | about 48 km north, moved a little each time a formation spawns |
+| Water level | 12 m below your base |
+| Beyond the map | open sea |
+
+The landscape is fictional and generated from a seed. The seed changes the shape of the mountains but not the layout below.
+
+## What is on the map
+
+The default theater is **mountains**:
+
+- **Your valley**: a flat apron around the launch point inside gentle ground out to about 3 km, with **a lake** just beside it.
+- **Their valley**, 48 km to the north. It is wider than yours.
+- **A mountain range across the middle**, about 24 km north of you, with **two passes** about 2.5 km wide, one on either side of the line between the bases.
+- **Peaks of roughly 2.6 km and up**, and rolling hills everywhere else.
+- **A river canyon** running coast to coast, about 19 km to one side of the bases.
+- **The sea**, past a ragged coast about 56 km from the centre.
+
+<Callout kind="threat" title="Water is solid">
+  The lake, the river and the sea share one water level, and the game treats water as a hard surface. Flying into it is the same as flying into the ground.
+</Callout>
+
+The **FLAT** theater, chosen on the briefing or tactical screen, is the same height everywhere. Changing the theater restarts the engagement.
+
+## Terrain matters to sensors
+
+Hills and ridges block line of sight for radars, warning receivers and radar seekers, but not for heat seekers. The type of ground also sets how much clutter a radar sees: mountains and wooded hills return the most, water the least. [Doppler, clutter and the notch](/radar/doppler-and-clutter/) explains why that matters.
+
+## The edges
+
+- **Enemy pilots stay inside a square 60 km from the centre** in each direction.<SimChoice /> The briefing map draws it as a dashed line.
+- **Missiles end their flight** if they get more than 150 km from the centre or climb above 30 km.
+
+## Where everyone starts
+
+**You, as a fighter**, start over your base at the altitude of the first enemy aircraft (never below 600 m), flying level towards it at 250 m/s.<SimChoice />
+
+**You, as the ground launcher**, stand on the ground at your launch cell (the base by default).
+
+**The enemy flight** takes off over their base in a loose, stepped formation, at the briefing's **Start height** above the ground (6500 m by default), flying towards you at 230 m/s. Their base is the briefing's **Distance** away (48 km by default), moved up to 10% along that line and 15% across it on each launch. The lead is on the axis, and the wingmen pair off to either side, each pair further out and further back. They then spread out around a patrol station at about 7000 m, each pilot on [its own patch of sky](/world/enemy-pilots/#its-habits):
+
+- against your **fighter**, 12 km in front of their base (about 36 km from yours at the default distance);
+- against your **ground launcher**, 12 km from your launch site, so it has something to shoot at.

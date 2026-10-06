@@ -1,0 +1,76 @@
+---
+title: "Taking the shot"
+description: "Your missile load, the weapon line on the HUD, every reason a launch is refused, and what you get instead of a launch-zone cue."
+icon: Target
+---
+
+As a fighter you carry **two heat seekers** and **four radar missiles**, each on its own station: a wingtip rail, a wing pylon, under the fuselage or in a weapons bay, depending on the aircraft ([Loadout](/aircraft/roster/#loadout)). <Key k="B" /> switches between the two weapons and <Key k="F" /> fires. Both use the same radar target: <Key k="T" /> picks it, the radar missile fires on it, and the heat seeker slaves to it.
+
+## Your stores
+
+| Store | Load | Notes |
+| --- | --- | --- |
+| Heat seekers | 2, one each side | The type you picked in the hangar; the default is the AIM-9X Block II. |
+| Radar missiles | 4, two each side | The card you picked; the default is the reference round. |
+| Chaff, flares | 120 each | See [Flares](/survival/flares/) and [Chaff](/survival/chaff/). |
+
+**Nothing reloads on its own.** <Key k="G" /> rearms everything at once: every station, chaff and flares. In flight it works from the fighter camera; the tactical screen has it too.
+
+## The weapon line
+
+Low on the HUD, one line shows the weapon key, the weapon's name, the rounds left (×N) and a status word, often followed by the next key to press. The hint keys follow your keybinds.
+
+| Weapon | Status | Meaning |
+| --- | --- | --- |
+| Either | **SHOOT** | Launch cleared. A pulsing chip with the fire key. |
+| Either | EMPTY | No rounds of this weapon left. The hint is REARM. |
+| Heat seeker | CAGED | Seeker off. The hint is UNCAGE. |
+| Heat seeker | SEARCH | Uncaged, nothing designated. The hint is SELECT TARGET. |
+| Heat seeker | SLAVED | Following your radar lock, nothing designated yet. |
+| Heat seeker | DESIGNATED | An aircraft is picked, but there is no infrared lock. |
+| Heat seeker | IR LOCK | Infrared lock. Turns into SHOOT once the shot is cleared. |
+| Radar | NO LOCK | No radar target. The hint is SELECT TARGET, or HOLD: MADDOG when the scope is empty. |
+| Radar | LOCKING | You have a target, but its track isn't launch quality yet. |
+| Radar | MADDOG · NO IFF | Fire is held for a MADDOG shot. |
+| Radar | GUIDE LIMIT | Your radar is already guiding missiles onto as many targets as it can. |
+
+[Heat seekers](/weapons/heat-seekers/) explains caged, slaved, designated and locked.
+
+## Why a launch is refused
+
+Press fire when a launch isn't cleared and nothing goes. The reason shows centred on the HUD, in capitals, for 2.5 s:
+
+| Message | When |
+| --- | --- |
+| No rounds left | Both heat seekers are gone. |
+| No radar rounds left | All 4 radar missiles are gone. |
+| Seeker caged: uncage it or lock with the radar | Heat seeker selected, seeker neither uncaged nor slaved to a radar lock. |
+| No target in the seeker | No aircraft in the seeker's designation cone. |
+| Needs an infrared lock | A lock-before-launch heat seeker with no infrared lock. |
+| No launch-quality track | Radar missile, but the target's track isn't confirmed or is too old. |
+| Radar is guiding all the targets it can | Your radar's guidance limit is full. |
+| Reloading | Ground launcher only, during its 2 s reload. |
+
+## No launch-zone cue
+
+**The game shows no maximum- or minimum-range cue for either weapon.** What you get instead:
+
+- **SHOOT**, on the weapon line and on the lock box, whenever the launch is cleared.
+- **The lock box**, with the target's range and closing speed.
+- **The heat seeker's tone**: steady when locked.
+- **The radar missile's A and T timers** in the DATALINK list, once it's flying ([Radar missiles](/weapons/radar-missiles/#the-datalink-list)).
+
+SHOOT only means the launch rules are met. A heat seeker with an infrared lock gets SHOOT at any range, even out of its reach.
+
+<Callout kind="tip" title="In the cockpit: minimum range">
+  The short end of a shot is set by the **fuze**. Hit an aircraft before your missile has armed and it is a DUD STRIKE: damage, but no blast. Most Sidewinders arm after 304.8 m. [Fuzes, hits and misses](/weapons/fuze-and-hits/) has the arming rules.
+</Callout>
+
+## At launch
+
+- Each missile leaves from its own station, the right one of a pair first, and is gone from the jet until you rearm.
+- From a rail or a wing pylon it slides off forward. A heat seeker leaves at your jet's speed; a radar missile gets a 20 m/s push.<SimChoice />
+- From under the fuselage or out of a bay it drops clear first, at 6 m/s, and lights its motor 0.3 s later, below you.<SimChoice />
+- Your own missile can't hit you until it has flown clear of your jet.
+- Each of your missiles in the air gets a small diamond labelled FOX2 or FOX3. The one the HUD is following, normally your newest, is filled.
+- The heat seeker cages again after each shot.
