@@ -1,6 +1,6 @@
 import { createGetUrl } from "fumadocs-core/source";
 
-export const appName = "MissileSim Guide";
+export const appName = "Hardlock Guide";
 export const docsRoute = "/";
 export const docsImageRoute = "/og";
 

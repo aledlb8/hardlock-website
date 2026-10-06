@@ -16,7 +16,7 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <span className="flex items-center gap-2 text-[15px]">
           <Mark />
-          <span className="font-semibold tracking-tight">MissileSim</span>
+          <span className="font-semibold tracking-tight">Hardlock</span>
           <span className="font-normal text-fd-muted-foreground">Guide</span>
         </span>
       ),

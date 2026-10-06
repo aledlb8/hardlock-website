@@ -1,6 +1,6 @@
-# MissileSim Guide
+# Hardlock Guide
 
-The player's guide to MissileSim, built with [Fumadocs](https://fumadocs.dev)
+The player's guide to Hardlock, built with [Fumadocs](https://fumadocs.dev)
 on Next.js 16 and Tailwind CSS 4.
 
 ## Commands

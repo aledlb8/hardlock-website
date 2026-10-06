@@ -1,4 +1,4 @@
-# Writing for the MissileSim guide
+# Writing for the Hardlock guide
 
 The guide explains how the game plays to people who play it. It is a Fumadocs site.
 Every page is MDX in `content/docs/(<part>)/<section>/<page>.mdx`, where `<part>` is one

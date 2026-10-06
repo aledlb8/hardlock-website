@@ -55,12 +55,12 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-6 pb-20 pt-16 md:pt-24 lg:grid-cols-[1.05fr_1fr] lg:pb-28">
           <div>
-            <p className="text-sm font-medium text-fd-muted-foreground">The MissileSim player&rsquo;s guide</p>
+            <p className="text-sm font-medium text-fd-muted-foreground">The Hardlock player&rsquo;s guide</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-fd-foreground sm:text-6xl xl:text-7xl">
               Master the sky.
             </h1>
             <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-fd-muted-foreground">
-              Everything you need to fly, fight and survive in MissileSim: the jet, the radar, every missile, and how
+              Everything you need to fly, fight and survive in Hardlock: the jet, the radar, every missile, and how
               to beat the shot that&rsquo;s coming for you.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -207,9 +207,9 @@ export default function Home() {
 
       <footer className="border-t border-fd-border">
         <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-fd-muted-foreground">
-          <span>MissileSim Guide</span>
+          <span>Hardlock Guide</span>
           <span className="max-w-xl">
-            The radar, seekers and countermeasures in MissileSim are gameplay models, not a description of any real
+            The radar, seekers and countermeasures in Hardlock are gameplay models, not a description of any real
             system.
           </span>
         </div>
