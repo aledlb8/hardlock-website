@@ -1,12 +1,15 @@
 ---
 title: "Cameras"
-description: "The free, missile and fighter cameras: how to switch between them, what each one shows when you fly the jet and when you run the ground launcher, and the settings that change how they move."
+description: "The fighter, site, missile and free cameras: how to switch between them, what each one shows when you fly the jet and when you run the ground launcher, and the settings that change how they move."
 icon: Video
 ---
 
-There are three cameras, and <Key k="V" /> cycles through them: **free, then missile, then fighter, then back to free**. The HUD names the current one under the heading tape: FREE CAMERA, MISSILE CAMERA or FIGHTER CAMERA.
+<Key k="V" /> cycles the cameras, and the HUD names the current one under the heading tape.
 
-Choosing the fighter role puts you straight into the fighter camera.
+| Role | Cameras, in the order <Key k="V" /> steps through them | A match starts in |
+| --- | --- | --- |
+| Fighter | Free, missile, fighter | The fighter camera |
+| SAM site | Site, missile, free | The site camera |
 
 ## Fighter camera, flying the jet
 
@@ -22,9 +25,15 @@ Two settings change this camera:
 - **Camera lag** (Settings > Controls) sets how quickly the view catches up, from 25 ms to 300 ms. The default is about 83 ms.
 - **Field of view** (Settings > Display) runs from 30° to 100° and defaults to 50°.
 
-## Fighter camera, running the ground launcher
+## Site camera
 
-As the ground launcher you have no jet, so the fighter camera rides behind the enemy aircraft your missile is chasing, or the best target when no shot is in the air. Hold <Key k="RMB" hold /> and drag to orbit it.
+The SAM role's own view. It stands at the launch site, behind the launcher, facing north up the valley the enemy comes from. In the raid modes it stands over the command post's shoulder instead, with the base in front of it.
+
+- **It never moves on its own.** Launches, hits and blasts leave it where it is, so you can fire and keep watching the sky.
+- **Turn it:** hold <Key k="RMB" hold /> and drag. The seeker and the target key pick the aircraft nearest the middle of the view.
+- **Zoom:** the mouse wheel narrows the view to pick a far aircraft out of the sky, and turning gets finer as you zoom in.
+
+The site camera shows only what you could see from the ground. To follow your round, step to the missile camera.
 
 ## Missile camera
 
