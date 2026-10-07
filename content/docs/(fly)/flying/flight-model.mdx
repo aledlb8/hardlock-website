@@ -23,12 +23,13 @@ The F-16's aerodynamics and engine come from NASA TP-1538 (1979), a wind-tunnel 
 
 ## The other jets: point-mass airframes
 
-The other twelve jets fly a simpler model, fed only by the numbers on their catalog card: weight, thrust, wing area, g limits and a published sea-level top speed. Where nothing is published, a labelled estimate fills the cell.
+The other twelve jets fly a simpler model, fed by the numbers on their catalog card: weight, thrust, wing area and span, g limits, a sea-level top speed and a top speed at altitude. Where nothing is published, a labelled estimate fills the cell. Each jet's maximum lift, angle of attack and roll rate are sim choices, set to match its type's reputation.<SimChoice />
 
-- **Lift is capped by speed.** With a published wing area, the g you can pull falls away at low speed. The Su-35S, Su-57 and J-20A publish no wing area, so they have no lift cap and can pull their full g at any speed above 120 m/s.
-- **Drag** is set so that, where the card gives a sea-level top speed, the jet reaches exactly that speed at sea level on full thrust. Pulling g adds drag, so turning costs speed.
-- **Thrust is a fixed rating.** It does not fall off with altitude or Mach, and it changes the instant you move the throttle.
-- **Short response lags** keep a point mass from snapping: rolls and pulls build up over a fraction of a second, and the roll rate tops out at 180 °/s.
+- **Lift is capped by speed.** The g you can pull falls away at low speed, set by the wing area and the jet's maximum lift.
+- **Thrust falls with height and changes with Mach**, along the F-16's NASA engine data, scaled to each card's own ratings.<SimChoice />
+- **Drag rises steeply through Mach 1.** It is set so that on full afterburner each jet tops out at its card's sea-level speed down low and at its published top Mach up high.
+- **Turning costs speed.** More lift means more drag, and near maximum lift the drag climbs steeply. A long, slender wing bleeds less in a hard turn than a short delta.
+- **Short response lags** keep a point mass from snapping: rolls and pulls build up over a fraction of a second, up to each jet's own roll rate.
 
 [The roster](/aircraft/roster/) lists each card's figures and where they come from.
 
@@ -37,5 +38,5 @@ The other twelve jets fly a simpler model, fed only by the numbers on their cata
 Enemy aircraft use the same flight models and the same mouse-aim style controls as you. Their pilot supplies an aim direction and a throttle. The enemy flight is all point-mass jets; [Enemy pilots](/world/enemy-pilots/) covers how they decide where to point.
 
 <Callout kind="tip">
-  The F-16 is the only jet whose surfaces, inertia and engine spool you can feel. The point-mass jets answer through short fixed lags and keep full thrust at any height, so the same climb or high-altitude sprint feels different in an F-16 and in any other jet.
+  The F-16 is the only jet whose surfaces, inertia and engine spool you can feel. The point-mass jets answer through short fixed lags and their thrust never spools, but every jet loses thrust as it climbs, so none of them is faster high up than its card's top Mach.
 </Callout>

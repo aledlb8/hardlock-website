@@ -61,8 +61,10 @@ Every card can carry two weights. The **brochure mass** is whatever the public s
 
 For the point-mass jets:
 
-- **Thrust** is the card's military rating, and the afterburner switches to the maximum rating.
-- **Sea-level speed**, where the card states one, is the speed the jet reaches at sea level on full thrust. It is a drag target, not a hard limit.
+- **Thrust** is the card's military rating, and the afterburner switches to the maximum rating. Both fall with height and change with Mach, along the F-16's NASA engine data.<SimChoice />
+- **Sea-level speed and top speed** are the speeds the jet reaches on full afterburner at sea level and high up. They are drag targets, not hard limits.
+- **Span** sets how much a hard turn costs: a slender wing bleeds less than a short one.
+- **Handling** (the angle of attack at maximum lift and the roll rate) is a sim choice for every point-mass jet, set to match its type's reputation.<SimChoice />
 - **No cell is empty.** Where nothing is published, the card carries an open-source figure or a labelled estimate, and the jet flies it.<SimChoice />
 - **No point-mass jet can pass 1,300 m/s.**<SimChoice />
 
@@ -85,7 +87,7 @@ You see every missile still carried, on your jet and on the enemy's; one in a ba
 
 ## The hangar card
 
-Point at an aircraft in the hangar or on the tactical screen to open its card. It shows the model type and the card status ("Full table", "Brochure" or "Open-source estimate"), then mass, flown mass, thrust, wing area, load limits, sea-level speed and the radar, with the card's note underneath. **A figure with no official source is drawn faint** and says it is an estimate.
+Point at an aircraft in the hangar or on the tactical screen to open its card. It shows the model type and the card status ("Full table", "Brochure" or "Open-source estimate"), then mass, flown mass, thrust, wing area, load limits, sea-level speed, top speed, handling and the radar, with the card's note underneath. **A figure with no official source is drawn faint** and says it is an estimate.
 
 Under the aircraft in the hangar, four stat bars compare it with the fleet: THRUST / WEIGHT, WING LOADING, LOAD LIMIT and SEA-LEVEL SPEED.
 
@@ -106,6 +108,7 @@ The default jet and the only full airframe. Its forces, moments, inertia, contro
 | g limits | +9 / −3 | +9 is the published F-16C limit; −3 has no published source |
 | Angle of attack, roll rate | 25°, 308 °/s | public, NASA TP-1538 |
 | Speed | 1,555 km/h indicated-airspeed limit | published game data; shown on the card, not enforced in flight |
+| Top speed | Mach 2.05 at altitude | public; shown on the card. The game's F-16 reaches about Mach 1.95 at 11 km and Mach 1.4 at sea level |
 
 ## F-15C
 
@@ -120,6 +123,8 @@ The default jet and the only full airframe. Its forces, moments, inertia, contro
 | Wing area | 56.42 m² | published game data |
 | g limits | +9 / −4 | +9 public; −4 published game data |
 | Sea-level speed | 1,629 km/h | published game data (an airspeed limit) |
+| Top speed | Mach 2.5 at high altitude | public |
+| Handling | 30°, 200 °/s roll | estimate<SimChoice /> |
 
 The game flies the public +9 g, not the higher figure on a game card.
 
@@ -136,6 +141,8 @@ The game flies the public +9 g, not the higher figure on a game card.
 | Wing area | 500 ft², approximate | public, Naval Aviation News |
 | g limits | +7.5 / −5 | +7.5 public design load factor; −5 published game data |
 | Sea-level speed | 1,497 km/h | published game data (an airspeed limit) |
+| Top speed | Mach 1.6 at 40,000 ft | public |
+| Handling | 40°, 160 °/s roll | estimate<SimChoice /> |
 
 **The F/A-18E is the only jet held to +7.5 g.**
 
@@ -151,6 +158,8 @@ The game flies the public +9 g, not the higher figure on a game card.
 | Wing area | 78.04 m² | public, Lockheed |
 | g limits | +9 / −3 | public |
 | Sea-level speed | 1,482 km/h (Mach 1.21) | public |
+| Top speed | Mach 2.25 at altitude | public |
+| Handling | 35°, 220 °/s roll | estimate<SimChoice /> |
 
 ## F-35A
 
@@ -164,6 +173,8 @@ The game flies the public +9 g, not the higher figure on a game card.
 | Wing area | 460 ft² | public |
 | g limits | +9 / −3 | +9 public; −3 estimate<SimChoice /> |
 | Sea-level speed | 1,296 km/h | public, the 700 kt flight-test limit |
+| Top speed | Mach 1.6 | public |
+| Handling | 35°, 200 °/s roll | estimate<SimChoice /> |
 
 ## JAS 39E Gripen
 
@@ -178,6 +189,8 @@ The game flies the public +9 g, not the higher figure on a game card.
 | Wing area | 30.03 m² | published game data |
 | g limits | +9 / −3 | public, Saab |
 | Sea-level speed | 1,543 km/h | published game data. Saab only publishes "above 1,400 km/h" |
+| Top speed | Mach 2 at altitude | public |
+| Handling | 26°, 240 °/s roll | estimate<SimChoice /> |
 
 Its Raven ES-05 radar sits on a published roll-repositioning mount, so a hard lock can follow a target out to ±100°.
 
@@ -193,6 +206,8 @@ Its Raven ES-05 radar sits on a published roll-repositioning mount, so a hard lo
 | Wing area | 51.2 m² | public |
 | g limits | +9 / −3 | public |
 | Sea-level speed | 1,530 km/h | public |
+| Top speed | Mach 2.0 at altitude | public |
+| Handling | 28°, 250 °/s roll | estimate<SimChoice /> |
 
 ## Rafale C
 
@@ -207,6 +222,8 @@ Its Raven ES-05 radar sits on a published roll-repositioning mount, so a hard lo
 | Wing area | 45.55 m² | published game data |
 | g limits | +9 / −3.2 | public |
 | Sea-level speed | 750 kt | public, DGA low-altitude figure |
+| Top speed | Mach 1.8 at high altitude | public |
+| Handling | 30°, 250 °/s roll | estimate<SimChoice /> |
 
 ## MiG-29 9.13
 
@@ -222,6 +239,8 @@ Second aircraft in the enemy flight.
 | Wing area | 38.06 m² | public, museum |
 | g limits | +9 / −5 | +9 public; −5 published game data |
 | Sea-level speed | 1,500 km/h near the ground | public |
+| Top speed | Mach 2.25 (2,400 km/h) at altitude | public |
+| Handling | 28°, 190 °/s roll | estimate<SimChoice /> |
 
 Its N019 radar can guide missiles onto **only 2 targets at once**.
 
@@ -239,6 +258,8 @@ Lead and fourth aircraft in the enemy flight.
 | Wing area | 61.92 m² | published game data |
 | g limits | +9 / −4 | +9 public; −4 published game data |
 | Sea-level speed | 1,400 km/h | public, without stores |
+| Top speed | Mach 2.35 (2,500 km/h) at altitude | public |
+| Handling | 30°, 200 °/s roll | estimate<SimChoice /> |
 
 Its N001 radar can guide missiles onto **only 1 target at a time** (public).
 
@@ -256,6 +277,8 @@ Third aircraft in the enemy flight.
 | Wing area | 62.0 m² | open sources |
 | g limits | +9 / −4 | +9 public; −4 estimate, the Su-27S figure<SimChoice /> |
 | Sea-level speed | 1,400 km/h at 200 m | public |
+| Top speed | Mach 2.25 (2,400 km/h) at altitude | public |
+| Handling | 32°, 210 °/s roll | estimate<SimChoice /> |
 
 Its N035 Irbis-E is the only **passive electronically scanned (PESA)** radar, on a hydraulic drive that lets a hard lock follow a target out to ±120°.
 
@@ -271,6 +294,8 @@ Its N035 Irbis-E is the only **passive electronically scanned (PESA)** radar, on
 | Wing area | 78.8 m² | open sources |
 | g limits | +9 / −3 | +9 open sources; −3 estimate<SimChoice /> |
 | Sea-level speed | 1,350 km/h | public |
+| Top speed | Mach 2 at altitude | public |
+| Handling | 32°, 220 °/s roll | estimate<SimChoice /> |
 
 ## J-20A
 
@@ -286,3 +311,5 @@ The J-20A's card status is "Open-source estimate": China publishes no mass, thru
 | Wing area | about 73 m² | open sources |
 | g limits | +9 / −3 | estimate |
 | Sea-level speed | about 1,400 km/h | estimate, the Su-27S and Su-35S figure |
+| Top speed | about Mach 2 | open sources |
+| Handling | 30°, 200 °/s roll | estimate<SimChoice /> |
