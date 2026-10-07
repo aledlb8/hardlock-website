@@ -7,7 +7,7 @@ icon: TrendingUp
 The two missiles the enemy fires at you behave very differently once they have to turn:
 
 - **The R-73 heat seeker** turns on its fins once its motor burns out. High and slow, it can pull very little.
-- **The radar missile** can pull about 30 g at any height and speed, and turning costs it no speed.
+- **The radar missile** can pull up to about 30 g, but high and slow it gets far less, and every turn costs it speed.
 
 [How a missile flies](/weapons/missile-flight/) covers the flight model itself.
 
@@ -17,13 +17,21 @@ The enemy always fires the game's reference radar missile:
 
 <Facts>
   <dt>Motor</dt><dd>6 s burn</dd>
-  <dt>Turn limit</dt><dd>300 m/s², about 30.6 g, at any height and speed</dd>
+  <dt>Turn limit</dt><dd>up to 300 m/s², about 30.6 g, less in thin air and at low speed</dd>
   <dt>Seeker field of view</dt><dd>about 29° around its flight path</dd>
   <dt>Seeker switches on</dt><dd>within 16 km of where it expects you</dd>
   <dt>Battery</dt><dd>120 s</dd>
 </Facts>
 
-**Making the radar missile turn hard will not wear it down.** Only its normal drag and gravity take speed away. What works against it is breaking its seeker's track ([Notching](/survival/the-notch/) and [Chaff](/survival/chaff/)), getting outside its field of view, or terrain: it needs a clear line to you on every look.
+**Making it turn hard wears it down**, more so the higher and slower it is. After burnout it can pull:
+
+| Radar missile speed after burnout | Sea level | 6 km | 10 km |
+| --- | --- | --- | --- |
+| 600 m/s | about 30.6 g (its cap) | about 30.6 g | about 30.6 g |
+| 400 m/s | about 30.6 g | about 24 g | about 15 g |
+| 300 m/s | about 25 g | about 13.5 g | about 8.4 g |
+
+Breaking its seeker's track ([Notching](/survival/the-notch/) and [Chaff](/survival/chaff/)), getting outside its field of view, or terrain still work too: it needs a clear line to you on every look.
 
 ## The R-73
 
