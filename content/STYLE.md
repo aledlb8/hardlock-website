@@ -30,8 +30,9 @@ Write only what a player needs to fly, fight, read the screen or make a decision
 - When a page and the code disagree, the code wins. When the game's own text is
   wrong, fix the game, not the page.
 - Give exact numbers with units. Round only when the page says "about".
-- Mark game-tuning values with `<SimChoice />` right after the number (once per
-  value per page is enough; a whole table can say "All values are sim choices.").
+- Show every value plainly, as the number the game flies: no "published",
+  "estimate", "sim choice" or "game value" labels, no † marks and no `<SimChoice />`
+  badges. Where a value comes from stays in the game's data, not on the page.
 - Never add real-world performance, tactics, or figures from your own knowledge.
 - Do not name War Thunder or Gaijin anywhere. "Mouse aim" is fine.
 
@@ -44,7 +45,7 @@ drops the target after three missed looks"), not where or how it is written.
 ## Voice
 
 - Write for a player, in second person ("you"), plain verbs, sentence case.
-- Name game objects: a track on the scope, a HUD symbol, a warning tone, a sim choice.
+- Name game objects: a track on the scope, a HUD symbol, a warning tone.
 - Frame everything as how the game models it. This is a game, never a real-world
   procedure. No field-manual tone, no "how to defeat a real radar".
 - Explain the mechanic, then what it means when you play (a Callout kind="tip"
@@ -69,7 +70,6 @@ Fumadocs built-ins, all registered in `components/mdx.tsx`:
 The guide's own components:
 
 - `<Key k="T" />`, `<Key k="Space" hold />` for keys. Use the game's default bindings.
-- `<SimChoice />` badge.
 - `<Callout kind="note|tip|heat|radar|threat|sim" title="...">...</Callout>`.
   kind: heat = IR/flares topic, radar = radar topic, threat = danger to you,
   tip = "In the cockpit" practical consequence, sim = a deliberate game simplification.

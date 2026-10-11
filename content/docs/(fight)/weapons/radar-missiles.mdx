@@ -18,11 +18,11 @@ A radar missile flies in two halves. First it steers on **datalink updates from 
 
 After launch your radar feeds the missile its track. **An update goes up only when your radar has actually measured the target again**: a coasting track sends nothing, and the missile flies on the last update it had, moved on at the target's velocity at the time.
 
-**The link only runs while the track has a number** (or is your current target). Drop the number with <Key k="U" /> and that missile's datalink ends, even though the scope still shows the contact. An update counts as fresh for **5 s**.<SimChoice /> Losing the link doesn't end the shot.
+**The link only runs while the track has a number** (or is your current target). Drop the number with <Key k="U" /> and that missile's datalink ends, even though the scope still shows the contact. An update counts as fresh for **5 s**. Losing the link doesn't end the shot.
 
 ## The seeker switches on at 16 km
 
-The missile turns its seeker on when **its own estimate** of the target comes within **16 km**, for every radar missile in the game.<SimChoice />
+The missile turns its seeker on when **its own estimate** of the target comes within **16 km**, for every radar missile in the game.
 
 **Switching on is not the same as finding the target.** While searching, the seeker looks 40 times a second inside a cone of **about 29°** around the missile's nose, and only accepts an echo near where it expects the target and at about the closing speed it expects. The older the last update, the wider it looks, as far as a fighter pulling 3 g could have strayed. It needs a clear line of sight past the terrain, and the ground clutter and the notch work on it as on any radar ([Doppler, clutter and the notch](/radar/doppler-and-clutter/)).
 
@@ -32,7 +32,7 @@ When the seeker takes the target, the missile flies on its own measurements from
 
 **It calls the target lost after three missed looks in a row** (75 ms) and goes to **memory**: it flies its last estimate onward and keeps looking, with its gates widening over time. If your radar has measured the target more recently than the seeker did, it goes back to searching around your radar's position.
 
-**There is no memory timeout.** A missile that never finds its target flies until its **120 s** battery runs out and ends as BATTERY SPENT, with no detonation.<SimChoice />
+**There is no memory timeout.** A missile that never finds its target flies until its **120 s** battery runs out and ends as BATTERY SPENT, with no detonation.
 
 <Callout kind="radar" title="It homes on its estimate, not on the aircraft">
   Until its seeker has the target, the missile only knows what your radar last told it. If the target turns hard after your link drops, the missile flies to where the target would have been, and has to find it inside its widening search when the seeker comes on.
@@ -48,9 +48,9 @@ With the radar missile selected and **no target designated**, hold <Key k="F" ho
 
 - It doesn't need a track, and it doesn't count against your radar's guidance limit.
 - It flies at a point **50 km straight ahead** of where it was launched.
-- Its seeker comes on **0.5 s** after launch and searches a narrow **7.5°** cone around its nose.<SimChoice />
+- Its seeker comes on **0.5 s** after launch and searches a narrow **7.5°** cone around its nose.
 - **The first echo it sees becomes its target**: any aircraft or chaff cloud in that cone. There is no friend-or-foe check.
-- With nothing found **30 s** after its seeker came on, it ends as SELF-DESTRUCT.<SimChoice />
+- With nothing found **30 s** after its seeker came on, it ends as SELF-DESTRUCT.
 
 ## The DATALINK list
 
