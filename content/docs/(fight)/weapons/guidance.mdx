@@ -16,11 +16,11 @@ Proportional navigation asks for very little while the line of sight barely move
 - it is at full strength from **40°**;
 - it fades back to plain proportional navigation as the error closes.
 
-These angles are sim choices.<SimChoice /> The AIM-9B and R-3S wait 0.5 s and 0.6 s after launch before they steer at all.
+The AIM-9B and R-3S wait 0.5 s and 0.6 s after launch before they steer at all.
 
 ## Lock memory
 
-When a heat seeker loses its lock, it keeps flying at **the last track for 3 s**, moved on at the target's last velocity, and its seeker looks there to pick the target up again.<SimChoice /> The HUD's seeker label reads "Memory" meanwhile.
+When a heat seeker loses its lock, it keeps flying at **the last track for 3 s**, moved on at the target's last velocity, and its seeker looks there to pick the target up again. The HUD's seeker label reads "Memory" meanwhile.
 
 After those 3 s, a round that had a lock **stops steering** until its seeker finds the target again. Its label reads "Ballistic".
 
@@ -39,9 +39,9 @@ Named radar missiles climb on long shots. **This is a game-made arc, not a model
 
 | Style | Who gets it |
 | --- | --- |
-| Gentle arc | most named radar missiles, including every AIM-120 |
-| High arc | the Phoenix family and Fakour-90 |
-| Long arc | Meteor and AIM-260 |
+| Gentle loft | most named radar missiles, including every AIM-120 |
+| High loft | the Phoenix family and Fakour-90 |
+| Long loft | Meteor and AIM-260 |
 | Direct | the reference round |
 
 **Enemy radar missiles never loft.** They always fly the reference round.
