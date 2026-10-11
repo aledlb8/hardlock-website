@@ -14,7 +14,7 @@ Every enemy aircraft has its own pilot, its own radar, its own missiles and its 
 
 ## Every pilot is different
 
-Plans and habits are dealt afresh every match, so two matches rarely open the same way, and no two pilots in a flight fly alike. All values in this section are sim choices.
+Plans and habits are dealt afresh every match, so two matches rarely open the same way, and no two pilots in a flight fly alike.
 
 ### How it comes in
 
@@ -37,8 +37,6 @@ Every pilot also waits **up to 12 s** after it first learns where you are before
 - **The way it fights.** A favourite hand to crank to, a break turn that goes nose low or climbs, how often it throws in a yo-yo, how much lead it pulls on you, and how quickly it pumps chaff and flares (±30 %).
 
 ## What a pilot can see
-
-All of these are sim choices.
 
 | Sense | What it gives the pilot |
 | --- | --- |
@@ -104,7 +102,7 @@ A pilot considers its weapons in every behaviour except Evade and Return home, a
 
 ## Skill levels
 
-All values are sim choices, and changing the skill takes effect immediately. Each pilot's own numbers are [nudged](#its-habits) a little from these.
+Changing the skill takes effect immediately. Each pilot's own numbers are [nudged](#its-habits) a little from these.
 
 | | Rookie | Veteran | Ace |
 | --- | --- | --- | --- |
@@ -123,6 +121,8 @@ Once a pilot has heard one of your missiles for its reaction time, it switches t
 - **Veterans and Aces plan.** They test a set of escapes against their estimate of every missile they know about (running away, slicing off, beaming, turning in, each level, low or high) and fly the one with the biggest predicted miss. Running the missile out of energy and holding the Doppler notch against a radar missile both score well. The plan is redone every 0.5 s, and under 6 s from impact it becomes a maximum-performance break turn.
 
 While evading it uses full g (of its skill's share), afterburner, and goes as low as 150 m. The plan is the pilot's estimate, not the real missile, so it can still fail.
+
+**It stops running from a spent missile.** Once a pilot reckons one of your missiles has burned out, it stops evading that missile as soon as the missile is no longer closing on it, or is less than 30 m/s faster than the jet and more than 1 km away, and goes back to the fight. A launch it has only heard on its warning receiver, with no missile on its warner, always counts.
 
 It also releases its own chaff and flares; [Flares](/survival/flares/#what-the-enemy-does-with-flares) and [Chaff](/survival/chaff/#what-the-enemy-does-with-chaff) give the rules. Enemy aircraft carry four radar missiles, two R-73s, **24 flares and 30 chaff**.
 
