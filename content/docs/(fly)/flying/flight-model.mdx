@@ -1,42 +1,33 @@
 ---
 title: "How the jet flies"
-description: "The F-16 is a full airframe built on NASA wind-tunnel data with a fly-by-wire. The other twelve jets are simpler point-mass models built from published figures. Enemy jets fly the same models you do."
+description: "Every jet is a full airframe with forces, moments, inertia, moving control surfaces, a spooling engine and a fly-by-wire. Enemy jets fly the same models you do."
 icon: Wind
 ---
 
-The game has two flight models. **The F-16C Block 50 is a full airframe** with forces, moments, inertia and moving control surfaces. **Every other aircraft is a point mass** built from the figures on its catalog card. The hangar card labels each one "Six-degree-of-freedom model" or "Point-mass model".
+**Every aircraft in the game is a full airframe**, with forces, moments, inertia, control surfaces that move at limited rates and an engine that spools. Each jet has its own wing, weight, engines and limits, so no two fly alike.
 
-Whoever is flying, you or an enemy pilot, only says where the nose should go and how much thrust to use. The same flight model then flies the jet.
+Whoever is flying, you or an enemy pilot, only says where the nose should go and how much thrust to use. The jet's fly-by-wire then moves the surfaces.
 
-## The F-16: wind-tunnel data and a fly-by-wire
+## What every airframe has
 
-The F-16's aerodynamics and engine come from NASA TP-1538 (1979), a wind-tunnel and simulator study of the F-16, as printed in Stevens & Lewis, *Aircraft Control and Simulation*.
+- **Forces and moments** follow the jet's angle of attack, sideslip, speed and control surfaces, so the way it responds changes with speed and with how hard you pull.
+- **Real inertia**, and control surfaces that move at limited rates, so it takes a moment to start and stop a roll or a pull.
+- **A fly-by-wire flies the surfaces for you** and holds each jet's g, angle-of-attack and roll limits. See [G, angle of attack and energy](/flying/limits-and-energy/).
+- **An engine that spools**, with thrust that changes with altitude and Mach. See [Throttle, afterburner and fuel](/flying/engine-and-fuel/).
+- **Drag that rises steeply through Mach 1.** On full afterburner each jet tops out near its card's sea-level speed down low and its top Mach at 11 km. [The roster](/aircraft/roster/) lists them.
 
-- **Forces and moments** follow the jet's angle of attack, sideslip and control surfaces, so the way it responds changes with speed and with how hard you pull.
-- **It has real inertia** and control surfaces that move at limited rates, so it takes a moment to start and stop a roll or a pull.
-- **A fly-by-wire flies the surfaces for you** and holds the g, angle-of-attack and roll limits on [G, angle of attack and energy](/flying/limits-and-energy/).
-- **Its engine spools** and its thrust changes with altitude and Mach. See [Throttle, afterburner and fuel](/flying/engine-and-fuel/).
+The F-16's aerodynamics come from NASA TP-1538 (1979), a wind-tunnel and simulator study of the F-16, as printed in Stevens & Lewis, *Aircraft Control and Simulation*. The F-15C and F/A-18E fly public NASA research data carried to their own wings. The other jets' tables are built from their public size, weight and engines with textbook aerodynamics.
 
-<Callout kind="sim" title="Low-speed data at every speed">
-  The NASA tables are low-speed data, so lift and handling have no Mach effect. The only supersonic effect is a rise in drag past Mach 1.
+## Canards and thrust vectoring
+
+The Gripen, Typhoon, Rafale and J-20A move their canard foreplanes with the pitch command.
+
+Three jets vector their thrust: the **F-22A** in pitch (±20°), the **Su-35S** in pitch and yaw (±15°) and the **Su-57** in pitch and yaw (±16°). The nozzles follow the stick like an extra control surface. They turn the nose with engine thrust rather than airflow, so they keep working when the jet is slow.
+
+<Callout kind="sim" title="The F-16 has no Mach effect on lift">
+  The F-16's NASA tables are low-speed data, so its lift and handling are the same at every Mach; only its drag rises past Mach 1. On every other jet, lift and control power change with Mach and fall away above Mach 1.
 </Callout>
-
-## The other jets: point-mass airframes
-
-The other twelve jets fly a simpler model, fed by the numbers on their catalog card: weight, thrust, wing area and span, g limits, a sea-level top speed and a top speed at altitude. Where nothing is published, a labelled estimate fills the cell. Each jet's maximum lift, angle of attack and roll rate are sim choices, set to match its type's reputation.<SimChoice />
-
-- **Lift is capped by speed.** The g you can pull falls away at low speed, set by the wing area and the jet's maximum lift.
-- **Thrust falls with height and changes with Mach**, along the F-16's NASA engine data, scaled to each card's own ratings.<SimChoice />
-- **Drag rises steeply through Mach 1.** It is set so that on full afterburner each jet tops out at its card's sea-level speed down low and at its published top Mach up high.
-- **Turning costs speed.** More lift means more drag, and near maximum lift the drag climbs steeply. A long, slender wing bleeds less in a hard turn than a short delta.
-- **Short response lags** keep a point mass from snapping: rolls and pulls build up over a fraction of a second, up to each jet's own roll rate.
-
-[The roster](/aircraft/roster/) lists each card's figures and where they come from.
 
 ## Enemy jets fly the same model
 
-Enemy aircraft use the same flight models and the same mouse-aim style controls as you. Their pilot supplies an aim direction and a throttle. The enemy flight is all point-mass jets; [Enemy pilots](/world/enemy-pilots/) covers how they decide where to point.
-
-<Callout kind="tip">
-  The F-16 is the only jet whose surfaces, inertia and engine spool you can feel. The point-mass jets answer through short fixed lags and their thrust never spools, but every jet loses thrust as it climbs, so none of them is faster high up than its card's top Mach.
-</Callout>
+Enemy aircraft use the same flight models and the same mouse-aim style controls as you. Their pilot supplies an aim direction and a throttle. [Enemy pilots](/world/enemy-pilots/) covers how they decide where to point.

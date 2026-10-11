@@ -1,35 +1,39 @@
 ---
 title: "G, angle of attack and energy"
-description: "The F-16's fly-by-wire limits, the point-mass jets' lift cap, speed limits, the ground, how turning costs speed, and corner speeds."
+description: "Each jet's fly-by-wire limits, speed limits, the ground, how turning costs speed, and every jet's corner speed and turn rates."
 icon: Activity
 ---
 
-**You cannot over-stress or stall the jet.** On the F-16 a fly-by-wire holds every limit. On the other jets the lift cap and the card's g limits do the same job. Nothing breaks if you pull hard, because the game has no structural damage from g. **The ground is what kills you.**
+**You cannot over-stress or stall the jet.** Every jet's fly-by-wire holds its limits. Nothing breaks if you pull hard, because the game has no structural damage from g. **The ground is what kills you.**
 
-## The F-16's fly-by-wire limits
+## Fly-by-wire limits
 
-| Limit | Value |
-| --- | --- |
-| Positive g | +9 g |
-| Negative g | −3 g |
-| Angle of attack | 25° |
-| Roll rate | Up to 308 °/s, less at low speed and at high angle of attack, never below 80 °/s |
-| Rudder | ±6° of sideslip, fading out at high angle of attack |
-| Spin prevention | Above 29° angle of attack, roll commands are ignored |
+| Jet | g limits | Angle of attack | Roll rate |
+| --- | --- | --- | --- |
+| F-16C Block 50 | +9 / −3 | 25° | 308 °/s |
+| F-15C | +9 / −4 | 30° | 200 °/s |
+| F/A-18E | +7.5 / −5 | 45° | 160 °/s |
+| F-22A | +9 / −3 | 60° | 220 °/s |
+| F-35A | +9 / −3 | 50° | 200 °/s |
+| JAS 39E Gripen | +9 / −3 | 28° | 240 °/s |
+| Eurofighter Typhoon | +9 / −3 | 28° | 250 °/s |
+| Rafale C | +9 / −3.2 | 30° | 250 °/s |
+| MiG-29 9.13 | +9 / −5 | 28° | 190 °/s |
+| Su-27S | +9 / −4 | 30° | 200 °/s |
+| Su-35S | +9 / −4 | 44° | 210 °/s |
+| Su-57 | +9 / −3 | 50° | 220 °/s |
+| J-20A | +9 / −3 | 30° | 200 °/s |
 
-Two limits govern every pull: 25° of angle of attack, and the angle that would make 9 g. **Whichever comes first wins.** Fast, you hit 9 g first. Slow, you hit 25° long before 9 g, and the pull just stops getting harder.
+Two limits govern every pull: the angle-of-attack limit, and the angle that would make the g limit. **Whichever comes first wins.** Fast, you hit the g limit first. Slow, you hit the angle-of-attack limit long before it, and the pull just stops getting harder. On the F-22A and Su-35S the angle-of-attack limit sits past the angle where the wing makes the most lift: a full pull points the nose further, but the flight path turns no faster and the speed bleeds away.
 
-## Limits on the other jets
-
-The point-mass jets fly their card's g limits; [the roster](/aircraft/roster/) marks which are estimates.
-
-- **Lift cap:** the g available shrinks as you slow down, set by the wing area and the jet's maximum lift. That is how these jets run out of pull at low speed. They cannot stall or spin.
-- **Angle of attack:** the HUD shows it climbing to the jet's maximum-lift angle, from 26° on the Gripen to 40° on the F/A-18E.<SimChoice />
-- **Roll:** each jet's own rate, from 160 °/s on the F/A-18E to 250 °/s on the Typhoon and Rafale, cut to as little as 30 % of that at low speed.<SimChoice />
+- **Roll rate** is the most each jet will roll. It falls at low speed and at high angle of attack (on the F-16, never below 80 °/s).
+- **During a hard push**, while the fly-by-wire holds the nose at its lowest angle of attack, it also slows the roll, so rolling does not drag the nose through that limit.
+- **Rudder:** up to ±6° of sideslip, fading out as you near the angle-of-attack limit.
+- **Spin prevention:** 4 to 5° past the angle-of-attack limit (29° on the F-16), roll and rudder commands are ignored and the surfaces only stop the jet yawing.
 
 ## Speed limits
 
-**No jet takes damage from speed.** The F-16 has no airspeed limit in flight: its card shows a 1,555 km/h indicated-airspeed limit, but the flight model does not enforce it. The point-mass jets are capped at 1,300 m/s.<SimChoice />
+**No jet takes damage from speed, and no jet has an airspeed limit in flight.** Drag alone sets how fast each one goes.
 
 ## The ground
 
@@ -39,29 +43,31 @@ The HUD's ALT row is height above your base's ground level, **not height above t
 
 ## How turning costs speed
 
-Pulling g costs speed on every jet, because making more lift makes more drag. The harder the pull, the faster it grows: on the point-mass jets the extra drag grows with the square of your g, and faster still as you near maximum lift. A full 9 g pull in the F-16 at 3 km on afterburner bleeds about 100 m/s in 6 s.
+Pulling g costs speed on every jet, because making more lift makes more drag, and the harder the pull, the faster it grows. A full 9 g pull in the F-16 at 3 km on afterburner bleeds about 100 m/s in 6 s.
 
-The point-mass jets top out at their card's sea-level speed down low and at their published top Mach high up: Mach 1.6 for the F/A-18E and F-35A, Mach 2.5 for the F-15C. Drag rises steeply through Mach 1, so **the last few tenths of Mach come slowly**.
+On full afterburner each jet tops out at about its card's sea-level speed down low and its top Mach at 11 km ([the roster](/aircraft/roster/) lists them). Drag rises steeply through Mach 1, so **the last few tenths of Mach come slowly**.
 
-## Corner speed
+## Corner speed and turn rates
 
-Corner speed here is the slowest speed at which a jet can reach its g limit. Below it, the lift limit binds first. This is the instantaneous figure, not a sustained turn. Worked out from each card's numbers:
+Corner speed here is the speed to enter a full pull at for the fastest turn it gives. Slower, the wing runs out of lift before the g limit; faster, the g limit holds the turn rate down. All figures are on full afterburner and rounded, so read them as "about":
 
-| Jet | Sea level | 3 km |
-| --- | --- | --- |
-| F-16C (estimate) | about 186 m/s | about 216 m/s |
-| F-15C | 162 m/s | 188 m/s |
-| F/A-18E (+7.5 g) | 154 m/s | 179 m/s |
-| F-22A | 155 m/s | 180 m/s |
-| F-35A | 185 m/s | 214 m/s |
-| JAS 39E Gripen | 170 m/s | 198 m/s |
-| Eurofighter Typhoon | 152 m/s | 177 m/s |
-| Rafale C | 151 m/s | 175 m/s |
-| MiG-29 9.13 | 172 m/s | 199 m/s |
-| Su-27S | 168 m/s | 195 m/s |
-| Su-35S | 180 m/s | 209 m/s |
-| Su-57 | 155 m/s | 180 m/s |
-| J-20A | 173 m/s | 201 m/s |
+| Jet | Corner speed, sea level | Corner speed, 3 km | Fastest turn, 3 km | Best sustained turn, 3 km |
+| --- | --- | --- | --- | --- |
+| F-16C Block 50 | 190 m/s | 220 m/s | 23.5 °/s | 16.7 °/s at 266 m/s |
+| F-15C | 140 m/s | 165 m/s | 28.6 °/s | 19.0 °/s at 240 m/s |
+| F/A-18E | 140 m/s | 160 m/s | 24.2 °/s | 15.6 °/s at 242 m/s |
+| F-22A | 130 m/s | 155 m/s | 34.5 °/s | 19.3 °/s at 242 m/s |
+| F-35A | 140 m/s | 160 m/s | 30.0 °/s | 14.3 °/s at 293 m/s |
+| JAS 39E Gripen | 175 m/s | 195 m/s | 25.7 °/s | 14.1 °/s at 268 m/s |
+| Eurofighter Typhoon | 155 m/s | 175 m/s | 27.6 °/s | 17.5 °/s at 266 m/s |
+| Rafale C | 140 m/s | 165 m/s | 30.6 °/s | 18.8 °/s at 270 m/s |
+| MiG-29 9.13 | 165 m/s | 185 m/s | 26.3 °/s | 17.6 °/s at 266 m/s |
+| Su-27S | 155 m/s | 180 m/s | 27.6 °/s | 18.3 °/s at 268 m/s |
+| Su-35S | 145 m/s | 170 m/s | 28.7 °/s | 16.7 °/s at 267 m/s |
+| Su-57 | 120 m/s | 140 m/s | 34.4 °/s | 18.5 °/s at 267 m/s |
+| J-20A | 175 m/s | 200 m/s | 25.5 °/s | 14.8 °/s at 266 m/s |
+
+The fastest turn lasts only a moment: the pull bleeds speed at once. The sustained turn is the fastest level turn the jet can hold without slowing down.
 
 <Callout kind="tip">
   - Hard pulls are paid for in speed, and slow jets cannot pull much.

@@ -1,6 +1,6 @@
 ---
 title: "Throttle, afterburner and fuel"
-description: "The throttle's range and speed, how the afterburner works, how the F-16's engine spools compared with the other jets, why you never run out of fuel, and what the afterburner does to your heat signature."
+description: "The throttle's range and speed, how the afterburner works, how each engine spools, which jets supercruise, why you never run out of fuel, and what the afterburner does to your heat signature."
 icon: Flame
 ---
 
@@ -18,26 +18,26 @@ The throttle runs from 0 to 110 %. **100 % is full dry power, and anything above
 
 Every start and restart puts you at 85 %. The HUD's THR row shows the throttle as a percentage, with an inverted AB chip beside it while the afterburner is lit. **The afterburner is all or nothing**: anywhere past 100 % gives the same full afterburner.
 
-## The F-16's engine
+## The engine
 
-The F-16's engine follows the NASA study's engine data, scaled to the Block 50's F110-GE-129. At a standstill at sea level it gives 14,807.7 lbf dry and 24,655.2 lbf with afterburner, and its thrust changes with altitude and Mach. Above Mach 1 its fixed intake loses pressure through the shock in front of it, so thrust falls away and the jet tops out near Mach 1.95 high up.
+Every jet's engine follows the F-16's NASA engine data, scaled to its own ratings, so on every jet thrust falls with height and changes with Mach. [The roster](/aircraft/roster/) lists each jet's dry and afterburner thrust at a standstill at sea level. Every jet has an afterburner, and lighting it always adds thrust.
 
-**It spools.** From idle it takes about 4 s to reach military power and about 5 s to reach full afterburner. From military power the afterburner lights in about half a second.
+**Every engine spools.** From idle it takes about 4 s to reach military power and about 5 s to reach full afterburner. From military power the afterburner lights in under a second. **The Rafale C spools faster**: about 2.5 s from idle to military power and about 3 s to full afterburner.
 
 At idle and high speed the engine pushes backwards, so chopping the throttle at speed slows you faster than drag alone would.
 
-## The other jets
+The F-16's fixed intake loses pressure through the shock in front of it above Mach 1, so its thrust falls away and it tops out near Mach 1.95 high up.
 
-The point-mass jets have **no spool lag**: thrust changes the moment you move the throttle. Like the F-16's, it falls with altitude and changes with Mach, following the same NASA engine data scaled to each card's ratings.<SimChoice />
+## Supercruise
 
-Every jet has a dry and an afterburner rating, so lighting the afterburner always adds thrust. The J-20A's ratings are estimates.<SimChoice />
+Two jets fly well past Mach 1 without the afterburner: at 11 km the **F-22A** reaches **Mach 1.82** on dry power and the **Typhoon Mach 1.49**. Every other jet tops out near Mach 1 on dry power (the F-16 at Mach 1.12), and needs the afterburner to go faster.
 
 ## The afterburner and your heat signature
 
 Your heat signature is the same at any throttle setting, with one exception: **the AIM-9D** sees a lit afterburner four times brighter from behind, and can see it within 20° of your nose head-on. Every other heat seeker, including the R-73 the enemy fires, sees you the same whatever your throttle. [Heat seekers](/weapons/heat-seekers/) explains the seeker side.
 
 <Callout kind="tip">
-  - On the F-16, open the throttle before you need the speed.
+  - Open the throttle before you need the speed: the engine takes seconds to spool up.
   - Against the enemy's R-73, cancelling the afterburner makes no difference.
-  - On the F-22A, Su-57 and J-20A, there is nothing to gain by lighting the afterburner.
+  - In the F-22A or the Typhoon, cruise fast on dry power and save the afterburner for the fight.
 </Callout>
