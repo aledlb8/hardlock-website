@@ -4,7 +4,7 @@ description: "The speed band in which the game's radars and radar seekers lose y
 icon: MoveHorizontal
 ---
 
-The game's radars and radar-missile seekers throw away echoes whose speed matches the ground behind them. **If your speed along their line of sight, measured against the ground, is inside the notch band, you are blanked, but only while the ground is behind you in their beam.** [Doppler, clutter and the notch](/radar/doppler-and-clutter/) explains the same rule from your own scope.
+In the game, ground clutter can hide your radar echo when the two overlap in apparent range and speed. **Being inside the notch band does not guarantee that a radar or missile loses you:** a strong return can still show, and distant ground at the edge of the beam may not overlap your echo. [Doppler, clutter and the notch](/radar/doppler-and-clutter/) explains the same rule from your own scope.
 
 ## The band, in numbers
 
@@ -15,7 +15,7 @@ The game's radars and radar-missile seekers throw away echoes whose speed matche
 | MiG-29 radar (N019) | ±25.7 m/s | 51.4 m/s |
 | Su-35S radar (Irbis-E) | ±23.15 m/s | 46.3 m/s |
 
-The blanked band reaches a few m/s past the guard, and is wider when the radar looks far off its own flight path at speed. Enemy airframes cycle Su-27S, MiG-29, Su-35S, Su-27S, so the default flight of two is a Su-27S and a MiG-29. The briefing's **Their aircraft** row can put the whole flight in one type.
+The clutter band reaches a few m/s past the guard, and is wider when the radar looks far off its own flight path at speed. Enemy airframes cycle Su-27S, MiG-29, Su-35S, Su-27S, so the default flight of two is a Su-27S and a MiG-29. The briefing's **Their aircraft** row can put the whole flight in one type.
 
 ## The speed gate
 
@@ -23,7 +23,7 @@ On top of the notch, a fighter radar in search or track-while-scan **ignores any
 
 ## The ground has to be behind you
 
-- **Radar or missile above you, looking down:** the ground is in its beam and the notch applies.
+- **Radar or missile above you, looking down:** overlapping ground returns can hide your echo.
 - **Radar below you, looking up:** the sky is behind you and there is no notch. A fighter radar's search speed gate can still drop you, but a missile seeker has no speed gate.
 
 The rougher the ground behind you, the more it helps: mountains and wooded hills return far more clutter than flat ground or water.
@@ -39,7 +39,7 @@ Your speed along the line of sight is your speed times the cosine of the angle b
 
 The real window is a little wider, because the band reaches past the guard. The band is fixed in m/s, so **the faster you fly, the narrower the window in angle**.
 
-Try it below. Set your speed and heading and pick who is looking. The explorer applies the same rules as this page: the notch guard, the search speed gate, and the ground-behind condition.
+Try it below. Set your speed and heading and pick who is looking. The explorer shows the notch guard, search speed gate and ground-behind geometry. It does not predict detection: range, return strength and terrain also matter.
 
 <NotchExplorer />
 

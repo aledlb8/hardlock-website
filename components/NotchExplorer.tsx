@@ -149,20 +149,20 @@ export function NotchExplorer() {
     verdict = {
       tone: "friendly",
       title: "In the notch",
-      body: "Your Doppler sits inside the blanked ground clutter, so this look can't see you. Hold it: the seeker needs only three missed looks in a row (75 ms) to fall back to memory.",
+      body: "Your echo is in the ground-clutter band. Overlapping clutter may hide it, but a strong return can remain visible. This diagram shows geometry, not a guaranteed loss of tracking.",
     };
   } else if (lookDown && absRadial < sensor.guard + 6) {
     verdict = {
       tone: "heat",
       title: "On the edge",
-      body: "The blanked band is the guard plus about one Doppler filter (2.4 to 5.6 m/s), and the beam's own clutter spread can widen it. Some looks may miss you, some won't.",
+      body: "The clutter band extends past the guard, and the beam's own clutter spread can widen it. Range and return strength also decide whether a look detects you.",
     };
   } else {
     verdict = {
       tone: "threat",
-      title: "Visible",
+      title: "Outside the central notch",
       body: lookDown
-        ? "Your speed along the line of sight is outside the blanked band. The ground behind you doesn't hide you."
+        ? "Your speed along the line of sight is outside the central clutter band. Other ground returns can still weaken detection."
         : "With only sky behind you there's no notch. Only a radar in search or track-while-scan can lose you, through its speed gate.",
     };
   }
@@ -284,7 +284,7 @@ export function NotchExplorer() {
       </div>
       <figcaption className="mt-3 text-[12.5px] leading-relaxed text-fd-muted-foreground">
         The game&rsquo;s notch rule, simplified to one look. The band shown is the minimum, the guard alone. In the game
-        the blanked band is the wider of the guard and the beam&rsquo;s own clutter spread, plus about one Doppler filter,
+        the clutter band is the wider of the guard and the beam&rsquo;s own clutter spread, plus about one Doppler filter,
         and every look also rolls for detection.
       </figcaption>
     </figure>
