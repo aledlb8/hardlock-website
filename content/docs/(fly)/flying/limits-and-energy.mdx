@@ -1,6 +1,6 @@
 ---
 title: "G, angle of attack and energy"
-description: "Each jet's fly-by-wire limits, the g override and over-g, speed limits, the ground, how turning costs speed, and every jet's corner speed and turn rates."
+description: "Each jet's fly-by-wire limits, what lowers the g limit, the g override and over-g, speed limits, the ground, how turning costs speed, and every jet's corner speed and turn rates."
 icon: Activity
 ---
 
@@ -8,21 +8,21 @@ icon: Activity
 
 ## Fly-by-wire limits
 
-| Jet | g limits | Angle of attack | Roll rate |
-| --- | --- | --- | --- |
-| F-16C Block 50 | +9 / −3 | 25° | 308 °/s |
-| F-15C | +9 / −4 | 30° | 200 °/s |
-| F/A-18E | +7.5 / −5 | 45° | 160 °/s |
-| F-22A | +9 / −3 | 60° | 220 °/s |
-| F-35A | +9 / −3 | 50° | 200 °/s |
-| JAS 39E Gripen | +9 / −3 | 28° | 240 °/s |
-| Eurofighter Typhoon | +9 / −3 | 28° | 250 °/s |
-| Rafale C | +9 / −3.2 | 30° | 250 °/s |
-| MiG-29 9.13 | +9 / −5 | 28° | 190 °/s |
-| Su-27S | +9 / −4 | 30° | 200 °/s |
-| Su-35S | +9 / −4 | 44° | 210 °/s |
-| Su-57 | +9 / −3 | 50° | 220 °/s |
-| J-20A | +9 / −3 | 30° | 200 °/s |
+| Jet | g limits | Full g up to | Angle of attack | Roll rate |
+| --- | --- | --- | --- | --- |
+| F-16C Block 50 | +9 / −3 | 11,070 kg | 25° | 308 °/s |
+| F-15C | +9 / −4 | 17,115 kg | 30° | 200 °/s |
+| F/A-18E | +7.5 / −5 | 18,053 kg | 45° | 160 °/s |
+| F-22A | +9 / −3 | 24,651 kg | 60° | 220 °/s |
+| F-35A | +9 / −3 | 18,339 kg | 50° | 200 °/s |
+| JAS 39E Gripen | +9 / −3 | 10,610 kg | 28° | 240 °/s |
+| Eurofighter Typhoon | +9 / −3 | 14,235 kg | 28° | 250 °/s |
+| Rafale C | +9 / −3.2 | 13,260 kg | 30° | 250 °/s |
+| MiG-29 9.13 | +9 / −5 | 14,200 kg | 28° | 190 °/s |
+| Su-27S | +9 / −4 | 21,910 kg | 30° | 200 °/s |
+| Su-35S | +9 / −4 | 25,660 kg | 44° | 210 °/s |
+| Su-57 | +9 / −3 | 24,260 kg | 50° | 220 °/s |
+| J-20A | +9 / −3 | 25,650 kg | 30° | 200 °/s |
 
 Two limits govern every pull: the angle-of-attack limit, and the angle that would make the g limit. **Whichever comes first wins.** Fast, you hit the g limit first. Slow, you hit the angle-of-attack limit long before it, and the pull just stops getting harder. On the F-22A and Su-35S the angle-of-attack limit sits past the angle where the wing makes the most lift: a full pull points the nose further, but the flight path turns no faster and the speed bleeds away.
 
@@ -31,24 +31,37 @@ Two limits govern every pull: the angle-of-attack limit, and the angle that woul
 - **Rudder:** up to ±6° of sideslip, fading out as you near the angle-of-attack limit.
 - **Spin prevention:** 4 to 5° past the angle-of-attack limit (29° on the F-16), roll and rudder commands are ignored and the surfaces only stop the jet yawing.
 
+## When the g limit is lower
+
+The +g limit in the table is for a jet flying straight into the pull, no heavier than its **full g** mass. Three things lower it, and the fly-by-wire holds the lower limit:
+
+- **Rolling while you pull.** At full roll rate the limit falls to **80 %**, 7.2 g on a 9 g jet, because one wing carries more of the load. A small roll, up to a fifth of the jet's roll rate, keeps the full limit. Roll first and then pull, and you get all of it.
+- **Weight.** Every missile on board weighs what it weighs, and firing one makes the jet lighter. The roster's mass is the jet with two heat seekers; the radar rounds add theirs. Up to the full-g mass nothing changes. Past it, the limit falls in proportion: 10 % over that mass costs about 9 % of the g. Four of the default radar rounds keep every jet under it, and four 190 kg rounds such as the Meteor cost about a tenth of a g. Heavy rounds cost more: a MiG-29 with four AIM-54A rounds pulls 8.5 g.
+- **Speed, on the MiG-29 9.13.** It holds 9 g up to Mach 0.85, then the limit falls to **7 g** by Mach 0.90 and stays there faster.
+
+The hangar card shows the full-g mass as **Full g up to**, and the MiG-29's card adds **Past Mach 0.90: +7.0 g**.
+
 ## The g override and over-g
 
 Hold <Key k="L Alt" hold /> to pull past the g limit, on the jets that allow it:
 
 | Jet | With the override held |
 | --- | --- |
-| F/A-18E | The limit rises to +10 g. |
+| F/A-18E | The limit rises by a third: +10 g straight, 8 g in a full rolling pull. |
 | F-15C, MiG-29 9.13, Su-27S | No g ceiling. The jet pulls as hard as the wing can lift, which at speed is far more than the wing can take. The angle-of-attack limit still holds. |
 | Every other jet | Nothing changes. The limit is hard. |
 
 The hangar card's **G override** line shows the same: To +10.0 g, No g ceiling, or None.
 
-**Past the limit, the airframe bends.** The HUD's G row blinks OVER-G while you are past it. Each pull costs structure by how far past the limit it peaks, not by how long you hold it, and the next pull costs again:
+**Past the limit, the airframe bends.** Each pull costs structure by how far past the bending point it peaks, not by how long you hold it, and the next pull costs again. Every number below follows the limit you have at that moment, so a rolling or heavy pull bends and breaks lower.
 
-- **A small overshoot is free.** Up to 0.2 g past the limit bends nothing.
-- **The wing fails at about 1.5 times the limit:** about 13 g on a fresh 9 g jet, and about 10.9 g on a fresh F/A-18E. Lost structure brings that closer, from missile blasts or from earlier over-g pulls. A jet with half its structure gone breaks halfway between its limit and 1.5 times it.
-- **A full override pull to 10 g in the F/A-18E** costs about 6% of the structure. Five of them leave the wing just strong enough; the sixth breaks it.
+- **A small overshoot is free.** Nothing bends until **1.14 times the limit**: 10.3 g on a 9 g jet, 8.6 g on the F/A-18E.
+- **An 11 g pull in a 9 g jet** costs about 2 % of the structure.
+- **A full override pull to 10 g in the F/A-18E** costs about 5 %. About ten of them break the wing.
+- **The wing fails** at about 13.2 g on a fresh 9 g jet and about 11 g on a fresh F/A-18E: near 1.5 times the limit, a little lower because the pull bends the wing on the way up. Lost structure brings it closer, from missile blasts or earlier over-g. With half the structure gone, a 9 g jet breaks near 11.9 g.
 - **When the wing fails**, the jet breaks up where it is flying and the HUD shows WING FAILED.
+
+The HUD's G row shows an inverted OVRD chip while you hold the override, and blinks OVER-G while the override takes you past the limit or the airframe bends.
 
 <Callout kind="threat">
   On the F-15C, MiG-29 9.13 and Su-27S, holding the override at high speed with the aim circle far off the nose reaches 13 g in a fraction of a second. Use it in a short, deliberate pull and let go.
