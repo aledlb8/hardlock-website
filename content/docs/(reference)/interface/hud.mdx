@@ -50,7 +50,7 @@ The block under the mission state shows your jet's numbers, or the missile's whe
 | SPD | Speed in km/h. |
 | ALT | Height in metres above your base's ground level, **not above the ground under you**. |
 | M | Mach number. |
-| G | Load factor. |
+| G | Load factor, with an inverted OVRD chip while the g override is held on a jet that has one, and a blinking OVER-G chip during any pull past the g limit and for 1 s after. |
 | THR | Your throttle in %, with an inverted AB chip while the afterburner is lit (jet only). |
 | FUEL | Propellant left in % (missile only). |
 | T+ | Seconds since launch (missile only). |
@@ -107,9 +107,9 @@ One short message at a time appears just above the weapon line, in this order of
 
 When one of your missiles destroys an aircraft, **SPLASH** appears in large capitals a quarter of the way down the screen, with the target's number, the weapon and how far away it fell, as in `T3 · AIM-9X BLOCK II · 2.4 KM`. It holds for 2.4 s.
 
-## SHOT DOWN and CRASHED
+## SHOT DOWN, CRASHED and WING FAILED
 
-When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile got you) or **CRASHED** (you hit the ground) appears in the same place. Under it: `ESC · RESTART ENGAGEMENT` when you are down for good in the sandbox, NEXT JET TAKING OFF when the scenario gives you another jet, or MISSION OVER when the match ends. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
+When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile got you), **CRASHED** (you hit the ground) or **WING FAILED** (you pulled past the breaking load, see [over-g](/flying/limits-and-energy/#the-g-override-and-over-g)) appears in the same place. Under it: `ESC · RESTART ENGAGEMENT` when you are down for good in the sandbox, NEXT JET TAKING OFF when the scenario gives you another jet, or MISSION OVER when the match ends. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
 
 ## The flash along the bottom edge
 
@@ -129,4 +129,4 @@ A quiet row at the bottom left shows <Key k="Tab" /> TACTICAL, <Key k="Z" /> CHA
 
 ## What the HUD does not have
 
-The HUD has **no pitch ladder, no flight-path marker, no horizon line**, no stall, pull-up or over-g warning, and no fuel gauge for your own jet.
+The HUD has **no pitch ladder, no flight-path marker, no horizon line**, no stall or pull-up warning, and no fuel gauge for your own jet.

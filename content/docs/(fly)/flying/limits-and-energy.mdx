@@ -1,10 +1,10 @@
 ---
 title: "G, angle of attack and energy"
-description: "Each jet's fly-by-wire limits, speed limits, the ground, how turning costs speed, and every jet's corner speed and turn rates."
+description: "Each jet's fly-by-wire limits, the g override and over-g, speed limits, the ground, how turning costs speed, and every jet's corner speed and turn rates."
 icon: Activity
 ---
 
-**You cannot over-stress or stall the jet.** Every jet's fly-by-wire holds its limits. Nothing breaks if you pull hard, because the game has no structural damage from g. **The ground is what kills you.**
+**You cannot stall the jet, and you cannot over-g it by accident.** Every jet's fly-by-wire holds its limits. A few jets let you pull past the g limit on purpose with the [g override](#the-g-override-and-over-g), and that is the only way to bend or break one.
 
 ## Fly-by-wire limits
 
@@ -30,6 +30,29 @@ Two limits govern every pull: the angle-of-attack limit, and the angle that woul
 - **During a hard push**, while the fly-by-wire holds the nose at its lowest angle of attack, it also slows the roll, so rolling does not drag the nose through that limit.
 - **Rudder:** up to ±6° of sideslip, fading out as you near the angle-of-attack limit.
 - **Spin prevention:** 4 to 5° past the angle-of-attack limit (29° on the F-16), roll and rudder commands are ignored and the surfaces only stop the jet yawing.
+
+## The g override and over-g
+
+Hold <Key k="L Alt" hold /> to pull past the g limit, on the jets that allow it:
+
+| Jet | With the override held |
+| --- | --- |
+| F/A-18E | The limit rises to +10 g. |
+| F-15C, MiG-29 9.13, Su-27S | No g ceiling. The jet pulls as hard as the wing can lift, which at speed is far more than the wing can take. The angle-of-attack limit still holds. |
+| Every other jet | Nothing changes. The limit is hard. |
+
+The hangar card's **G override** line shows the same: To +10.0 g, No g ceiling, or None.
+
+**Past the limit, the airframe bends.** The HUD's G row blinks OVER-G while you are past it. Each pull costs structure by how far past the limit it peaks, not by how long you hold it, and the next pull costs again:
+
+- **A small overshoot is free.** Up to 0.2 g past the limit bends nothing.
+- **The wing fails at about 1.5 times the limit:** about 13 g on a fresh 9 g jet, and about 10.9 g on a fresh F/A-18E. Lost structure brings that closer, from missile blasts or from earlier over-g pulls. A jet with half its structure gone breaks halfway between its limit and 1.5 times it.
+- **A full override pull to 10 g in the F/A-18E** costs about 6% of the structure. Five of them leave the wing just strong enough; the sixth breaks it.
+- **When the wing fails**, the jet breaks up where it is flying and the HUD shows WING FAILED.
+
+<Callout kind="threat">
+  On the F-15C, MiG-29 9.13 and Su-27S, holding the override at high speed with the aim circle far off the nose reaches 13 g in a fraction of a second. Use it in a short, deliberate pull and let go.
+</Callout>
 
 ## Speed limits
 
