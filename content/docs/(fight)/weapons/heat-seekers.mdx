@@ -1,10 +1,10 @@
 ---
 title: "Heat seekers (Fox 2)"
-description: "How the rail seeker is powered, aimed and locked, what an aircraft's heat looks like from each angle, lock before and after launch, and how flares pull it away."
+description: "How the rail seeker is powered, aimed and locked, how hot each jet runs and why, what cloud, rain, haze and hills hide, how the sun and its glint fool a seeker, and how flares pull it away."
 icon: Thermometer
 ---
 
-Your fighter carries two heat seekers, and the enemy fires the R-73. A heat seeker sees aircraft and flares, nothing else. **Every aircraft in the game gives off exactly the same heat**, whatever its throttle or speed. What the seeker gets depends on the angle it views that heat from.
+Your fighter carries two heat seekers, and the enemy fires the R-73. A heat seeker sees aircraft, flares, the sun and the sun's reflection on water. **How bright a jet looks depends on its engine, its speed, the angle you see it from and the air in between**: a jet in afterburner glows, one at idle fades, and one inside a cloud vanishes.
 
 ## Powering and aiming the seeker
 
@@ -19,7 +19,7 @@ On the HUD, a small circle shows where the head is looking. The seeker tone tell
 
 | Seeker state | Tone |
 | --- | --- |
-| Searching | a growl that rises as an aircraft nears the head's line of sight |
+| Searching | a growl that rises as an aircraft nears the head's line of sight, but only one the head could lock right now |
 | Designated, not locked | the growl, a little higher |
 | Locked | a steady clean tone |
 
@@ -42,22 +42,75 @@ In flight the head can never look further from the missile's body than its **gim
 
 [The missile catalog](/weapons/catalog/) lists each round's gimbal and seeker.
 
+## How hot a jet runs
+
+A jet's heat has four parts:
+
+- **The hot tailpipe.** It follows the engine's power, which lags the throttle. When you throttle back, the metal keeps its heat for a while: about two thirds of the extra heat is gone after 6 s and nearly all of it after 15 s. Throttling up heats it again within a few seconds.
+- **The exhaust.** It follows the engine's power at once.
+- **The afterburner's flame.** At full afterburner it makes an F-16C's tail about **four times brighter** than at military power. It grows as the afterburner lights.
+- **The skin**, warmed by the air it rams. It barely shows below Mach 1. At Mach 1.5 it is about an eighth of an F-16C's military tail and at Mach 2 about a third, the same from every side.
+
+Bigger engines run hotter, and a shaped nozzle hides some of the tailpipe from behind. Seen from dead astern, settled, against an F-16C at military power:
+
+| Aircraft | Military | Idle | Full afterburner |
+| --- | --- | --- | --- |
+| F-16C Block 50 | 1.00 | 0.24 | 4.2 |
+| Gripen E | 0.95 | 0.23 | 3.9 |
+| F-35A | 0.99 | 0.23 | 5.0 |
+| F-22A | 1.05 | 0.23 | 6.8 |
+| Rafale C | 1.21 | 0.29 | 5.0 |
+| MiG-29 9.13 | 1.23 | 0.29 | 5.1 |
+| F-15C | 1.34 | 0.32 | 5.6 |
+| F/A-18E | 1.34 | 0.32 | 5.6 |
+| Typhoon | 1.35 | 0.32 | 5.6 |
+| Su-27S | 1.51 | 0.36 | 6.3 |
+| Su-57 | 1.51 | 0.36 | 6.6 |
+| J-20A | 1.51 | 0.36 | 6.7 |
+| Su-35S | 1.62 | 0.39 | 6.7 |
+
+The F-22A's and F-35A's nozzles hide their tailpipes well, but nothing hides an afterburner's flame. The HUD's HEAT figure shows your own tail heat against your jet's at military power; see [the HUD](/interface/hud/#flight-data).
+
 ## Heat and aspect
 
-The seeker reads the aircraft's heat times an **aspect factor** that depends on the seeker type:
+The seeker reads each part of the heat through an **aspect factor** that depends on the seeker type:
 
-| Seeker aspect | What it sees |
-| --- | --- |
-| Rear | Only from behind. **Nothing at or ahead of the target's beam.** |
-| Rear cone (Magic I) | Only within 70° of the tail. |
-| All-aspect | From every angle, but head-on only a fifth as bright as from dead astern. |
-| Afterburner nose gate (AIM-9D only) | Rear, **four times brighter** when the target is in afterburner, and head-on within 20° of its nose while the afterburner is lit. |
+| Seeker aspect | Tailpipe and exhaust | Afterburner flame | Skin |
+| --- | --- | --- | --- |
+| Rear | Only from behind. **Nothing at or ahead of the target's beam.** | From behind, and from the side: half as bright on the beam, nothing nose-on. | Never |
+| Rear cone (Magic I) | Only within 70° of the tail. | Only within 70° of the tail. | Never |
+| All-aspect | From every angle, but head-on only a fifth as bright as from dead astern. | As the tailpipe, or as a rear head sees it, whichever is brighter. | From every side |
+| Afterburner nose gate (AIM-9D only) | As a rear head. | As a rear head, and head-on within 20° of the nose a twentieth of it. | Never |
 
-**Afterburner only matters to the AIM-9D.** No other seeker reads it.
+**Range.** Every seeker has a **lock range** against an F-16C at military power seen from dead astern, from 6 km for the rear-aspect rounds to about 22 km for the RVV-MD; [the missile catalog](/weapons/catalog/) lists them. Against other heat it grows with the **square root** of the heat: four times the heat locks at twice the range, a quarter of it at half. So a jet in full afterburner is seen about twice as far, and one throttled back to idle at half the range. Nose-on, an all-aspect head sees only a fifth of the tailpipe plus the skin. Beyond its lock range the seeker sees nothing, even slaved to a radar lock. Whether a round can *reach* that far is down to its motor.
 
-**Range.** Every seeker has a **lock range** against a fighter seen from dead astern, from 6 km for the rear-aspect rounds to about 22 km for the RVV-MD; [the missile catalog](/weapons/catalog/) lists them. It shrinks as the aspect moves forward: nose-on, an all-aspect head locks at under half of it. Beyond it the seeker sees nothing, even slaved to a radar lock. Whether a round can *reach* that far is down to its motor.
+## What hides heat
 
-**What it ignores.** A heat seeker has **no line-of-sight check against the terrain**: a hill between it and the target does not break its lock. There is no sun and no ground heat either.
+The seeker looks through the same sky you see, set by the weather on [the briefing map](/world/game-flow/#the-briefing-map):
+
+- **Cloud.** Heat inside or behind a cloud is lost in it: a hundred metres of thick cloud leaves about 1 %. A jet deep in a cloud can't be locked, and a missile tracking it loses it. The clouds drift with the wind.
+- **Rain**, under a Storm's clouds: the heaviest rain takes about 45 % of the heat in every kilometre.
+- **Haze.** On a Hazy day a 5 km shot near the ground keeps about 40 % of the heat; the haze thins with height and hardly matters above 5 km. Cloudy, Overcast and Storm skies carry a little haze too; Clear and Fair carry none that matters.
+- **Terrain.** A hill or the ground between the seeker and the target hides it completely.
+
+Flares are dimmed by cloud, rain and haze the same way.
+
+## The sun and its glint
+
+The sun is far brighter than any jet. A head takes it, the way it takes a flare, when the sun stands close to the target in its view:
+
+| Flare rejection | Takes the sun within | Takes the glint |
+| --- | --- | --- |
+| None | 9° of the target | yes |
+| Rise-rate | 6° | yes |
+| Kinematic | 2° | yes |
+| Imaging | 1° | never |
+
+The sun must also be in the head's view. Once on the sun, the missile flies at it and stays on it while the sun is in view. Cloud between the head and the sun hides it, and under an Overcast or Storm deck there is no sun. The sun's direction and height are set in [Settings](/interface/settings/).
+
+Over water (the lakes, the river and the sea) the sun's **glint** stands as far below the horizon as the sun is above it, in the sun's direction. It is much dimmer than the sun, but it still takes a head off an F-16C at military power more than about 1 km away. The rougher the sea, the dimmer it is and the wider it spreads: about 4° round its centre in Fair weather.
+
+While a missile follows the sun or its glint, the missile camera labels it SUN or GLINT and the detail line reads `Seeker tracking sun` or `Seeker tracking glint`.
 
 ## Flares
 
@@ -74,10 +127,12 @@ The flare has no aspect factor but the aircraft does, so a flare out-shines a ta
 
 ## Enemy heat seekers
 
-The enemy always fires the **R-73**: all-aspect, lock after launch, 75° gimbal, 40 g, and no flare rejection. [Enemy pilots](/world/enemy-pilots/) lists when it fires.
+The enemy always fires the **R-73**: all-aspect, lock after launch, 75° gimbal, 40 g, and no flare rejection. **Its seeker must see your heat before it leaves the rail**: inside its lock range for your heat and aspect, and not hidden by cloud, haze or terrain. [Enemy pilots](/world/enemy-pilots/) lists when it fires.
 
 <Callout kind="tip" title="In the cockpit">
   - **A rear-aspect round sees nothing ahead of the target's beam.** If the target turns its nose to the missile, the lock drops. The round flies 3 s of memory, then goes ballistic unless it locks again.
   - Lock with the radar (<Key k="T" />) and the seeker slaves to that target.
   - Against a target dropping flares, imaging seekers (AIM-9X, IRIS-T, ASRAAM, PL-10…) are the hardest to decoy.
+  - With an R-73 behind you, throttle back early (the tailpipe takes seconds to cool), dive into cloud if there is one, or put the sun or its glint behind you.
+  - Your own shots go best at a target in afterburner, and worst at one throttled back or flying in cloud.
 </Callout>

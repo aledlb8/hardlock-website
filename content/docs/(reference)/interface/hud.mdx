@@ -39,7 +39,7 @@ The large word at the top left says what you, or the missile you are following, 
 | TERMINAL | A radar missile's own seeker has the target. |
 | MEMORY / ENDED | A radar missile flying on memory / done homing. |
 
-Under it, a smaller **detail line**. In the jet with nothing in flight it reads your radar mode and your heat seeker's state (`off`, `caged`, `searching`, `slaved to the radar`, `designated` or `heat lock`). Once a missile is in the air it reads that missile's seeker state instead, such as `Seeker tracking flare`, plus how many are in the air.
+Under it, a smaller **detail line**. In the jet with nothing in flight it reads your radar mode and your heat seeker's state (`off`, `caged`, `searching`, `slaved to the radar`, `designated` or `heat lock`). Once a missile is in the air it reads that missile's seeker state instead, such as `Seeker tracking flare`, `Seeker tracking sun` or `Seeker tracking glint`, plus how many are in the air.
 
 ## Flight data
 
@@ -52,6 +52,7 @@ The block under the mission state shows your jet's numbers, or the missile's whe
 | M | Mach number. |
 | G | Load factor, then the g your jet is allowed right now (it falls in a rolling pull, when heavy, and on some jets at speed), with an inverted OVRD chip while the g override is held on a jet that has one, and a blinking OVER-G chip while the override takes you past the g limit, or for 1 s after the airframe bends. |
 | THR | Your throttle in %, with an inverted AB chip while the afterburner is lit (jet only). |
+| HEAT | Your tail's heat as a heat seeker behind you sees it, in % of your jet's at military power: about 25 at idle once the tailpipe cools, over 400 in full afterburner. An inverted CLOUD chip while you are inside a cloud, hidden from heat seekers (jet only). |
 | FUEL | Propellant left in % (missile only). |
 | T+ | Seconds since launch (missile only). |
 
