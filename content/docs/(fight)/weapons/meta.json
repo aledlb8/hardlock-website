@@ -1,5 +1,5 @@
 {
-  "title": "Missiles",
+  "title": "Weapons",
   "icon": "Crosshair",
   "defaultOpen": true,
   "pages": [
@@ -9,6 +9,7 @@
     "radar-missiles",
     "launching",
     "fuze-and-hits",
-    "catalog"
+    "catalog",
+    "gun"
   ]
 }

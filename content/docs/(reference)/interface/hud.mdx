@@ -1,6 +1,6 @@
 ---
 title: "The HUD"
-description: "Every element of the in-flight HUD: where it sits, when it shows, and what each word on it means, from the flight data to the MISSILE banner and SPLASH."
+description: "Every element of the in-flight HUD: where it sits, when it shows, and what each word on it means, from the flight data and the DAMAGE block to the MISSILE banner and SPLASH."
 icon: ScanEye
 ---
 
@@ -10,12 +10,12 @@ The HUD is drawn in **one white ink** with no coloured boxes. When something mat
 
 | Screen area | What is there |
 | --- | --- |
-| Top left | Mission state, a detail line, the flight data |
+| Top left | Mission state, a detail line, the flight data, and the DAMAGE block once you are hit |
 | Top centre | Heading tape, camera name, scenario messages, PAUSED, the MISSILE / LAUNCH banner |
 | Top right | The target list, then any friendlies and the match |
-| Centre | Aim circle, nose cross and the [target symbols](/interface/symbols/) |
+| Centre | Aim circle, nose cross, the gun's lead circle and the [target symbols](/interface/symbols/) |
 | Bottom left | Radar scope and DATALINK list (fighter), key hints |
-| Bottom centre | The weapon line, with notices above it |
+| Bottom centre | The weapon line and the gun line, with notices above them |
 | Bottom right | The RWR, with your chaff and flare counts |
 
 The HUD only appears while you are playing, with **Show HUD** on and no menu or tactical screen open. <Key k="H" /> hides and shows it. Hiding it does not stop anything: the tones still play.
@@ -55,6 +55,8 @@ The block under the mission state shows your jet's numbers, or the missile's whe
 | HEAT | Your tail's heat as a heat seeker behind you sees it, in % of your jet's at military power: about 25 at idle once the tailpipe cools, over 400 in full afterburner. An inverted CLOUD chip while you are inside a cloud, hidden from heat seekers (jet only). |
 | FUEL | Propellant left in % (missile only). |
 | T+ | Seconds since launch (missile only). |
+
+Once a round has struck your jet, a **DAMAGE** block appears under the flight data: what is burning, what is lost, the fuel left when a tank is holed, and the airframe's HULL. [The gun](/weapons/gun/#being-hit) lists every line.
 
 ## Heading tape and camera name
 
@@ -96,6 +98,8 @@ When you fly the jet, the radar scope sits at the bottom left in every camera, w
 
 Along the bottom centre: the key that switches weapon (<Key k="B" />), the selected missile's name, the rounds left, then a status word and, when there is something to press, a key and a hint. [Taking the shot](/weapons/launching/#the-weapon-line) lists every status.
 
+Just above it, the **gun line**: <Key k="LMB" />, your gun's name and its rounds left, with FIRING while it fires and EMPTY when it is dry. What your rounds break is called out under the middle of the view for 3 s, such as `T2  ENGINE FIRE`; see [The gun](/weapons/gun/#what-hits-break).
+
 ## Notices above the weapon line
 
 One short message at a time appears just above the weapon line, in this order of priority:
@@ -106,11 +110,11 @@ One short message at a time appears just above the weapon line, in this order of
 
 ## SPLASH
 
-When one of your missiles destroys an aircraft, **SPLASH** appears in large capitals a quarter of the way down the screen, with the target's number, the weapon and how far away it fell, as in `T3 · AIM-9X BLOCK II · 2.4 KM`. It holds for 2.4 s.
+When one of your missiles or your gun destroys an aircraft, **SPLASH** appears in large capitals a quarter of the way down the screen, with the target's number, the weapon and how far away it fell, as in `T3 · AIM-9X BLOCK II · 2.4 KM`. A gun kill also says WING OFF or PILOT KILLED when the jet went down that way. It holds for 2.4 s.
 
 ## SHOT DOWN, CRASHED and WING FAILED
 
-When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile got you), **CRASHED** (you hit the ground) or **WING FAILED** (you pulled past the breaking load, see [over-g](/flying/limits-and-energy/#the-g-override-and-over-g)) appears in the same place. Under it: `ESC · RESTART ENGAGEMENT` when you are down for good in the sandbox, NEXT JET TAKING OFF when the scenario gives you another jet, or MISSION OVER when the match ends. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
+When your own jet is destroyed, your flight data, radar and warnings leave the HUD and **SHOT DOWN** (a missile or gunfire got you), **CRASHED** (you hit the ground) or **WING FAILED** (you pulled past the breaking load, see [over-g](/flying/limits-and-energy/#the-g-override-and-over-g)) appears in the same place. Gunfire can also end it with **WING SHOT OFF**, **PILOT KILLED** or **EXPLODED** (a fire reached the fuel). Under it: `ESC · RESTART ENGAGEMENT` when you are down for good in the sandbox, NEXT JET TAKING OFF when the scenario gives you another jet, or MISSION OVER when the match ends. [Kills, crashes and rearming](/world/outcomes/#when-you-go-down) has the rules.
 
 ## The flash along the bottom edge
 
@@ -130,4 +134,4 @@ A quiet row at the bottom left shows <Key k="Tab" /> TACTICAL, <Key k="Z" /> CHA
 
 ## What the HUD does not have
 
-The HUD has **no pitch ladder, no flight-path marker, no horizon line**, no stall or pull-up warning, and no fuel gauge for your own jet.
+The HUD has **no pitch ladder, no flight-path marker, no horizon line**, no stall or pull-up warning, and no fuel gauge for your own jet until a tank is holed and the DAMAGE block shows the fuel left.

@@ -1,0 +1,95 @@
+---
+title: "The gun"
+description: "Every jet's cannon: firing it, the lead circle and SHOOT, what hits break part by part, being hit, and how enemy pilots use theirs."
+icon: Flame
+---
+
+Every jet carries its own cannon. **Hold <Key k="LMB" hold /> to fire**, in the fighter role and the fighter camera. Each round flies on its own, slowing and dropping, and bursts on whatever its path crosses first. A single round rarely brings anything down: a short burst cripples, a long one from close behind finishes the job.
+
+## The guns
+
+| Aircraft | Gun | Rounds | Rate | Firing time |
+| --- | --- | --- | --- | --- |
+| F-16C Block 50 | M61A1 Vulcan, 20 mm | 511 | 6,000 a minute | about 5 s |
+| F-15C | M61A1 Vulcan, 20 mm | 940 | 6,000 a minute | about 9.5 s |
+| F/A-18E | M61A2 Vulcan, 20 mm | 412 | 6,000 a minute | about 4 s |
+| F-22A | M61A2 Vulcan, 20 mm | 480 | 6,000 a minute | about 5 s |
+| F-35A | GAU-22/A, 25 mm | 180 | 3,300 a minute | about 3.5 s |
+| JAS 39E Gripen | Mauser BK-27, 27 mm | 120 | 1,700 a minute | about 4 s |
+| Eurofighter Typhoon | Mauser BK-27, 27 mm | 150 | 1,700 a minute | about 5 s |
+| Rafale C | Nexter 30M791, 30 mm | 125 | 2,500 a minute | about 3 s |
+| MiG-29 9.13 | GSh-30-1, 30 mm | 150 | 1,650 a minute | about 5.5 s |
+| Su-27S, Su-35S | GSh-30-1, 30 mm | 150 | 1,650 a minute | about 5.5 s |
+| Su-57 | 9A1-4071K, 30 mm | 150 | 1,650 a minute | about 5.5 s |
+| J-20A | 30 mm cannon | 150 | 1,650 a minute | about 5.5 s |
+
+A rotary gun (the Vulcans and the GAU-22/A) has to spin up: it reaches its full rate about a third of a second after you press, and the first rounds come slower. The revolvers and the 30 mm guns are at full rate from the first round. <Key k="G" /> refills the gun with the rest of the stores.
+
+**The 30 mm rounds hit far harder.** A 30 mm round does about four times the harm of a 20 mm one, so the slower guns kill with fewer hits.
+
+## How the rounds fly
+
+Each round leaves at your jet's speed plus the gun's muzzle velocity, then air drag slows it and gravity pulls it down. A 20 mm round takes about **1.3 s to cover a kilometre** down low and about 1 s at 10 km, where the air is thin; the 30 mm rounds are a little slower. By 1 km a round has dropped several metres. Rounds keep flying for 6 s, or until they hit the ground, where they kick up dust or water.
+
+One round in five is a **tracer**. Tracers burn for about 3 s and their colour says whose gun it is: **red** from the American guns, **orange** from the European revolvers, **yellow-green** from the 30 mm guns of the Russian and Chinese jets.
+
+## The lead circle and SHOOT
+
+Inside 2.5 km the HUD draws the **lead circle**: where your nose cross has to sit for a round fired now to meet the target. It allows for the target's speed, your own, and how the rounds slow and drop. Its target is your radar lock when the lock is inside 2.5 km; otherwise it is the nearest enemy you can see within about 26° of your nose.
+
+<Figure src="/img/hud/gunsight.png" alt="The lead circle on a bandit ahead, with HIT ×17, SHOOT and the callouts of what the burst broke" caption="In flight: the lead circle on a bandit 400 m ahead just after a burst, with the hit count, SHOOT, and what the hits broke." />
+
+- **Fly the nose cross into the circle.** The circle is about the size of the target at its range, so inside it a burst hits.
+- **The ring round it** closes from twelve o'clock as the range falls: a full ring when the target is on top of you, nothing at 2.5 km. The tick on it marks 1.1 km.
+- **SHOOT** appears under the circle when the target is inside 1.1 km and your nose cross is inside the circle.
+- **HIT ×N** beside the circle counts your hits over the last second or so, and four short strokes flash where each round burst.
+- A faint line joins the target to its lead.
+
+<Callout kind="tip">
+  With a radar lock the circle uses the lock's track, which knows the target's speed but not its turn. Against a jet pulling hard, drop the lock and let the circle take the target by eye: then it allows for the turn too.
+</Callout>
+
+Above the weapon line, the **gun line** shows <Key k="LMB" />, the gun's name, the rounds left, and FIRING while rounds are leaving or EMPTY when the gun is dry.
+
+## What hits break
+
+Each round strikes one part of the airframe, the first one its path meets, and also costs the airframe a little of its whole structure: about 1 % for a 20 mm round, about 4 % for a 30 mm one. What each part does as it is shot up:
+
+| Part | What hits do |
+| --- | --- |
+| Cockpit | A round under the canopy may kill the pilot: about one 20 mm round in five, most 30 mm rounds. From behind, the seat's armoured back stops most of them. **PILOT KILLED**: the jet goes down whole. |
+| Engine | Thrust falls. Below half, **ENGINE DAMAGED**; at zero the engine stops, **ENGINE OUT**. A twin flies on its other engine at half thrust; a single-engine jet is left gliding. A hit can start an **ENGINE FIRE**. |
+| Fuel tanks | Every hole leaks (**FUEL LEAK**), a white trail streaming behind. Self-sealing tanks close most of each hole over the next minute. A heavy round can burst the fuselage tank outright. When the tanks run dry, **FLAMEOUT**: every engine stops. A hit can light the fuel, **FIRE**. |
+| Wings | A holed wing lifts less, so **the jet rolls toward it**. At zero the wing comes off, **L WING OFF** or **R WING OFF**: the jet rolls hard into the missing wing and spins down. |
+| Ailerons | Each gives half the roll power. Shot away (**L AILERON**, **R AILERON**), that side gives none. On the deltas (Gripen, Typhoon, Rafale, J-20A) they are elevons, so pitch suffers too. |
+| Tail | **TAILPLANE**: pitch power falls to under a third. **RUDDER**: the fin is gone, with the rudder and most of the jet's directional stability. |
+
+A fire burns for several seconds, eating the airframe (and the wing, when it sits in a wing tank), then either goes out (**FIRE OUT**) or reaches the fuel and the jet is lost (**EXPLODED**). Holes and torn skin also add drag. **A holed wing breaks under a lighter pull**: the more a wing is shot up, the sooner [over-g](/flying/limits-and-energy/#the-g-override-and-over-g) snaps it.
+
+What your rounds break is called out under the middle of the view for 3 s, with the target's number, such as `T2  ENGINE FIRE`. A gun kill counts as yours: SPLASH names the gun, and how the jet went if it did not simply blow apart (WING OFF, PILOT KILLED).
+
+## Being hit
+
+A round striking your jet **knocks through the airframe** as it bursts, and the HUD flashes. What it broke appears in a **DAMAGE** block under your flight data:
+
+- an inverted chip for what is lost or burning: ENGINE FIRE, FIRE and FLAMEOUT blink; ENGINE OUT (with how many still run on a twin), L AILERON, R AILERON, TAILPLANE, RUDDER;
+- FUEL LEAK with the fuel left and how fast it is going, as `FUEL LEAK  1240 kg  -14 kg/s`; once it stops, the fuel left;
+- plain text for what is only damaged: ENGINE DAMAGED, L WING, R WING, TAILPLANE, RUDDER;
+- **HULL** and the share of the airframe's structure left.
+
+Your jet carries half its internal fuel. A single 20 mm hole takes many minutes to drain it; three 30 mm holes empty an F-16C in about a minute and a quarter. Your fly-by-wire still flies the jet as best it can, so a lost aileron shows as a slower, lopsided roll and a holed wing as a jet that wants to roll toward it.
+
+<Callout kind="threat" title="You hear the hits before the gun">
+  The rounds outrun their own sound. A gun firing at you from behind is heard as its rounds strike and crack past you first; the gun itself arrives seconds later, and while you fly away from it at speed its report has to chase you.
+</Callout>
+
+## How enemy pilots use their guns
+
+An enemy pilot fires its gun in a turning fight or on a head-on pass, never while dodging a missile or pulling away from the ground:
+
+- it can see you, by eye or radar;
+- you are inside its gun range: **650 m** for a rookie, **750 m** for a veteran, **900 m** for an ace;
+- its nose is on your lead, within your size plus 1.4° for a rookie, 0.7° for a veteran, 0.35° for an ace;
+- it fires bursts of half a second to a second and a quarter, with a breath between them.
+
+In a turning fight inside about 1.6 times its gun range, it flies its nose onto the lead instead of onto you. A weapons hold stops its gun as well as its missiles. [Enemy pilots](/world/enemy-pilots/#when-it-shoots) covers the rest of its shooting.
