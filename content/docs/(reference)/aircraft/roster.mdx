@@ -108,22 +108,44 @@ Coverage is how far the radar looks off the nose: its search sweeps all of it, a
 
 ## Loadout
 
-Every jet carries the same stores: two heat seekers, four radar missiles, 120 chaff and 120 flares. Any heat seeker and any radar missile fits any jet. Where the missiles ride follows each type's usual air-to-air carriage:
+Each jet's missiles hang on hardpoints in mirrored pairs, and each pair is cleared for what the real type's stations take: **heat seekers only, radar missiles only, or either**. A jet starts on its **standard fit**, the type's usual air-to-air load. Every jet also carries 120 chaff and 120 flares. Enemy jets always fly their type's standard fit.
 
-| Aircraft | Heat seekers | Radar missiles |
-| --- | --- | --- |
-| F-16C, F/A-18E, JAS 39E Gripen, Rafale C, Su-27S | Wingtip rails | Wing pylons, two each side |
-| MiG-29 9.13, Su-35S | Outer wing pylons | Wing pylons, two each side |
-| Eurofighter Typhoon | Outer wing pylons | Under the fuselage |
-| F-15C | Wing pylons | Under the fuselage |
-| F-35A | Outer wing pylons | Internal bays |
-| F-22A, J-20A, Su-57 | Internal bays | Internal bays |
+| Aircraft | Standard fit | Heat seekers only | Radar only | Either |
+| --- | --- | --- | --- | --- |
+| F-16C Block 50 | 2 AIM-9X Block II, 4 AIM-120C-7 | | | Wingtips, outer and inner pylons |
+| F-15C | 4 AIM-9X Block II, 4 AIM-120C-7 | | Front and rear fuselage | Inner and outer wing rails |
+| F/A-18E | 2 AIM-9X Block II, 6 AIM-120D | Wingtips | Fuselage | Outer and middle pylons |
+| F-22A | 2 AIM-9X Block II, 6 AIM-120D | Side bays | Main bay (three pairs) | |
+| F-35A | 2 AIM-9X Block II, 4 AIM-120D | Outer pylons | Main bays (two pairs) | |
+| JAS 39E Gripen | 2 IRIS-T, 6 Meteor | Wingtips | | Outer, middle and inner pylons |
+| Eurofighter Typhoon | 4 ASRAAM, 4 Meteor | Outer pylons | Front and rear fuselage | Middle pylons |
+| Rafale C | 2 MICA IR, 4 MICA RF, 2 Meteor | | | Wingtips, outer and inner pylons, rear fuselage |
+| MiG-29 9.13 | 4 R-73, 2 R-77 | Outer pylons | | Middle and inner pylons |
+| Su-27S | 4 R-73, 6 R-77 | Wingtips and outer pylons | Intakes and the tunnel between the engines | Inner pylons |
+| Su-35S | 2 R-73M, 8 RVV-SD | Outer pylons | Intakes and the tunnel between the engines | Middle and inner pylons |
+| Su-57 | 2 RVV-MD, 4 RVV-SDM | Side bays | Main bays (two pairs) | |
+| J-20A | 2 PL-10, 4 PL-15E | Side bays | Main bay (two pairs) | |
+
+**Your own fit:** the hangar's **LOADOUT** tab shows a row of boxes under the jet, one per hardpoint from the left wingtip to the right, each with the missile it carries. Click a box, or step along them with <Key k="A" />/<Key k="D" />, to pick a hardpoint; its mirror is armed with it. The list on the left then offers every missile that pair can take, or **Leave empty**; click one or step through them with <Key k="W" />/<Key k="S" />. Pairs can carry different missiles, so an F-16 can fly with AIM-9X on its wingtips and AIM-9M on its outer pylons. **Reset to standard** puts the standard fit back. Each jet keeps its own fit, and a saved scenario keeps the fit it was set up with. In a sandbox match the tactical screen has the same choice for each pair; a change there reloads every missile station.
+
+**Each jet carries its own nation's missiles**, plus the foreign ones the real type is cleared for:
+
+- **F-16C, F-15C, F/A-18E, F-22A, F-35A:** the US Sidewinders, AMRAAMs, Phoenixes and the AIM-260.
+- **Rafale C:** the French Magic and MICA (IR and RF), and Meteor.
+- **Typhoon:** ASRAAM, IRIS-T, the AIM-9L/I and Meteor, plus the AIM-9L/M and AIM-120B/C.
+- **Gripen E:** IRIS-T, A-Darter and Meteor, plus the AIM-9L/M and AIM-120B/C.
+- **MiG-29, Su-27S, Su-35S, Su-57:** the Russian rounds, except that the RVV-BD does not fit the Su-57's bays.
+- **J-20A:** the Chinese PL rounds.
+
+A short-range-only pair (a Flanker's wingtips, for example) never takes the long R-27T or R-27ET; those hang only where a radar missile could.
+
+Every missile weighs: an empty pair makes the jet lighter, and a big load can cost a heavy jet some g ([When the g limit is lower](/flying/limits-and-energy/#when-the-g-limit-is-lower)).
 
 You see every missile still carried, on your jet and on the enemy's; one in a bay stays hidden. Each one fired is gone from its station until it is rearmed. [Taking the shot](/weapons/launching/#at-launch) describes how each one leaves.
 
 ## The hangar card
 
-Point at an aircraft in the hangar or on the tactical screen to open its card. Under its name it says whether it is a single-engine or twin-engine fighter, then lists, in this order: mass, engines, dry thrust and afterburner thrust (each, on a twin), wing area, wingspan, load limits, AoA limit, roll rate, thrust vectoring (on the three jets that have it), sea-level speed, top speed, the radar set and its antenna, and the radar's coverage across and up and down. **Every figure is the one the game flies.**
+Point at an aircraft in the hangar or on the tactical screen to open its card. Under its name it says whether it is a single-engine or twin-engine fighter, then lists, in this order: mass, engines, dry thrust and afterburner thrust (each, on a twin), wing area, wingspan, load limits, AoA limit, roll rate, thrust vectoring (on the three jets that have it), sea-level speed, top speed, the radar set and its antenna, the radar's coverage across and up and down, its standard missiles, and its gun with its rounds and rate of fire. **Every figure is the one the game flies.**
 
 Under the aircraft in the hangar, four stat bars compare it with the fleet: THRUST / WEIGHT, WING LOADING, LOAD LIMIT and SEA-LEVEL SPEED.
 

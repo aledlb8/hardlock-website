@@ -10,19 +10,19 @@ icon: Activity
 
 | Jet | g limits | Full g up to | Angle of attack | Roll rate |
 | --- | --- | --- | --- | --- |
-| F-16C Block 50 | +9 / −3 | 11,070 kg | 25° | 308 °/s |
+| F-16C Block 50 | +9 / −3 | 11,340 kg | 25° | 308 °/s |
 | F-15C | +9 / −4 | 30,844 kg | 30° | 200 °/s |
 | F/A-18E | +7.5 / −5 | 19,958 kg | 45° | 160 °/s |
-| F-22A | +9 / −3 | 24,651 kg | 60° | 220 °/s |
-| F-35A | +9 / −3 | 18,339 kg | 50° | 200 °/s |
-| JAS 39E Gripen | +9 / −3 | 10,610 kg | 28° | 240 °/s |
-| Eurofighter Typhoon | +9 / −3 | 14,235 kg | 28° | 250 °/s |
-| Rafale C | +9 / −3.2 | 13,260 kg | 30° | 250 °/s |
+| F-22A | +9 / −3 | 25,380 kg | 60° | 220 °/s |
+| F-35A | +9 / −3 | 18,609 kg | 50° | 200 °/s |
+| JAS 39E Gripen | +9 / −3 | 11,339 kg | 28° | 240 °/s |
+| Eurofighter Typhoon | +9 / −3 | 14,694 kg | 28° | 250 °/s |
+| Rafale C | +9 / −3.2 | 13,989 kg | 30° | 250 °/s |
 | MiG-29 9.13 | +9 / −5 | 14,200 kg | 28° | 190 °/s |
 | Su-27S | +9 / −4 | 19,000 kg | 30° | 200 °/s |
 | Su-35S | +9 / −4 | 22,147 kg | 44° | 210 °/s |
-| Su-57 | +9 / −3 | 24,260 kg | 50° | 220 °/s |
-| J-20A | +9 / −3 | 25,650 kg | 30° | 200 °/s |
+| Su-57 | +9 / −3 | 24,529 kg | 50° | 220 °/s |
+| J-20A | +9 / −3 | 25,920 kg | 30° | 200 °/s |
 
 Two limits govern every pull: the angle-of-attack limit, and the angle that would make the g limit. **Whichever comes first wins.** Fast, you hit the g limit first. Slow, you hit the angle-of-attack limit long before it, and the pull just stops getting harder. On the F-22A and Su-35S the angle-of-attack limit sits past the angle where the wing makes the most lift: a full pull points the nose further, but the flight path turns no faster and the speed bleeds away.
 
@@ -36,8 +36,8 @@ Two limits govern every pull: the angle-of-attack limit, and the angle that woul
 The +g limit in the table is for a jet flying straight into the pull, no heavier than its **full g** mass. Three things lower it, and the fly-by-wire holds the lower limit:
 
 - **Rolling while you pull.** At full roll rate the limit falls to **80 %**, 7.2 g on a 9 g jet, because one wing carries more of the load. A small roll, up to a fifth of the jet's roll rate, keeps the full limit. Roll first and then pull, and you get all of it.
-- **Weight.** Every missile on board weighs what it weighs, and firing one makes the jet lighter. The roster's mass is the jet with two heat seekers; the radar rounds add theirs. Up to the full-g mass nothing changes. Past it, the limit falls in proportion: 10 % over that mass costs about 9 % of the g. Four of the default radar rounds keep most jets under it, and four 190 kg rounds such as the Meteor cost about a tenth of a g. Heavy rounds cost more: a MiG-29 with four AIM-54A rounds pulls 8.5 g. **The Su-27S and Su-35S are past it already in combat trim**: with the default rounds they pull about 7.9 g and 7.8 g, and every missile they fire gives a little back.
-- **Speed, on the MiG-29 9.13, Su-27S and Su-35S.** The MiG-29 holds 9 g up to Mach 0.85, then the limit falls to **7 g** by Mach 0.90 and stays there faster. The Su-27S and Su-35S lose about a fifth of their limit between Mach 0.85 and 0.90 and get some back past Mach 1.25: an Su-27S in combat trim pulls about 7.9 g slow, 6.4 g from Mach 0.90 to 1.20 and 6.9 g past Mach 1.25.
+- **Weight.** Every missile on board weighs what it weighs, and firing one makes the jet lighter. The roster's mass holds two short-range missiles; everything else you hang adds its own weight, and an empty hardpoint adds none. Up to the full-g mass nothing changes. Past it, the limit falls in proportion: 10 % over that mass costs about 9 % of the g. Every jet's standard fit keeps it at full g, apart from the two Flankers below. Heavier picks cost: an Su-35S with eight RVV-BD pulls about 6.8 g. **The Su-27S and Su-35S are past it already in combat trim**: with their standard fit they pull about 7.6 g and 7.5 g, and every missile they fire gives a little back.
+- **Speed, on the MiG-29 9.13, Su-27S and Su-35S.** The MiG-29 holds 9 g up to Mach 0.85, then the limit falls to **7 g** by Mach 0.90 and stays there faster. The Su-27S and Su-35S lose about a fifth of their limit between Mach 0.85 and 0.90 and get some back past Mach 1.25: an Su-27S in combat trim pulls about 7.6 g slow, 6.2 g from Mach 0.90 to 1.20 and 6.6 g past Mach 1.25.
 
 The hangar card shows the full-g mass as **Full g up to**, and these three jets' cards add **At speed**: their lowest limit and the Mach it starts at (+7.0 g past Mach 0.90 on the MiG-29, +7.3 g past Mach 0.90 on the two Flankers, at their full-g mass). The HUD's G row shows the g you are allowed right now beside the load, as in `G 6.2 /7.9`.
 
