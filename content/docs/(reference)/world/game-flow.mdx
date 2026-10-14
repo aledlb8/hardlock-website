@@ -59,13 +59,14 @@ Changing a named missile changes its visible shape and finish on the aircraft an
 
 The briefing is a high, orbiting view over the terrain, centred between the two bases. Drag to orbit and use the wheel to zoom. The map shows range rings every 10 km from your base, north, the dashed edge of the area the enemy pilots stay inside, the enemy base (HOSTILE AIRFIELD) and every enemy aircraft in the air as T1, T2… Point at one to open its card. A scenario with more flights or zones also draws them where they start, with friendly flights marked as such in the map key.
 
-The column on the right sets up the fight. Its rows work like [Settings](/interface/settings/): arrows or <Key k="←" />/<Key k="→" /> step a value. Pointing at a row describes it in the panel below; with nothing under the cursor, that panel shows the SITUATION: the scenario's mode, the distance to the enemy base, how many hostiles are airborne, their skill, whether the opening repeats, then any time limit, your jets and other flights, and the scenario's briefing text. The map key sits at the bottom left. **EDIT SCENARIO** opens the setup in the [editor](/world/scenarios/#the-editor).
+The column on the right sets up the fight. Its rows work like [Settings](/interface/settings/): arrows or <Key k="←" />/<Key k="→" /> step a value. Pointing at a row describes it in the panel below; with nothing under the cursor, that panel shows the SITUATION: the scenario's mode, the distance to the enemy base, how many hostiles are airborne, their skill, whether the opening repeats, then any time limit, your jets, the weapons rule and other flights, and the scenario's briefing text. The map key sits at the bottom left. **EDIT SCENARIO** opens the setup in the [editor](/world/scenarios/#the-editor).
 
 | Group | Setting | Options | Notes |
 | --- | --- | --- | --- |
-| SCENARIO | Scenario | CUSTOM, then every saved scenario | Picking one sets every row below. See [Scenarios](#scenarios). |
+| SCENARIO | Scenario | Every saved scenario, then CUSTOM | Picking one sets every row below. CUSTOM is your own setup. See [Scenarios](#scenarios). |
 | | Name and SAVE | | Saves the rows under the name you type. |
 | ENGAGEMENT | You fly | SAM SITE or FIGHTER | See [The ground launcher](/world/ground-launcher/). |
+| | Weapons | MISSILES + GUNS, MISSILES ONLY, GUNS ONLY | Fighter role only. The rule holds for every jet in the fight, the enemy's and any wingmen too. Missiles only: no jet can fire its gun. Guns only: every jet takes off with empty rails and no radar missiles, and the enemy closes in to fight with its gun. |
 | | Mode | SANDBOX, RAID CAMPAIGN, ENDLESS RAIDS | SAM site only. The raid modes are [Base defence](/world/base-defence/); they hide the Aircraft, Their aircraft, Distance and Start height rows, and LOADOUT lists the base's launchers. |
 | | Terrain | MOUNTAINS or FLAT | See [The theater](/world/theater/). |
 | | Weather | CLEAR, FAIR, CLOUDY, OVERCAST, HAZY, STORM | The sky: a few wisps, scattered cumulus, towering cumulus, one grey deck, a haze that fades the distance, or a storm with rain, lightning and thunder. Cloud, rain and haze hide heat from heat seekers, yours and the enemy's ([what hides heat](/weapons/heat-seekers/#what-hides-heat)); radar, radar missiles and flight work the same in every weather. |
@@ -85,7 +86,7 @@ The column on the right sets up the fight. Its rows work like [Settings](/interf
 
 The Scenario row lists every [scenario](/world/scenarios/), the ones the game ships first, then your own. Picking one sets every row below, along with its rules, its other flights and its script.
 
-Change any row after picking a scenario and the row reads CUSTOM: the setup is yours until you save it, and it keeps the scenario's rules and flights. Type a name in the field under the row and press **SAVE**. Saving under a name you already used replaces that scenario. Your scenarios are kept as files in the `config/scenarios` folder next to the game. The list is read again each time you open the briefing.
+CUSTOM, always last in the list, is your own setup. Change any row after picking a scenario and the row moves to CUSTOM: the setup is yours, and it keeps the scenario's rules and flights. CUSTOM holds on to it while you step through the other scenarios, so stepping back to CUSTOM brings your rows back as you left them, even after you quit the game. To keep it for good, type a name in the field under the row and press **SAVE**: it joins the list under that name and CUSTOM is free again. Saving under a name you already used replaces that scenario. Your scenarios are kept as files in the `config/scenarios` folder next to the game. The list is read again each time you open the briefing.
 
 ## The tactical screen
 
