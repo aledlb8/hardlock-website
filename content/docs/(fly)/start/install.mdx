@@ -1,6 +1,6 @@
 ---
 title: "Installing and running"
-description: "What your PC needs, how to install and start the game, and the files it writes next to itself."
+description: "What your PC needs, how to install and start the game, and where it keeps your settings, scenarios and log."
 icon: Download
 ---
 
@@ -27,12 +27,17 @@ If the game can't start, for example on a graphics card without Vulkan 1.3, it s
 
 ## Files it creates
 
-Next to the executable:
+Everything the game writes goes in `%LOCALAPPDATA%\Hardlock` (paste that into the Explorer address bar), never next to `Hardlock.exe`, so the game can live in a folder Windows will not let it write to:
 
 | File | What it is |
 | --- | --- |
-| `config\user_settings.ini` | Your settings. Delete it to go back to the defaults. |
-| `imgui.ini` | Interface layout state. |
-| `hardlock.log` | A log of the last run. Send it along if something goes wrong. |
+| `user_settings.ini` | Your settings and keys. Delete it to go back to the defaults. |
+| `scenarios\` | Scenarios you save. Copy a `.json` file here to add someone else's. |
+| `raids\` | Raid tables exported from the scenario editor. |
+| `custom_setup.json` | The briefing's CUSTOM setup. |
+| `screenshots\` | <Key k="F12" /> screenshots. |
+| `hardlock.log` | A log of this run, with `hardlock.prev.log` the run before. Send them along if something goes wrong. |
+
+A version that kept these in a `config` folder next to the game has them copied across on the first start.
 
 Settings save themselves as you change them. There is no save button.
