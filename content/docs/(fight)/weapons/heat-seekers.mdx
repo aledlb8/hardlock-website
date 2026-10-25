@@ -4,7 +4,7 @@ description: "How the rail seeker is powered, aimed and locked, how hot each jet
 icon: Thermometer
 ---
 
-Your fighter carries as many heat seekers as its fit gives it ([Loadout](/aircraft/roster/#loadout)), and the enemy fires the R-73. A heat seeker sees aircraft, flares, the sun and the sun's reflection on water. **How bright a jet looks depends on its engine, its speed, the angle you see it from and the air in between**: a jet in afterburner glows, one at idle fades, and one inside a cloud vanishes.
+Your fighter carries as many heat seekers as its fit gives it ([Loadout](/aircraft/roster/#loadout)), and an enemy jet fires its own nation's (see [below](#enemy-heat-seekers)). A heat seeker sees aircraft, flares, the sun and the sun's reflection on water. **How bright a jet looks depends on its engine, its speed, the angle you see it from and the air in between**: a jet in afterburner glows, one at idle fades, and one inside a cloud vanishes.
 
 ## Powering and aiming the seeker
 
@@ -127,12 +127,26 @@ The flare has no aspect factor but the aircraft does, so a flare out-shines a ta
 
 ## Enemy heat seekers
 
-The enemy always fires the **R-73**: all-aspect, lock after launch, 75° gimbal, 40 g, and no flare rejection. **Its seeker must see your heat before it leaves the rail**: inside its lock range for your heat and aspect, and not hidden by cloud, haze or terrain. [Enemy pilots](/world/enemy-pilots/) lists when it fires.
+**An enemy jet fires the missiles its type carries, its nation's**: the standard fit of [its loadout](/aircraft/roster/#loadout). Each round flies and sees as described on this page and in [the catalog](/weapons/catalog/), with its own gimbal, g and flare rejection.
+
+| Enemy jet | Heat seeker | Radar missiles |
+| --- | --- | --- |
+| F-16C Block 50, F-15C | AIM-9X Block II | AIM-120C-7 |
+| F/A-18E, F-22A, F-35A | AIM-9X Block II | AIM-120D |
+| Gripen E | IRIS-T | Meteor |
+| Typhoon | ASRAAM | Meteor |
+| Rafale C | MICA IR | MICA RF and Meteor |
+| MiG-29 9.13, Su-27S | R-73 | R-77 |
+| Su-35S | R-73M | RVV-SD |
+| Su-57 | RVV-MD | RVV-SDM |
+| J-20A | PL-10 | PL-15E |
+
+**Its seeker must see your heat before it leaves the rail**: inside its lock range for your heat and aspect, and not hidden by cloud, haze or terrain. [Enemy pilots](/world/enemy-pilots/) lists when it fires.
 
 <Callout kind="tip" title="In the cockpit">
   - **A rear-aspect round sees nothing ahead of the target's beam.** If the target turns its nose to the missile, the lock drops. The round flies 3 s of memory, then goes ballistic unless it locks again.
   - Lock with the radar (<Key k="T" />) and the seeker slaves to that target.
   - Against a target dropping flares, imaging seekers (AIM-9X, IRIS-T, ASRAAM, PL-10…) are the hardest to decoy.
-  - With an R-73 behind you, throttle back early (the tailpipe takes seconds to cool), dive into cloud if there is one, or put the sun or its glint behind you.
+  - With a heat seeker behind you, throttle back early (the tailpipe takes seconds to cool), dive into cloud if there is one, or put the sun or its glint behind you.
   - Your own shots go best at a target in afterburner, and worst at one throttled back or flying in cloud.
 </Callout>
