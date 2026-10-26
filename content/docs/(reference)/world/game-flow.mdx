@@ -4,7 +4,7 @@ description: "From the title screen to the briefing map, the hangar, the tactica
 icon: Workflow
 ---
 
-Hardlock has six screens (title, scenario list, editor, hangar, briefing and playing) and four overlays that can sit on top of play (pause, settings, the tactical screen and the debrief). The world keeps running behind the menus whenever the game is not paused.
+Hardlock has seven screens (title, scenario list, multiplayer, editor, hangar, briefing and playing) and four overlays that can sit on top of play (pause, settings, the tactical screen and the debrief). The world keeps running behind the menus whenever the game is not paused.
 
 ```mermaid
 flowchart LR
@@ -13,6 +13,9 @@ flowchart LR
     S -->|PLAY| B
     S -->|EDIT| E[Editor]
     B -->|EDIT SCENARIO| E
+    T -->|MULTIPLAYER| N[Multiplayer]
+    N -->|SET UP AND HOST| B
+    N -->|JOIN, HOST NOW| P
     T -->|HANGAR| H[Hangar]
     H -->|BRIEFING| B
     B -->|LOADOUT| H
@@ -31,6 +34,7 @@ flowchart LR
 | --- | --- |
 | START ENGAGEMENT | Opens the briefing map. |
 | SCENARIOS | Opens the scenario list. See [Scenarios and the editor](/world/scenarios/). |
+| MULTIPLAYER | Opens the multiplayer screen: join a match, or host one. See [Playing with friends](/start/multiplayer/). |
 | HANGAR | Opens the hangar, where you pick an aircraft and its missiles. |
 | SETTINGS | Opens settings on the Display page. |
 | CONTROLS | Opens settings on the Keybinds page. |

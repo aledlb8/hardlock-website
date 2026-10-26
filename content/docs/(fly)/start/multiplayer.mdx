@@ -1,24 +1,31 @@
 ---
 title: "Playing with friends"
-description: "Host a match others can join, run a server of your own, or join one, from the command line."
+description: "Host a match others can join, join one, or run a server of your own."
 icon: Users
 ---
 
 One machine runs the match and everyone else joins it. Every pilot flies their own jet with their own missiles, radar, warning receiver and gun, and the computer pilots fight, or fly with, every player as they would one. A pilot can join on either side, so the same match can be friends against the computer, friends against each other, or both.
 
-For now hosting and joining are started from the command line: open a Command Prompt in the game's folder (type `cmd` in Explorer's address bar there) and type the commands below.
+Choose **MULTIPLAYER** on the title screen. At the top, type the **callsign** the others see (up to 24 letters; left empty you fly as Pilot), pick your **Side**, and check the **AIRCRAFT** box: you fly that jet with the missiles the [hangar](/world/game-flow/#the-hangar) arms it with, whether you join or host. Click the box to change it in the hangar; BACK there returns to this screen. The callsign, side, address and port are remembered for next time.
 
-## Hosting the match you play
+## Joining
 
-```
-Hardlock.exe --host
-```
+Type the host's address under **JOIN A MATCH**, with `:port` after it if they host on a port other than **27015**, and press **JOIN** (<Key k="Enter" />). Until you are in, the button reads CANCEL · CONNECTING TO and the address; it, or <Key k="Esc" />, gives up. You then fly in the host's scenario, by its rules, on your side.
 
-The game skips the title and starts the match the menus have set up, and you fly in it as usual. Others can join from then on. Add a port after `--host` to use one other than **27015**, and `--name` to say whose game it is: `Hardlock.exe --host 27020 --name Viper`.
+The host's match is only borrowed: when you leave, your menus are as you left them, your own scenario, aircraft and role included.
+
+## Hosting
+
+Under **HOST A MATCH**, set the port (27015 unless you want another), then either:
+
+- **SET UP AND HOST** (<Key k="B" />) opens the briefing map. Set the match up as usual; its main button reads **HOST** instead of LAUNCH.
+- **HOST NOW** (<Key k="H" />) hosts the match the briefing already has set up, shown on the **Match** line.
+
+You fly in the match as usual, on the blue side, and others can join from then on. Going back to the title screen ends it for everyone. Base defence can't be hosted: the screen reads "Base defence is for one player", HOST NOW stays dark and the briefing's button reads SOLO ONLY until another mode is set.
 
 ## Running a server
 
-`hardlock_server.exe`, next to the game, runs a match with no window and no pilot of its own, for as long as it is left running. Every pilot in it is someone who joined.
+`hardlock_server.exe`, next to the game, runs a match with no window and no pilot of its own, for as long as it is left running. Every pilot in it is someone who joined. Start it from a Command Prompt in the game's folder (type `cmd` in Explorer's address bar there):
 
 ```
 hardlock_server.exe --name "Friday night" --max-players 8
@@ -34,15 +41,9 @@ hardlock_server.exe --name "Friday night" --max-players 8
 
 A server plays its scenario for everyone who joins, by the scenario's own rules, and starts the next match **15 seconds** after one ends. Once everybody has left, it starts a fresh match 30 seconds later. <Key k="Ctrl" /> + <Key k="C" /> closes it and tells every player why.
 
-## Joining
+## While you are connected
 
-```
-Hardlock.exe --connect 192.168.1.20 --name Maverick --team red
-```
-
-Give the host's address, with `:port` after it if it is not 27015. Leave out `--team red` to fly on the blue side. You fly the airframe you last picked in the hangar, on its standard fit.
-
-While you are connected a line at the top of the screen says so: **CONNECTING TO**, then **ONLINE** with the server's name and your ping. A host sees **HOSTING** with the port and how many have joined. Going back to the title screen leaves the match. If the server closes or the connection drops, you are taken back to the title and told why.
+A line at the top of the screen says so: **CONNECTING TO**, then **ONLINE** with the server's name and your ping. A host sees **HOSTING** with the port and how many have joined. Going back to the title screen leaves the match. If the server closes or the connection drops, you go back to the MULTIPLAYER screen (the title, if you joined from the command line) and are told why.
 
 ## The match
 
@@ -57,14 +58,25 @@ After the debrief, the host's RESTART starts the next match for everyone, and LE
 The other players' games must reach the host's UDP port.
 
 - On the same home network, use the host's local address (`ipconfig` in a Command Prompt shows it as the IPv4 address).
-- Over the internet, the host forwards UDP port 27015 on their router to their PC and gives the others their public address.
+- Over the internet, the host forwards the UDP port on their router to their PC and gives the others their public address.
 - The first time you host, Windows Firewall asks whether to let the game use the network. Allow it, or nobody can join.
 
 Everyone must play the same version of the game. A different one is turned away with "The server runs another build of the game".
+
+## From the command line
+
+The same sessions start from a Command Prompt in the game's folder:
+
+```
+Hardlock.exe --host 27020 --name Viper
+Hardlock.exe --connect 192.168.1.20 --name Maverick --team red
+```
+
+`--host` skips the title and hosts the match the menus have set up (the port is optional). `--connect` joins the address given; leave out `--team red` to fly on the blue side.
 
 ## Good to know
 
 - A networked match never pauses: the menu opens, but the fight goes on around you. The simulation speed setting stays at normal.
 - Your own jet answers your controls at once. Everything else is drawn where the server had it a tenth of a second ago, so the picture stays smooth.
 - Other pilots show on your radar and your warning receiver, as any aircraft does, but the HUD does not box them yet. On the red side, the HUD's target list still lists the red side's computer pilots.
-- Base defence raids are for one player.
+- A fit your jet can't carry is put right by the host: a pair goes back to its standard load and a missile the jet can't carry to its standard one.
