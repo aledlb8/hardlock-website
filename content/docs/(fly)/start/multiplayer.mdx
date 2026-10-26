@@ -32,7 +32,7 @@ hardlock_server.exe --name "Friday night" --max-players 8
   <dt>--seed</dt><dd>the world's seed (from the clock)</dd>
 </Facts>
 
-A server plays the scenario's opening, its flights taking off with their orders, and then keeps the fight going: a pilot who goes down gets a new jet at their airfield **5 seconds** later, and a beaten formation is replaced by a new one **20 seconds** after the last of it falls. <Key k="Ctrl" /> + <Key k="C" /> closes it and tells every player why.
+A server plays its scenario for everyone who joins, by the scenario's own rules, and starts the next match **15 seconds** after one ends. Once everybody has left, it starts a fresh match 30 seconds later. <Key k="Ctrl" /> + <Key k="C" /> closes it and tells every player why.
 
 ## Joining
 
@@ -43,6 +43,14 @@ Hardlock.exe --connect 192.168.1.20 --name Maverick --team red
 Give the host's address, with `:port` after it if it is not 27015. Leave out `--team red` to fly on the blue side. You fly the airframe you last picked in the hangar, on its standard fit.
 
 While you are connected a line at the top of the screen says so: **CONNECTING TO**, then **ONLINE** with the server's name and your ping. A host sees **HOSTING** with the port and how many have joined. Going back to the title screen leaves the match. If the server closes or the connection drops, you are taken back to the title and told why.
+
+## The match
+
+Every pilot plays the scenario's rules as in a match of their own. You have its jets to lose, and when yours goes down you watch the wreck and ask for the next one, as [offline](/world/outcomes/). The kills, rounds and hits on your debrief are yours alone; the waves, the clock and the objectives belong to everyone.
+
+When your last jet is down and others still fly, the HUD reads **NO JETS LEFT · THE OTHERS FLY ON** and you watch the rest of the fight. The match is lost only when **nobody has a jet left**: it ends 4 seconds after the last one falls, as ALL JETS LOST. A pilot alone in a match still waits on their wreck before the debrief, as offline.
+
+After the debrief, the host's RESTART starts the next match for everyone, and LEAVE (<Key k="Esc" />) ends the session for all. A joined game's debrief reads NEXT MATCH SOON and puts you back in the air when the next match begins; LEAVE takes you off the server.
 
 ## Reaching the host
 
