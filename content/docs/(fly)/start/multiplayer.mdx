@@ -108,6 +108,7 @@ The other players' games must reach the host's UDP port.
 - **Over the internet** the host's game asks the router to open the port and gives the join code. A router with UPnP turned off, or that refuses, needs the UDP port forwarded to the host's PC by hand; the others then join at the host's public address.
 - **A provider's shared address.** Some internet connections put the router itself behind the provider's own network (the chat says "The router is behind your provider's own network"). No port the host opens is reachable then. Have a friend whose connection can host do it, run a server on a machine with an address of its own (a rented server), or join a virtual network app together (such as Tailscale, ZeroTier or Radmin VPN) and use the address it gives the host.
 - The first time you host, Windows Firewall asks whether to let the game use the network. Allow it, or nobody can join.
+- Each pilot who joins costs the host about 25 KB/s of upload in a small match and about 50 KB/s in a full one (32 pilots), whether or not the guns are firing. A home connection with 5 Mbit/s up carries a dozen pilots; a large server is best on a machine with a fast line.
 
 Everyone must play the same version of the game. A different one is turned away with "The server runs another build of the game".
 
