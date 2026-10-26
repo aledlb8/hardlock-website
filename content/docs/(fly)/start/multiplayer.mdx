@@ -69,6 +69,20 @@ Every pilot plays the scenario's rules as in a match of their own. You have its 
 
 When your last jet is down and others still fly, the HUD reads **NO JETS LEFT · THE OTHERS FLY ON** and you watch the rest of the fight. The match is lost only when **nobody has a jet left**: it ends 4 seconds after the last one falls, as ALL JETS LOST. A pilot alone in a match still waits on their wreck before the debrief, as offline.
 
+The scenarios are written for the blue side. A pilot who joins on red fights against it, and wins when blue loses: their debrief reads VICTORY under **RED WINS**, and blue's win reads DEFEAT under **BLUE WINS**.
+
+### Dogfight
+
+For pilots against pilots, host the **Dogfight** scenario, or any scenario set to the DOGFIGHT mode in the [editor](/world/scenarios/#how-a-match-is-won). Blue fights red. Each aircraft of the other side your side brings down is a point, pilots and computer pilots alike; a crash or friendly fire scores nothing. The first side to the score limit wins, or the side ahead when time runs out, and level is a **DRAW**. Jets are unlimited unless the scenario says otherwise; a side whose every pilot is out of jets loses. The mission block on the HUD reads your side's points first, then the other side's and the limit (BLUE 3 · RED 2 · TO 10). Turn **Computer pilots** off in the editor's RULES for pilots only.
+
+The chat tells everyone who shot down whom and with what (Viper shot down Maverick (AIM-120C-7)), who was shot down by a computer pilot, and who crashed.
+
+### Other pilots on the HUD
+
+The **PILOTS** block on the right lists every other pilot with **FRIEND** or **HOSTILE** and their range, or DOWN. A friend gets the friend ring with their callsign, as a friendly flight does, at any range out to 60 km, and shows on the radar scope as a friendly. A hostile pilot shows only when you can see them: the spotting mark within 8 km with a clear line of sight, with their callsign under it. On the radar a pilot is a track like any other.
+
+On the red side the HUD is red's: the red computer pilots are your FRIENDLIES and the blue ones your TARGETS.
+
 After the debrief, the host's RESTART starts the next match for everyone, CHANGE MATCH sets up another one, and LEAVE (<Key k="Esc" />) ends the session for all. A joined game's debrief reads NEXT MATCH SOON and puts you back in the air when the next match begins; LEAVE takes you off the server. A joined game's pause menu has **LEAVE THE MATCH** in place of the main menu, and no restart: the host runs the match.
 
 ## Reaching the host
@@ -95,7 +109,7 @@ Hardlock.exe --connect 192.168.1.20 --name Maverick --team red
 ## Good to know
 
 - A networked match never pauses: the menu opens, but the fight goes on around you. The simulation speed setting stays at normal.
-- Your own jet answers your controls at once. Everything else is drawn where the server had it a tenth of a second ago, so the picture stays smooth.
+- Your own jet answers your controls at once. Everything else is drawn where the server had it a tenth of a second ago, so the picture stays smooth. Your cannon rounds are judged against the aircraft where your screen showed them, so aim at what you see.
 - P and J are keybinds: change them under Settings, Keybinds, as Pilots and Chat.
-- Other pilots show on your radar and your warning receiver, as any aircraft does, but the HUD does not box them yet. On the red side, the HUD's target list still lists the red side's computer pilots.
+
 - A fit your jet can't carry is put right by the host: a pair goes back to its standard load and a missile the jet can't carry to its standard one.
