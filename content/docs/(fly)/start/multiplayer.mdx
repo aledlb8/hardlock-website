@@ -45,6 +45,14 @@ A server plays its scenario for everyone who joins, by the scenario's own rules,
 
 A line at the top of the screen says so: **CONNECTING TO**, then **ONLINE** with the server's name and your ping. A host sees **HOSTING** with the port and how many have joined. Going back to the title screen leaves the match. If the server closes or the connection drops, you go back to the MULTIPLAYER screen (the title, if you joined from the command line) and are told why.
 
+## Chat and the scoreboard
+
+Hold <Key k="P" /> for the scoreboard: every pilot in the match, blue and red apart, with their kills, jets lost, hits for rounds fired, and ping. Your own row is lit; **DOWN** marks a pilot waiting on their next jet, **OUT** one with none left. It works on the debrief too.
+
+<Key k="J" /> opens the chat line over the radar scope. Type, then <Key k="Enter" /> to send, or <Key k="Esc" /> to close it. <Key k="Tab" /> switches between **ALL** (everyone) and **TEAM** (your side only; the line is marked TEAM). While the line is open your keys type instead of flying, firing or dropping flares; the mouse still steers. Lines fade after 12 seconds, and the open chat shows the last ten. The chat also tells you who joins, on which side, and who leaves.
+
+A pilot who joins with a callsign already taken gets a number after it (Viper 2). Lines are up to 160 characters, and five in five seconds is the most a pilot can send.
+
 ## The match
 
 Every pilot plays the scenario's rules as in a match of their own. You have its jets to lose, and when yours goes down you watch the wreck and ask for the next one, as [offline](/world/outcomes/). The kills, rounds and hits on your debrief are yours alone; the waves, the clock and the objectives belong to everyone.
@@ -78,5 +86,6 @@ Hardlock.exe --connect 192.168.1.20 --name Maverick --team red
 
 - A networked match never pauses: the menu opens, but the fight goes on around you. The simulation speed setting stays at normal.
 - Your own jet answers your controls at once. Everything else is drawn where the server had it a tenth of a second ago, so the picture stays smooth.
+- P and J are keybinds: change them under Settings, Keybinds, as Pilots and Chat.
 - Other pilots show on your radar and your warning receiver, as any aircraft does, but the HUD does not box them yet. On the red side, the HUD's target list still lists the red side's computer pilots.
 - A fit your jet can't carry is put right by the host: a pair goes back to its standard load and a missile the jet can't carry to its standard one.
