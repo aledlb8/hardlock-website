@@ -58,6 +58,8 @@ hardlock_server.exe --name "Friday night" --max-players 8
   <dt>--list-on</dt><dd>tell a server list (its address, port 27017 unless given) the server is up</dd>
 </Facts>
 
+Every 30 seconds the server prints who is playing, with each pilot's ping. If it prints **running ... ms behind its step**, the PC was too busy to keep the match's time, and every pilot felt the hitch. Close other heavy programs, or run the server on another PC than the one you play on.
+
 Games on the same network find a server by themselves. `hardlock_server.exe --master` runs a server list instead of a match: servers that name it with `--list-on` are listed, and games that give its address see them. It listens on UDP port 27017 unless given `--port`.
 
 A server plays its scenario for everyone who joins, by the scenario's own rules, and starts the next match **15 seconds** after one ends. Once everybody has left, it starts a fresh match 30 seconds later. With several `--scenario`, each next match is the next scenario in the list, then back to the first; every player is taken into it. <Key k="Ctrl" /> + <Key k="C" /> closes it and tells every player why.
@@ -126,7 +128,7 @@ Hardlock.exe --connect 192.168.1.20 --name Maverick --team red
 ## Good to know
 
 - A networked match never pauses: the menu opens, but the fight goes on around you. The simulation speed setting stays at normal.
-- Your own jet answers your controls at once. Everything else is drawn where the server had it a tenth of a second ago, so the picture stays smooth. Your cannon rounds are judged against the aircraft where your screen showed them, so aim at what you see.
+- Your own jet answers your controls at once. Everything else is drawn where it is when your controls reach the server, the same moment your jet is in, so the radar's boxes sit on the aircraft they mark. Your own missiles, flares and chaff appear once the server has released them, a round trip after the key. Your cannon rounds are judged against the aircraft where your screen showed them, so aim at what you see.
 - P and J are keybinds: change them under Settings, Keybinds, as Pilots and Chat.
 
 - A fit your jet can't carry is put right by the host: a pair goes back to its standard load and a missile the jet can't carry to its standard one.
