@@ -48,7 +48,7 @@ The hangar shows the selected aircraft with your fit of missiles on their statio
 
 Changing a named missile changes its visible shape and finish on the aircraft and in flight. Closely related variants can share a silhouette. Shapes with unpublished details are artistic approximations.
 
-- **Tabs:** AIRCRAFT and LOADOUT run along the top, each showing its current pick under its label. <Key k="Q" /> and <Key k="E" /> or a click change tab, and <Key k="W" />/<Key k="S" /> or <Key k="↑" />/<Key k="↓" /> step through the open list. The aircraft list is grouped by nation.
+- **Tabs:** AIRCRAFT and LOADOUT run along the top. <Key k="Q" /> and <Key k="E" /> or a click change tab, and <Key k="W" />/<Key k="S" /> or <Key k="↑" />/<Key k="↓" /> step through the open list. The aircraft list is grouped by nation.
 - **Loadout:** a box for each hardpoint under the jet. Pick one with a click or <Key k="A" />/<Key k="D" />, then choose its missile, or leave it empty, from the list on the left; its mirror is armed with it. [Loadout](/aircraft/roster/#loadout) lists what each jet and hardpoint can take.
 - **Card:** the right column shows the card of whatever you point at, or else the current pick of the open list.
 - **Under the aircraft:** its name and bars for thrust-to-weight, wing loading, load limit and sea-level speed.
@@ -57,14 +57,14 @@ Changing a named missile changes its visible shape and finish on the aircraft an
 **BRIEFING** (<Key k="Enter" />) goes on to the briefing map; <Key k="Esc" /> goes back to the title.
 
 <Callout kind="note" title="The hangar makes you a pilot">
-  Picking any aircraft or missile in the hangar switches you to the fighter role. If you were running the ground launcher, the hangar header warns you first.
+  Picking any aircraft or missile in the hangar switches you to the fighter role.
 </Callout>
 
 ## The briefing map
 
-The briefing is a high, orbiting view over the terrain, centred between the two bases. Drag to orbit and use the wheel to zoom. The map shows range rings every 10 km from your base, north, the dashed edge of the area the enemy pilots stay inside, the enemy base (HOSTILE AIRFIELD) and every enemy aircraft in the air as T1, T2… Point at one to open its card. A scenario with more flights or zones also draws them where they start, with friendly flights marked as such in the map key.
+The briefing is a high, orbiting view over the terrain, centred between the two bases. Drag to orbit and use the wheel to zoom. The map shows range rings every 10 km from your base, each labelled with its range, north, the dashed edge of the area the enemy pilots stay inside, the enemy base (HOSTILE AIRFIELD) and every enemy aircraft in the air as T1, T2… Point at one to open its card. A scenario with more flights or zones also draws them where they start, friendly flights under their callsigns.
 
-The column on the right sets up the fight. Its rows work like [Settings](/interface/settings/): arrows or <Key k="←" />/<Key k="→" /> step a value. Pointing at a row describes it in the panel below; with nothing under the cursor, that panel shows the SITUATION: the scenario's mode, the distance to the enemy base, how many hostiles are airborne, their skill, whether the opening repeats, then any time limit, your jets, the weapons rule and other flights, and the scenario's briefing text. The map key sits at the bottom left. **EDIT SCENARIO** opens the setup in the [editor](/world/scenarios/#the-editor).
+The column on the right sets up the fight. Its rows work like [Settings](/interface/settings/): arrows or <Key k="←" />/<Key k="→" /> step a value. The panel below shows the situation: the scenario's mode, the distance to the enemy base, how many hostiles are airborne, their skill, whether the opening repeats, then any time limit, your jets, the weapons rule and other flights, and the scenario's briefing text. Pointing at the AIRCRAFT slot shows your jet's missiles and gun there instead. **EDIT SCENARIO** opens the setup in the [editor](/world/scenarios/#the-editor).
 
 | Group | Setting | Options | Notes |
 | --- | --- | --- | --- |
@@ -83,7 +83,7 @@ The column on the right sets up the fight. Its rows work like [Settings](/interf
 | | Same opening | on / off | On, every launch and restart opens the same way. |
 | | Weapons free | on / off | Fighter role only. Off means the enemy never fires. |
 | | Hostile radar | on / off | Fighter role only. Also <Key k="N" /> in flight. |
-| LOADOUT | Aircraft and rounds | | Fighter role: a slot that opens the hangar, showing the missiles your fit carries. Your fit is kept for each aircraft; a scenario changes it only if it was saved with its own stations, and none of the shipped ones was. SAM site: the launcher's round and reload. |
+| LOADOUT | AIRCRAFT | | Fighter role: a slot that opens the hangar. Your fit is kept for each aircraft; a scenario changes it only if it was saved with its own stations, and none of the shipped ones was. SAM site: the launcher's round and reload. |
 
 **LAUNCH** (<Key k="Enter" />) starts the engagement with a fresh random seed, so the formation flying behind the menus is replaced by a new one. With **Same opening** on, the seed is kept instead: the formation and the plans the enemy pilots open with are the same on every launch, so an opening can be learned.
 
@@ -109,4 +109,4 @@ The pause menu offers RESUME, RESTART ENGAGEMENT, SETTINGS, CONTROLS, MAIN MENU 
 
 ## The debrief
 
-A scenario that can be won or lost ends with the debrief: victory or defeat, the reason, your results and, for waves and the sandbox, a score. From it you restart, go back to the briefing or leave for the title screen; [Scenarios and the editor](/world/scenarios/#the-debrief) has the details. The open sandbox never ends on its own, so its feedback stays in the moment: **SPLASH** when one of your missiles destroys an aircraft, and **SHOT ENDED** with a reason whenever a missile ends its flight. [The HUD](/interface/hud/#notices-above-the-weapon-line) describes both.
+A scenario that can be won or lost ends with the debrief: victory or defeat, your results and, for waves and the sandbox, a score. From it you restart, go back to the briefing or leave for the title screen; [Scenarios and the editor](/world/scenarios/#the-debrief) has the details. The open sandbox never ends on its own, so its feedback stays in the moment: **SPLASH** when one of your missiles destroys an aircraft, and **SHOT ENDED** with a reason whenever a missile ends its flight. [The HUD](/interface/hud/#notices-above-the-weapon-line) describes both.
